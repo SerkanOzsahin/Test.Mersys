@@ -27,10 +27,17 @@ public class _02_Attestations_ManagementDC extends Parent {
     public WebElement name;
 
     @FindBy(xpath = "//ms-save-button[@class='ng-star-inserted']//button")
-    public  WebElement saveButton;
+    public WebElement saveButton;
 
     @FindBy(xpath = "//div[contains(text(),'successfully')]")
     public WebElement successMessage;
+    @FindBy(css = "[data-placeholder='Name']")
+    public WebElement searchBox;
+
+    @FindBy(xpath = "(//*[@class='mat-mdc-button-touch-target'])[12]")
+    public WebElement editButton;
+
+
 
     public WebElement getWebElement(String strElement) {
 
