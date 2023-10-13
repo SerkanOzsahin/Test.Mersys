@@ -9,7 +9,10 @@ import io.cucumber.java.en.Then;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.time.Duration;
 import java.util.List;
 
 public class _03_Document_Types_Management {
@@ -20,6 +23,8 @@ public class _03_Document_Types_Management {
 
     _03_Document_Types_ManagementDC dc = new _03_Document_Types_ManagementDC();
     _03_Document_Types_ManagementLN ln = new _03_Document_Types_ManagementLN();
+
+    public WebDriverWait wait = new WebDriverWait(BD.getDriver(), Duration.ofSeconds(20));
 
     @And("the user click on the elements in LeftNav")
     public void theUserClickOnTheElementsInLeftNav(DataTable links) {
@@ -54,7 +59,9 @@ public class _03_Document_Types_Management {
 
     @And("the user edits an existing document type")
     public void theUserEditsAnExistingDocumentType() {
-        dc.mySendKeys(dc.nameSearch, docNameStr + Keys.ENTER);
+        dc.mySendKeys(dc.nameSearch, docNameStr);
+        dc.myClick(dc.searchButton);
+        wait.until(ExpectedConditions.elementToBeClickable(dc.searchButton));
         dc.myClick(dc.edit);
         dc.mySendKeys(dc.documentName, docNewNameStr);
         dc.myClick(dc.saveButton);
@@ -67,13 +74,13 @@ public class _03_Document_Types_Management {
 
     @And("the user deletes an existing document type")
     public void theUserDeletesAnExistingDocumentType() {
-
-
+        dc.mySendKeys(dc.nameSearch, docNewNameStr);
+        dc.myClick(dc.deleteImageButton);
+        dc.myClick(dc.deleteDialogButton);
     }
 
     @Then("the document type should be deleted successfully")
     public void theDocumentTypeShouldBeDeletedSuccessfully() {
-
-
+        dc.verifyContainsText(dc.successMessage, "success");
     }
 }

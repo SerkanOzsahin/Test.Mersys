@@ -43,24 +43,15 @@ public class _03_Document_Types_ManagementDC extends Parent {
     @FindBy(css = "[data-placeholder='Name']")
     public WebElement nameSearch;
 
+    @FindBy(xpath = "//ms-search-button//button")
+    public WebElement searchButton;
+
     @FindBy(xpath = "//ms-edit-button")
     public WebElement edit;
 
+    @FindBy(xpath = "(//ms-delete-button//button)[1]")
+    public WebElement deleteImageButton;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    @FindBy(xpath = "//button[@type='submit']")
+    public WebElement deleteDialogButton;
 }
