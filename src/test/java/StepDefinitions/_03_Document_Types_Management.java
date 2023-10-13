@@ -75,6 +75,8 @@ public class _03_Document_Types_Management {
     @And("the user deletes an existing document type")
     public void theUserDeletesAnExistingDocumentType() {
         dc.mySendKeys(dc.nameSearch, docNewNameStr);
+        dc.myClick(dc.searchButton);
+        wait.until(ExpectedConditions.elementToBeClickable(dc.searchButton));
         dc.myClick(dc.deleteImageButton);
         dc.myClick(dc.deleteDialogButton);
     }
