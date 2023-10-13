@@ -20,9 +20,7 @@ public class _03_Document_Types_ManagementLN extends Parent {
     public WebElement documentTypes;
 
     public WebElement getWebElement(String strElement) {
-
         switch (strElement) {
-
             case "setup": return this.setup;
             case "parameters": return this.parameters;
             case "documentTypes": return this.documentTypes;
