@@ -37,8 +37,11 @@ public class _02_Attestations_ManagementDC extends Parent {
     @FindBy(xpath = "(//*[@class='mat-mdc-button-touch-target'])[12]")
     public WebElement editButton;
 
+    @FindBy(xpath = "(//ms-delete-button//button)[1]")
+    public WebElement delete;
 
-
+    @FindBy(xpath = "//button[@type='submit']")
+    public WebElement deleteButton;
     public WebElement getWebElement(String strElement) {
 
         switch (strElement) {
