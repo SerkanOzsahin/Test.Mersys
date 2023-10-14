@@ -21,7 +21,7 @@ Feature: Editing Nationalities
       | setup         |
       | parameters    |
       | nationalities |
-    When the user uses the search function to find a nationality
+    And the user uses the search function to find a nationality
     Then the matching nationalities should be displayed successfully
 
   Scenario: Deleting a Nationality
