@@ -24,6 +24,10 @@ public class _02_Attestations_ManagementLN extends Parent {
     public WebElement getWebElement(String strElement) {
 
         switch (strElement) {
+            case "humanResources":return humanResources;
+            case "humanResourcesSetup":return humanResourcesSetup;
+            case "humanResourcesAttestations":return humanResourcesAttestations;
+
 
         }
 
