@@ -32,40 +32,54 @@ public class _06_Configuring_Training_Subject_Categories {
             ln.myClick(clickElement);
         }
     }
-    @Then("the user creates a subject categories")
+
+    @And("the user creates a subject categories")
     public void theUserCreatesASubjectCategories() {
         dc.myClick(dc.addButton);
         dc.mySendKeys(dc.shortName, "testgrup3");
         dc.mySendKeys(dc.codeInput, "GRP3");
         dc.myClick(dc.saveButton);
     }
-    @And("the subject categories document should be added successfully")
+
+    @Then("the subject categories document should be added successfully")
     public void theSubjectCategoriesDocumentShouldBeAddedSuccessfully() {
         Assert.assertTrue(dc.activeScroll.isDisplayed());
         dc.verifyContainsText(dc.successMessage, "success");
     }
-    @Then("the user edits an existing subject categories")
+
+    @And("the user edits an existing subject categories")
     public void theUserEditsAnExistingSubjectCategories() {
-        dc.mySendKeys(dc.searchBox,"testgrup3"+ Keys.ENTER);
+        dc.mySendKeys(dc.searchBox, "testgrup3" + Keys.ENTER);
         dc.wait.until(ExpectedConditions.numberOfElementsToBe(By.xpath("//fuse-progress-bar/*"), 0));
         dc.myClick(dc.editButton);
         dc.mySendKeys(dc.shortName, "testgrup3edit");
-        dc.mySendKeys(dc.codeInput,"GRP3Test");
+        dc.mySendKeys(dc.codeInput, "GRP3Test");
         dc.myClick(dc.saveButton);
     }
-    @And("the subject categories should be edited successfully")
+
+    @Then("the subject categories should be edited successfully")
     public void theSubjectCategoriesShouldBeEditedSuccessfully() {
         dc.verifyContainsText(dc.successMessage, "success");
     }
-    @Then("the user deletes an existing subject categories")
+
+    @And("the user deletes an existing subject categories")
     public void theUserDeletesAnExistingSubjectCategories() {
-        dc.mySendKeys(dc.searchBox,"testgrup3edit"+ Keys.ENTER);
+        dc.mySendKeys(dc.searchBox, "testgrup3edit" + Keys.ENTER);
         dc.wait.until(ExpectedConditions.numberOfElementsToBe(By.xpath("//fuse-progress-bar/*"), 0));
         dc.myClick(dc.deleteImageButton);
         dc.myClick(dc.deleteButton);
     }
-    @And("the subject categories should be deleted successfully")
+
+    @Then("the subject categories should be deleted successfully")
     public void theSubjectCategoriesShouldBeDeletedSuccessfully() {
         dc.verifyContainsText(dc.successMessage, "success");
+    }
+    @And("the user creates a subject categories with disable scroll")
+    public void theUserCreatesASubjectCategoriesWithDisableScroll() {
+        dc.myClick(dc.addButton);
+        dc.mySendKeys(dc.shortName, "testgrup3edit");
+        dc.mySendKeys(dc.codeInput, "GRP3");
+        dc.myClick(dc.scrollChange);
+        dc.myClick(dc.saveButton);
     }
 }

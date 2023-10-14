@@ -45,6 +45,9 @@ public class _06_Configuring_Training_Subject_CategoriesDC extends Parent {
     public WebElement codeInput;
     @FindBy(xpath = "//mat-slide-toggle[contains(@formcontrolname,'active')]")
     public WebElement activeScroll;
+    @FindBy(xpath = "(//button[contains(@role,'switch')])[5]")
+    public WebElement scrollChange;
+
     public WebElement getWebElement(String strElement) {
 
         switch (strElement) {
