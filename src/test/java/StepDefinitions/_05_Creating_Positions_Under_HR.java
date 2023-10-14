@@ -9,6 +9,7 @@ import io.cucumber.java.en.Then;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 
 import java.time.Duration;
 import java.util.List;
@@ -83,25 +84,34 @@ public class _05_Creating_Positions_Under_HR {
 
     @And("the user searches for a position")
     public void theUserSearchesForAPosition() {
-
-
+        dc.myClick(dc.addButton);
+        dc.mySendKeys(dc.positionName, positionNameStr);
+        dc.mySendKeys(dc.shortName, shortNameStr);
+        dc.myClick(dc.saveButton);
+        dc.verifyContainsText(dc.successMessage, "success");
+        dc.mySendKeys(dc.nameSearch, positionNameStr);
+        dc.myClick(dc.searchButton);
     }
 
     @Then("the system should display the relevant results")
     public void theSystemShouldDisplayTheRelevantResults() {
-
-
+        wait.until(ExpectedConditions.elementToBeClickable(dc.searchButton));
+        Assert.assertEquals(dc.positionNameText.getText(), positionNameStr);
     }
 
     @And("the user chooses to enable or disable a position")
     public void theUserChoosesToEnableOrDisableAPosition() {
-
-
+        dc.mySendKeys(dc.nameSearch, positionNameStr);
+        dc.myClick(dc.searchButton);
+        wait.until(ExpectedConditions.elementToBeClickable(dc.searchButton));
+        dc.myClick(dc.activeInactiveButton);
     }
 
     @Then("the position's status should be updated accordingly")
     public void thePositionSStatusShouldBeUpdatedAccordingly() {
-
-
+        dc.verifyContainsText(dc.successMessage, "success");
+        dc.myClick(dc.deleteImageButton);
+        dc.myClick(dc.deleteDialogButton);
+        dc.verifyContainsText(dc.successMessage, "success");
     }
 }
