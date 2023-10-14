@@ -26,8 +26,8 @@ public class _03_Document_Types_Management {
     String docNewNameStr = "group3test123";
     String descNameStr = "group3testforproject";
 
-    @And("the user clicks on the elements in LeftNav")
-    public void theUserClicksOnTheElementsInLeftNav(DataTable links) {
+    @And("the user navigates to document types")
+    public void theUserNavigatesToDocumentTypes(DataTable links) {
         BD.getDriver().get("https://test.mersys.io/");
         dc.mySendKeys(dc.username, "turkeyts");
         dc.mySendKeys(dc.password, "TechnoStudy123");
