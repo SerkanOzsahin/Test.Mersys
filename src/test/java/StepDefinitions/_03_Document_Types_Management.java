@@ -17,17 +17,17 @@ import java.util.List;
 
 public class _03_Document_Types_Management {
 
-    String docNameStr = "group3test";
-    String docNewNameStr = "group3test123";
-    String descNameStr = "group3testforproject";
-
     _03_Document_Types_ManagementDC dc = new _03_Document_Types_ManagementDC();
     _03_Document_Types_ManagementLN ln = new _03_Document_Types_ManagementLN();
 
     public WebDriverWait wait = new WebDriverWait(BD.getDriver(), Duration.ofSeconds(20));
 
-    @And("the user click on the elements in LeftNav")
-    public void theUserClickOnTheElementsInLeftNav(DataTable links) {
+    String docNameStr = "group3test";
+    String docNewNameStr = "group3test123";
+    String descNameStr = "group3testforproject";
+
+    @And("the user clicks on the elements in LeftNav")
+    public void theUserClicksOnTheElementsInLeftNav(DataTable links) {
         BD.getDriver().get("https://test.mersys.io/");
         dc.mySendKeys(dc.username, "turkeyts");
         dc.mySendKeys(dc.password, "TechnoStudy123");
