@@ -1,8 +1,10 @@
 Feature: Position Categories Management
 
   Scenario: Add Position Categories
-    And the user clicks on human resources button and  on setup button
-    And the user clicks on position categories
+    And the user clicks on the elements in LeftNav
+     | human resources |
+     | setup           |
+     |position categories|
     Then the position categories should be added successfully
 
   Scenario: Edit Position Categories
