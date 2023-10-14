@@ -49,16 +49,9 @@ public class _05_Creating_Positions_Under_HRDC extends Parent {
     @FindBy(xpath = "//button[@type='submit']")
     public WebElement deleteDialogButton;
 
+    @FindBy(xpath = "(//tbody[@role='rowgroup']/tr/td)[2]")
+    public WebElement positionNameText;
 
-
-
-
-
-
-
-
-
-
-
-
+    @FindBy(css = "div[class='mdc-form-field']")
+    public WebElement activeInactiveButton;
 }
