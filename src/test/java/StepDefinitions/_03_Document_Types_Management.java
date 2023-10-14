@@ -6,6 +6,7 @@ import Utilities.BD;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -26,7 +27,7 @@ public class _03_Document_Types_Management {
     String docNewNameStr = "group3test123";
     String descNameStr = "group3testforproject";
 
-    @And("the user navigates to document types")
+    @When("the user navigates to document types")
     public void theUserNavigatesToDocumentTypes(DataTable links) {
         BD.getDriver().get("https://test.mersys.io/");
         dc.mySendKeys(dc.username, "turkeyts");
