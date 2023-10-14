@@ -6,6 +6,7 @@ import Utilities.BD;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -68,6 +69,32 @@ public class _05_Creating_Positions_Under_HR {
         dc.verifyContainsText(dc.successMessage, "success");
     }
 
+    @And("the user searches for a position")
+    public void theUserSearchesForAPosition() {
+        dc.mySendKeys(dc.nameSearch, posNewNameStr);
+        dc.myClick(dc.searchButton);
+        wait.until(ExpectedConditions.elementToBeClickable(dc.searchButton));
+    }
+
+    @Then("the system should display the relevant results")
+    public void theSystemShouldDisplayTheRelevantResults() {
+        Assert.assertEquals(dc.positionNameText.getText(), posNewNameStr);
+    }
+
+    @And("the user chooses to enable or disable a position")
+    public void theUserChoosesToEnableOrDisableAPosition() {
+        dc.mySendKeys(dc.nameSearch, posNewNameStr);
+        dc.myClick(dc.searchButton);
+        wait.until(ExpectedConditions.elementToBeClickable(dc.searchButton));
+        dc.myClick(dc.activeInactiveButton);
+        dc.wait.until(ExpectedConditions.numberOfElementsToBe(By.xpath("//fuse-progress-bar/*"), 0));
+    }
+
+    @Then("the position's status should be updated accordingly")
+    public void thePositionSStatusShouldBeUpdatedAccordingly() {
+        dc.verifyContainsText(dc.successMessage, "updated");
+    }
+
     @And("the user deletes a position")
     public void theUserDeletesAPosition() {
         dc.mySendKeys(dc.nameSearch, posNewNameStr);
@@ -79,39 +106,6 @@ public class _05_Creating_Positions_Under_HR {
 
     @Then("the position should be deleted successfully")
     public void thePositionShouldBeDeletedSuccessfully() {
-        dc.verifyContainsText(dc.successMessage, "success");
-    }
-
-    @And("the user searches for a position")
-    public void theUserSearchesForAPosition() {
-        dc.myClick(dc.addButton);
-        dc.mySendKeys(dc.positionName, positionNameStr);
-        dc.mySendKeys(dc.shortName, shortNameStr);
-        dc.myClick(dc.saveButton);
-        dc.verifyContainsText(dc.successMessage, "success");
-        dc.mySendKeys(dc.nameSearch, positionNameStr);
-        dc.myClick(dc.searchButton);
-    }
-
-    @Then("the system should display the relevant results")
-    public void theSystemShouldDisplayTheRelevantResults() {
-        wait.until(ExpectedConditions.elementToBeClickable(dc.searchButton));
-        Assert.assertEquals(dc.positionNameText.getText(), positionNameStr);
-    }
-
-    @And("the user chooses to enable or disable a position")
-    public void theUserChoosesToEnableOrDisableAPosition() {
-        dc.mySendKeys(dc.nameSearch, positionNameStr);
-        dc.myClick(dc.searchButton);
-        wait.until(ExpectedConditions.elementToBeClickable(dc.searchButton));
-        dc.myClick(dc.activeInactiveButton);
-    }
-
-    @Then("the position's status should be updated accordingly")
-    public void thePositionSStatusShouldBeUpdatedAccordingly() {
-        dc.verifyContainsText(dc.successMessage, "success");
-        dc.myClick(dc.deleteImageButton);
-        dc.myClick(dc.deleteDialogButton);
         dc.verifyContainsText(dc.successMessage, "success");
     }
 }
