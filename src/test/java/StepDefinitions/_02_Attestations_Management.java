@@ -69,9 +69,24 @@ public class _02_Attestations_Management {
 
     @When("the user deletes an existing attestations document")
     public void theUserDeletesAnExistingAttestationsDocument() {
+        BD.getDriver().get("https://test.mersys.io/");
+        dc.mySendKeys(dc.userName, "turkeyts");
+        dc.mySendKeys(dc.password, "TechnoStudy123");
+        dc.myClick(dc.loginButton);
+
+        ln.myClick(ln.humanResources);
+        ln.myClick(ln.humanResourcesSetup);
+        ln.myClick(ln.humanResourcesAttestations);
+
+        dc.mySendKeys(dc.searchBox,"testgrup3edit"+ Keys.ENTER);
+        dc.wait.until(ExpectedConditions.numberOfElementsToBe(By.xpath("//fuse-progress-bar/*"), 0));
+        dc.myClick(dc.delete);
+        dc.myClick(dc.deleteButton);
     }
 
     @Then("the attestations document should deleted successfully")
     public void theAttestationsDocumentShouldDeletedSuccessfully() {
+        dc.verifyContainsText(dc.successMessage, "successfully");
+
     }
 }
