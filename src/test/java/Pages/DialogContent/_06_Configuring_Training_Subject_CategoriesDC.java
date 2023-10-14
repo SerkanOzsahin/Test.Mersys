@@ -2,15 +2,22 @@ package Pages.DialogContent;
 
 import Pages.Parent;
 import Utilities.BD;
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class _06_Configuring_Training_Subject_CategoriesDC extends Parent {
     public _06_Configuring_Training_Subject_CategoriesDC() {
         PageFactory.initElements(BD.getDriver(), this);
     }
+    public void staleElement(WebElement element) {
+        wait.until(ExpectedConditions.numberOfElementsToBe
+                (By.xpath("//fuse-progress-bar/*"), 0));
 
+    }
     @FindBy(css = "[formcontrolname='username']")
     public WebElement userName;
     @FindBy(css = "[formcontrolname='password']")

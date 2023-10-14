@@ -45,7 +45,7 @@ public class _02_Attestations_Management {
     @Then("the user edits an existing attestations document")
     public void theUserEditsAnExistingAttestationsDocument() {
         dc.mySendKeys(dc.searchBox,"testgrup3"+ Keys.ENTER);
-        dc.wait.until(ExpectedConditions.numberOfElementsToBe(By.xpath("//fuse-progress-bar/*"), 0));
+        dc.staleElement(dc.editButton);
         dc.myClick(dc.editButton);
         dc.mySendKeys(dc.shortName, "testgrup3edit");
         dc.myClick(dc.saveButton);
@@ -57,7 +57,7 @@ public class _02_Attestations_Management {
     @Then("the user deletes an existing attestations document")
     public void theUserDeletesAnExistingAttestationsDocument() {
         dc.mySendKeys(dc.searchBox,"testgrup3edit"+ Keys.ENTER);
-        dc.wait.until(ExpectedConditions.numberOfElementsToBe(By.xpath("//fuse-progress-bar/*"), 0));
+        dc.staleElement(dc.deleteImageButton);
         dc.myClick(dc.deleteImageButton);
         dc.myClick(dc.deleteButton);
     }
