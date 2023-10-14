@@ -67,7 +67,7 @@ public class _12_Editing_Nationalities {
         dc.verifyContainsText(dc.successMessage, "success");
     }
 
-    @When("the user uses the search function to find a nationality")
+    @And("the user uses the search function to find a nationality")
     public void theUserUsesTheSearchFunctionToFindANationality() {
         dc.mySendKeys(dc.nameSearch, newNatNameStr);
         dc.myClick(dc.searchButton);
