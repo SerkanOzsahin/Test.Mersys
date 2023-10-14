@@ -6,6 +6,7 @@ import Utilities.BD;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -26,7 +27,7 @@ public class _05_Creating_Positions_Under_HR {
     String posNewNameStr = "group3test123";
     String shortNameStr = "g3";
 
-    @And("the user navigates to positions")
+    @When("the user navigates to positions")
     public void theUserNavigatesToPositions(DataTable links) {
         BD.getDriver().get("https://test.mersys.io/");
         dc.mySendKeys(dc.username, "turkeyts");

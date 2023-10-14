@@ -1,7 +1,7 @@
 Feature: Document Types Management
 
   Scenario: Add a Document Type
-    And the user navigates to document types
+    When the user navigates to document types
       | setup         |
       | parameters    |
       | documentTypes |
@@ -9,7 +9,7 @@ Feature: Document Types Management
     Then the document type should be added successfully
 
   Scenario: Edit an Existing Document Type
-    And the user navigates to document types
+    When the user navigates to document types
       | setup         |
       | parameters    |
       | documentTypes |
@@ -17,7 +17,7 @@ Feature: Document Types Management
     Then the document type should be edited successfully
 
   Scenario: Delete an Existing Document Type
-    And the user navigates to document types
+    When the user navigates to document types
       | setup         |
       | parameters    |
       | documentTypes |
