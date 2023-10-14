@@ -16,14 +16,6 @@ Feature: Creating Positions Under HR
     And the user updates an existing position
     Then the position should be edited successfully
 
-  Scenario: Delete a Position
-    And the user navigates to positions
-      | humanResources |
-      | setup          |
-      | positions      |
-    And the user deletes a position
-    Then the position should be deleted successfully
-
   Scenario: Search for a Position
     And the user navigates to positions
       | humanResources |
@@ -39,3 +31,11 @@ Feature: Creating Positions Under HR
       | positions      |
     And the user chooses to enable or disable a position
     Then the position's status should be updated accordingly
+
+  Scenario: Delete a Position
+    And the user navigates to positions
+      | humanResources |
+      | setup          |
+      | positions      |
+    And the user deletes a position
+    Then the position should be deleted successfully
