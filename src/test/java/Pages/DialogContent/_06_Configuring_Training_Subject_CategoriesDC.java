@@ -16,7 +16,6 @@ public class _06_Configuring_Training_Subject_CategoriesDC extends Parent {
     public void staleElement(WebElement element) {
         wait.until(ExpectedConditions.numberOfElementsToBe
                 (By.xpath("//fuse-progress-bar/*"), 0));
-
     }
     @FindBy(css = "[formcontrolname='username']")
     public WebElement userName;
@@ -52,9 +51,10 @@ public class _06_Configuring_Training_Subject_CategoriesDC extends Parent {
     public WebElement codeInput;
     @FindBy(xpath = "//mat-slide-toggle[contains(@formcontrolname,'active')]")
     public WebElement activeScroll;
-    @FindBy(xpath = "(//button[contains(@role,'switch')])[5]")
+    @FindBy(xpath = "//mat-slide-toggle[contains(@formcontrolname,'active')]/*")
     public WebElement scrollChange;
 
+   //(//button[contains(@role,'switch')])[5]
     public WebElement getWebElement(String strElement) {
 
         switch (strElement) {
