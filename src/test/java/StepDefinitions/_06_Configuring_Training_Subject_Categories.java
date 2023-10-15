@@ -19,6 +19,8 @@ public class _06_Configuring_Training_Subject_Categories {
     _06_Configuring_Training_Subject_CategoriesLN ln = new _06_Configuring_Training_Subject_CategoriesLN();
     _06_Configuring_Training_Subject_CategoriesDC dc = new _06_Configuring_Training_Subject_CategoriesDC();
 
+
+
     @When("the user navigates to education")
     public void theUserNavigatesToEducation(DataTable dt) {
         BD.getDriver().get("https://test.mersys.io/");
@@ -50,7 +52,7 @@ public class _06_Configuring_Training_Subject_Categories {
     @And("the user edits an existing subject categories")
     public void theUserEditsAnExistingSubjectCategories() {
         dc.mySendKeys(dc.searchBox, "testgrup3" + Keys.ENTER);
-        dc.wait.until(ExpectedConditions.numberOfElementsToBe(By.xpath("//fuse-progress-bar/*"), 0));
+        dc.staleElement(dc.editButton);
         dc.myClick(dc.editButton);
         dc.mySendKeys(dc.shortName, "testgrup3edit");
         dc.mySendKeys(dc.codeInput, "GRP3Test");
@@ -65,7 +67,7 @@ public class _06_Configuring_Training_Subject_Categories {
     @And("the user deletes an existing subject categories")
     public void theUserDeletesAnExistingSubjectCategories() {
         dc.mySendKeys(dc.searchBox, "testgrup3edit" + Keys.ENTER);
-        dc.wait.until(ExpectedConditions.numberOfElementsToBe(By.xpath("//fuse-progress-bar/*"), 0));
+        dc.staleElement(dc.deleteImageButton);
         dc.myClick(dc.deleteImageButton);
         dc.myClick(dc.deleteButton);
     }
