@@ -8,7 +8,9 @@ import org.openqa.selenium.support.PageFactory;
 
 public class _01_Position_Categories_ManagementDC extends Parent {
 
-    public _01_Position_Categories_ManagementDC() {PageFactory.initElements(BD.getDriver(), this);}
+    public _01_Position_Categories_ManagementDC() {
+        PageFactory.initElements(BD.getDriver(), this);
+    }
 
     @FindBy(css = "[formcontrolname='username']")
     public WebElement userName;
@@ -31,11 +33,14 @@ public class _01_Position_Categories_ManagementDC extends Parent {
     @FindBy(xpath = "//span[text()='Save']")
     public WebElement saveButton;
 
-    @FindBy(xpath = "(//span[@class='mat-mdc-button-touch-target'])[12]")
-    public WebElement editButton;
+    @FindBy(css = "[data-placeholder='Name']")
+    public WebElement nameSearch;
 
-    @FindBy(css = "input[id='ms-text-field-6']")
-    public WebElement positionCategory;
+    @FindBy(xpath = "//ms-search-button//button")
+    public WebElement searchButton;
+
+    @FindBy(xpath = "//ms-edit-button")
+    public WebElement edit;
 
     @FindBy(xpath = "(//ms-delete-button//button)[1]")
     public WebElement deleteImageBtn;
