@@ -22,6 +22,7 @@ public class _11_Editing_Discounts_Under_Parameters {
     String editDescriptionName = "grup3test";
     String editIntegrationCode = "gp3test";
     String editPriority = "%10";
+
     @When("the user navigates to setup")
     public void theUserNavigatesToSetup(DataTable dt) {
         BD.getDriver().get("https://test.mersys.io/");
@@ -35,7 +36,8 @@ public class _11_Editing_Discounts_Under_Parameters {
             ln.myClick(clickElement);
         }
     }
-    @Then("the user creates a new discount")
+
+    @And("the user creates a new discount")
     public void theUserCreatesANewDiscount() {
         dc.myClick(dc.addButton);
         dc.mySendKeys(dc.description, descriptionName);
@@ -43,13 +45,15 @@ public class _11_Editing_Discounts_Under_Parameters {
         dc.mySendKeys(dc.priority, priority + Keys.ENTER);
         dc.myClick(dc.saveAndClose);
     }
-    @And("the discount document should be added successfully")
+
+    @Then("the discount document should be added successfully")
     public void theDiscountDocumentShouldBeAddedSuccessfully() {
         dc.verifyContainsText(dc.successMessage, "success");
     }
-    @Then("the user edits an existing new discount")
+
+    @And("the user edits an existing new discount")
     public void theUserEditsAnExistingNewDiscount() {
-        dc.mySendKeys(dc.searchBox,descriptionName+Keys.ENTER);
+        dc.mySendKeys(dc.searchBox, descriptionName + Keys.ENTER);
         dc.staleElement(dc.editButton);
         dc.myClick(dc.editButton);
         dc.mySendKeys(dc.description, editDescriptionName);
@@ -58,18 +62,21 @@ public class _11_Editing_Discounts_Under_Parameters {
         dc.myClick(dc.saveAndClose);
 
     }
-    @And("the new discount should be edited successfully")
+
+    @Then("the new discount should be edited successfully")
     public void theNewDiscountShouldBeEditedSuccessfully() {
         dc.verifyContainsText(dc.successMessage, "success");
     }
-    @Then("the user deletes an existing new discount")
+
+    @And("the user deletes an existing new discount")
     public void theUserDeletesAnExistingNewDiscount() {
         dc.mySendKeys(dc.searchBox, editDescriptionName + Keys.ENTER);
         dc.staleElement(dc.deleteImageButton);
         dc.myClick(dc.deleteImageButton);
         dc.myClick(dc.deleteButton);
     }
-    @And("the new discount should be deleted successfully")
+
+    @Then("the new discount should be deleted successfully")
     public void theNewDiscountShouldBeDeletedSuccessfully() {
         dc.verifyContainsText(dc.successMessage, "success");
     }

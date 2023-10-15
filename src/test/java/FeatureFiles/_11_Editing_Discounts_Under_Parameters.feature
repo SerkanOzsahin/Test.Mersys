@@ -5,21 +5,21 @@ Feature: Editing Discounts Under Parameters
       | setup           |
       | parametersSetup |
       | discounts       |
-    Then the user creates a new discount
-    And the discount document should be added successfully
+    And the user creates a new discount
+    Then the discount document should be added successfully
 
   Scenario: Edit a new Discount
     When the user navigates to setup
       | setup           |
       | parametersSetup |
       | discounts       |
-    Then the user edits an existing new discount
-    And the new discount should be edited successfully
+    And the user edits an existing new discount
+    Then the new discount should be edited successfully
 
   Scenario: Delete a new Discount
     When the user navigates to setup
       | setup           |
       | parametersSetup |
       | discounts       |
-    Then the user deletes an existing new discount
-    And the new discount should be deleted successfully
+    And the user deletes an existing new discount
+    Then the new discount should be deleted successfully
