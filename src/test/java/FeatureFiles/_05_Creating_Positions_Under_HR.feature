@@ -22,7 +22,7 @@ Feature: Creating Positions Under HR
       | setup          |
       | positions      |
     And the user searches for a position
-    Then the system should display the relevant results
+    Then the system should display the results
 
   Scenario: Enable and Disable Positions
     When the user navigates to positions
@@ -30,7 +30,7 @@ Feature: Creating Positions Under HR
       | setup          |
       | positions      |
     And the user chooses to enable or disable a position
-    Then the position's status should be updated accordingly
+    Then the position's status should be updated
 
   Scenario: Delete a Position
     When the user navigates to positions

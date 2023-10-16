@@ -77,8 +77,8 @@ public class _05_Creating_Positions_Under_HR {
         wait.until(ExpectedConditions.elementToBeClickable(dc.searchButton));
     }
 
-    @Then("the system should display the relevant results")
-    public void theSystemShouldDisplayTheRelevantResults() {
+    @Then("the system should display the results")
+    public void theSystemShouldDisplayTheResults() {
         Assert.assertEquals(dc.positionNameText.getText(), posNewNameStr);
     }
 
@@ -91,8 +91,8 @@ public class _05_Creating_Positions_Under_HR {
         dc.wait.until(ExpectedConditions.numberOfElementsToBe(By.xpath("//fuse-progress-bar/*"), 0));
     }
 
-    @Then("the position's status should be updated accordingly")
-    public void thePositionSStatusShouldBeUpdatedAccordingly() {
+    @Then("the position's status should be updated")
+    public void thePositionSStatusShouldBeUpdated() {
         dc.verifyContainsText(dc.successMessage, "updated");
     }
 
