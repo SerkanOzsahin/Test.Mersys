@@ -41,11 +41,9 @@ public class _13_Parameters_Navigation {
             WebElement linkWebElement = ln.getWebElement(strLinkList.get(i));
             String linkTitle = linkWebElement.getText();
             ln.myClick(linkWebElement);
-            System.out.println(linkTitle);
             dc.wait.until(ExpectedConditions.numberOfElementsToBe(By.xpath("//fuse-progress-bar/*"), 0));
             String pageTitle = ln.titleText.getText();
-            System.out.println(pageTitle);
-            Assert.assertTrue(linkTitle.toLowerCase().contains(pageTitle.toLowerCase()));
+            Assert.assertTrue(pageTitle.toLowerCase().contains(linkTitle.toLowerCase()));
         }
     }
 }

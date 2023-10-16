@@ -12,7 +12,6 @@ Feature: Parameters Navigation
       | citizenships  |
       | rfl           |
       | nationalities |
-      | fees          |
       | discounts     |
       | gradeLevels   |
       | documentTypes |
