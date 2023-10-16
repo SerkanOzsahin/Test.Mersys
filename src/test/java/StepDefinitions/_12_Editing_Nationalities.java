@@ -9,18 +9,14 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
-import java.time.Duration;
 import java.util.List;
 
 public class _12_Editing_Nationalities {
 
     _12_Editing_NationalitiesDC dc = new _12_Editing_NationalitiesDC();
     _12_Editing_NationalitiesLN ln = new _12_Editing_NationalitiesLN();
-
-    public WebDriverWait wait = new WebDriverWait(BD.getDriver(), Duration.ofSeconds(20));
 
     String natNameStr = "group3test";
     String newNatNameStr = "group3test123";
@@ -56,7 +52,7 @@ public class _12_Editing_Nationalities {
     public void theUserEditsTheNationality() {
         dc.mySendKeys(dc.nameSearch, natNameStr);
         dc.myClick(dc.searchButton);
-        wait.until(ExpectedConditions.elementToBeClickable(dc.searchButton));
+        dc.wait.until(ExpectedConditions.elementToBeClickable(dc.searchButton));
         dc.myClick(dc.edit);
         dc.mySendKeys(dc.positionName, newNatNameStr);
         dc.myClick(dc.saveButton);
@@ -71,7 +67,7 @@ public class _12_Editing_Nationalities {
     public void theUserUsesTheSearchFunctionToFindANationality() {
         dc.mySendKeys(dc.nameSearch, newNatNameStr);
         dc.myClick(dc.searchButton);
-        wait.until(ExpectedConditions.elementToBeClickable(dc.searchButton));
+        dc.wait.until(ExpectedConditions.elementToBeClickable(dc.searchButton));
     }
 
     @Then("the matching nationalities should be displayed successfully")
@@ -83,7 +79,7 @@ public class _12_Editing_Nationalities {
     public void theUserDeletesANationality() {
         dc.mySendKeys(dc.nameSearch, newNatNameStr);
         dc.myClick(dc.searchButton);
-        wait.until(ExpectedConditions.elementToBeClickable(dc.searchButton));
+        dc.wait.until(ExpectedConditions.elementToBeClickable(dc.searchButton));
         dc.myClick(dc.deleteImageButton);
         dc.myClick(dc.deleteDialogButton);
     }
