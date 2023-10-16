@@ -55,7 +55,7 @@ public class _05_Creating_Positions_Under_HR {
     public void theUserUpdatesAnExistingPosition() {
         dc.mySendKeys(dc.nameSearch, positionNameStr);
         dc.myClick(dc.searchButton);
-        dc.wait.until(ExpectedConditions.elementToBeClickable(dc.searchButton));
+        dc.wait.until(ExpectedConditions.numberOfElementsToBe(By.xpath("//fuse-progress-bar/*"), 0));
         dc.myClick(dc.edit);
         dc.mySendKeys(dc.positionName, posNewNameStr);
         dc.myClick(dc.saveButton);
@@ -70,7 +70,7 @@ public class _05_Creating_Positions_Under_HR {
     public void theUserSearchesForAPosition() {
         dc.mySendKeys(dc.nameSearch, posNewNameStr);
         dc.myClick(dc.searchButton);
-        dc.wait.until(ExpectedConditions.elementToBeClickable(dc.searchButton));
+        dc.wait.until(ExpectedConditions.numberOfElementsToBe(By.xpath("//fuse-progress-bar/*"), 0));
     }
 
     @Then("the system should display the results")
@@ -82,7 +82,7 @@ public class _05_Creating_Positions_Under_HR {
     public void theUserChoosesToEnableOrDisableAPosition() {
         dc.mySendKeys(dc.nameSearch, posNewNameStr);
         dc.myClick(dc.searchButton);
-        dc.wait.until(ExpectedConditions.elementToBeClickable(dc.searchButton));
+        dc.wait.until(ExpectedConditions.numberOfElementsToBe(By.xpath("//fuse-progress-bar/*"), 0));
         dc.myClick(dc.activeInactiveButton);
         dc.wait.until(ExpectedConditions.numberOfElementsToBe(By.xpath("//fuse-progress-bar/*"), 0));
     }
@@ -96,7 +96,7 @@ public class _05_Creating_Positions_Under_HR {
     public void theUserDeletesAPosition() {
         dc.mySendKeys(dc.nameSearch, posNewNameStr);
         dc.myClick(dc.searchButton);
-        dc.wait.until(ExpectedConditions.elementToBeClickable(dc.searchButton));
+        dc.wait.until(ExpectedConditions.numberOfElementsToBe(By.xpath("//fuse-progress-bar/*"), 0));
         dc.myClick(dc.deleteImageButton);
         dc.myClick(dc.deleteDialogButton);
     }
