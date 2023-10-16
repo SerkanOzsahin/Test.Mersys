@@ -7,6 +7,7 @@ import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -58,7 +59,7 @@ public class _03_Document_Types_Management {
     public void theUserEditsAnExistingDocumentType() {
         dc.mySendKeys(dc.nameSearch, docNameStr);
         dc.myClick(dc.searchButton);
-        dc.wait.until(ExpectedConditions.elementToBeClickable(dc.searchButton));
+        dc.wait.until(ExpectedConditions.numberOfElementsToBe(By.xpath("//fuse-progress-bar/*"), 0));
         dc.myClick(dc.edit);
         dc.mySendKeys(dc.documentName, docNewNameStr);
         dc.myClick(dc.saveButton);
@@ -73,7 +74,7 @@ public class _03_Document_Types_Management {
     public void theUserDeletesAnExistingDocumentType() {
         dc.mySendKeys(dc.nameSearch, docNewNameStr);
         dc.myClick(dc.searchButton);
-        dc.wait.until(ExpectedConditions.elementToBeClickable(dc.searchButton));
+        dc.wait.until(ExpectedConditions.numberOfElementsToBe(By.xpath("//fuse-progress-bar/*"), 0));
         dc.myClick(dc.deleteImageButton);
         dc.myClick(dc.deleteDialogButton);
     }

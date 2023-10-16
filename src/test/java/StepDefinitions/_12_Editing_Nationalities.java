@@ -7,6 +7,7 @@ import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
@@ -52,7 +53,7 @@ public class _12_Editing_Nationalities {
     public void theUserEditsTheNationality() {
         dc.mySendKeys(dc.nameSearch, natNameStr);
         dc.myClick(dc.searchButton);
-        dc.wait.until(ExpectedConditions.elementToBeClickable(dc.searchButton));
+        dc.wait.until(ExpectedConditions.numberOfElementsToBe(By.xpath("//fuse-progress-bar/*"), 0));
         dc.myClick(dc.edit);
         dc.mySendKeys(dc.positionName, newNatNameStr);
         dc.myClick(dc.saveButton);
@@ -67,7 +68,7 @@ public class _12_Editing_Nationalities {
     public void theUserUsesTheSearchFunctionToFindANationality() {
         dc.mySendKeys(dc.nameSearch, newNatNameStr);
         dc.myClick(dc.searchButton);
-        dc.wait.until(ExpectedConditions.elementToBeClickable(dc.searchButton));
+        dc.wait.until(ExpectedConditions.numberOfElementsToBe(By.xpath("//fuse-progress-bar/*"), 0));
     }
 
     @Then("the matching nationalities should be displayed successfully")
@@ -79,7 +80,7 @@ public class _12_Editing_Nationalities {
     public void theUserDeletesANationality() {
         dc.mySendKeys(dc.nameSearch, newNatNameStr);
         dc.myClick(dc.searchButton);
-        dc.wait.until(ExpectedConditions.elementToBeClickable(dc.searchButton));
+        dc.wait.until(ExpectedConditions.numberOfElementsToBe(By.xpath("//fuse-progress-bar/*"), 0));
         dc.myClick(dc.deleteImageButton);
         dc.myClick(dc.deleteDialogButton);
     }
