@@ -34,9 +34,6 @@ public class _13_Parameters_NavigationLN extends Parent {
     @FindBy(xpath = "(//span[text()='Nationalities'])[1]")
     public WebElement nationalities;
 
-    @FindBy(xpath = "//span[text()='Fees']")
-    public WebElement fees;
-
     @FindBy(xpath = "(//span[text()='Discounts'])[1]")
     public WebElement discounts;
 
@@ -68,7 +65,6 @@ public class _13_Parameters_NavigationLN extends Parent {
             case "citizenships": return this.citizenships;
             case "rfl": return this.rfl;
             case "nationalities": return this.nationalities;
-            case "fees": return this.fees;
             case "discounts": return this.discounts;
             case "gradeLevels": return this.gradeLevels;
             case "documentTypes": return this.documentTypes;
