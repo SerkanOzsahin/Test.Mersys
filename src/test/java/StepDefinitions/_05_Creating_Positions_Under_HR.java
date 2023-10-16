@@ -10,18 +10,14 @@ import io.cucumber.java.en.When;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
-import java.time.Duration;
 import java.util.List;
 
 public class _05_Creating_Positions_Under_HR {
 
     _05_Creating_Positions_Under_HRDC dc = new _05_Creating_Positions_Under_HRDC();
     _05_Creating_Positions_Under_HRLN ln = new _05_Creating_Positions_Under_HRLN();
-
-    public WebDriverWait wait = new WebDriverWait(BD.getDriver(), Duration.ofSeconds(20));
 
     String positionNameStr = "group3test";
     String posNewNameStr = "group3test123";
@@ -59,7 +55,7 @@ public class _05_Creating_Positions_Under_HR {
     public void theUserUpdatesAnExistingPosition() {
         dc.mySendKeys(dc.nameSearch, positionNameStr);
         dc.myClick(dc.searchButton);
-        wait.until(ExpectedConditions.elementToBeClickable(dc.searchButton));
+        dc.wait.until(ExpectedConditions.elementToBeClickable(dc.searchButton));
         dc.myClick(dc.edit);
         dc.mySendKeys(dc.positionName, posNewNameStr);
         dc.myClick(dc.saveButton);
@@ -74,7 +70,7 @@ public class _05_Creating_Positions_Under_HR {
     public void theUserSearchesForAPosition() {
         dc.mySendKeys(dc.nameSearch, posNewNameStr);
         dc.myClick(dc.searchButton);
-        wait.until(ExpectedConditions.elementToBeClickable(dc.searchButton));
+        dc.wait.until(ExpectedConditions.elementToBeClickable(dc.searchButton));
     }
 
     @Then("the system should display the results")
@@ -86,7 +82,7 @@ public class _05_Creating_Positions_Under_HR {
     public void theUserChoosesToEnableOrDisableAPosition() {
         dc.mySendKeys(dc.nameSearch, posNewNameStr);
         dc.myClick(dc.searchButton);
-        wait.until(ExpectedConditions.elementToBeClickable(dc.searchButton));
+        dc.wait.until(ExpectedConditions.elementToBeClickable(dc.searchButton));
         dc.myClick(dc.activeInactiveButton);
         dc.wait.until(ExpectedConditions.numberOfElementsToBe(By.xpath("//fuse-progress-bar/*"), 0));
     }
@@ -100,7 +96,7 @@ public class _05_Creating_Positions_Under_HR {
     public void theUserDeletesAPosition() {
         dc.mySendKeys(dc.nameSearch, posNewNameStr);
         dc.myClick(dc.searchButton);
-        wait.until(ExpectedConditions.elementToBeClickable(dc.searchButton));
+        dc.wait.until(ExpectedConditions.elementToBeClickable(dc.searchButton));
         dc.myClick(dc.deleteImageButton);
         dc.myClick(dc.deleteDialogButton);
     }

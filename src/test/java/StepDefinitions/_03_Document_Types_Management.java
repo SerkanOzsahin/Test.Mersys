@@ -11,17 +11,13 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.time.Duration;
 import java.util.List;
 
 public class _03_Document_Types_Management {
 
     _03_Document_Types_ManagementDC dc = new _03_Document_Types_ManagementDC();
     _03_Document_Types_ManagementLN ln = new _03_Document_Types_ManagementLN();
-
-    public WebDriverWait wait = new WebDriverWait(BD.getDriver(), Duration.ofSeconds(20));
 
     String docNameStr = "group3test";
     String docNewNameStr = "group3test123";
@@ -62,7 +58,7 @@ public class _03_Document_Types_Management {
     public void theUserEditsAnExistingDocumentType() {
         dc.mySendKeys(dc.nameSearch, docNameStr);
         dc.myClick(dc.searchButton);
-        wait.until(ExpectedConditions.elementToBeClickable(dc.searchButton));
+        dc.wait.until(ExpectedConditions.elementToBeClickable(dc.searchButton));
         dc.myClick(dc.edit);
         dc.mySendKeys(dc.documentName, docNewNameStr);
         dc.myClick(dc.saveButton);
@@ -77,7 +73,7 @@ public class _03_Document_Types_Management {
     public void theUserDeletesAnExistingDocumentType() {
         dc.mySendKeys(dc.nameSearch, docNewNameStr);
         dc.myClick(dc.searchButton);
-        wait.until(ExpectedConditions.elementToBeClickable(dc.searchButton));
+        dc.wait.until(ExpectedConditions.elementToBeClickable(dc.searchButton));
         dc.myClick(dc.deleteImageButton);
         dc.myClick(dc.deleteDialogButton);
     }
