@@ -23,7 +23,7 @@ public class _04_Adding_New_FieldsLN extends Parent {
         switch (strElement) {
             case "setup": return this.setup;
             case "parameters": return this.parameters;
-            case "documentTypes": return this.fields;
+            case "fields": return this.fields;
         }
         return null;
     }

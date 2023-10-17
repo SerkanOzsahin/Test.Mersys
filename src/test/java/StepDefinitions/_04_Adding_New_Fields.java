@@ -50,7 +50,7 @@ public class _04_Adding_New_Fields {
         dc.myClick(dc.saveButton);
     }
 
-    @Then("the new field should be added succesfully")
+    @Then("the new field should be added successfully")
     public void theNewFieldShouldBeAddedSuccessfully() {
 
         dc.verifyContainsText(dc.successMessage, "success");
@@ -64,7 +64,7 @@ public class _04_Adding_New_Fields {
         dc.mySendKeys(dc.fieldName, newFieldNameStr);
         dc.myClick(dc.saveButton);
     }
-    @Then("the field should be edited succesfully")
+    @Then("the field should be edited successfully")
     public void theFieldShouldBeEditedSuccessfully() {
 
         dc.verifyContainsText(dc.successMessage, "success");
@@ -79,7 +79,7 @@ public class _04_Adding_New_Fields {
         dc.myClick(dc.deleteDialogButton);
     }
 
-    @Then("the field shold be deleted succesfully")
+    @Then("the field should be deleted successfully")
     public void theFieldShouldBeDeletedSuccessfully() {
 
         dc.verifyContainsText(dc.successMessage, "success");
