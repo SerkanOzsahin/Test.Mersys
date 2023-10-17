@@ -7,9 +7,7 @@ import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -43,9 +41,8 @@ public class _04_Adding_New_Fields {
     public void theUserAddsANewField() {
         dc.myClick(dc.addButton);
         dc.mySendKeys(dc.fieldName, fieldNameStr);
-        dc.myClick(dc.code);
-        new Actions(BD.getDriver()).sendKeys(Keys.ESCAPE).build().perform();
         dc.mySendKeys(dc.code, codeNameStr);
+        dc.myClick(dc.fieldtype);
         dc.myClick(dc.test);
         dc.myClick(dc.saveButton);
     }
