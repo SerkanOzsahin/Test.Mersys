@@ -62,15 +62,15 @@ public class _13_Parameters_NavigationLN extends Parent {
             case "countries": return this.countries;
             case "states": return this.states;
             case "cities": return this.cities;
-            case "citizenships": return this.citizenships;
-            case "rfl": return this.rfl;
+            case "citizen ships": return this.citizenships;
+            case "reason for leaving": return this.rfl;
             case "nationalities": return this.nationalities;
             case "discounts": return this.discounts;
-            case "gradeLevels": return this.gradeLevels;
-            case "documentTypes": return this.documentTypes;
-            case "bankAccounts": return this.bankAccounts;
+            case "grade levels": return this.gradeLevels;
+            case "document types": return this.documentTypes;
+            case "bank accounts": return this.bankAccounts;
             case "fields": return this.fields;
-            case "fieldSettings": return this.fieldSettings;
+            case "field settings": return this.fieldSettings;
         }
         return null;
     }

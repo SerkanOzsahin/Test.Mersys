@@ -6,15 +6,15 @@ Feature: Parameters Navigation
       | parameters |
 
     Then Upon clicking the following menu links, the user should see the corresponding page titles
-      | countries     |
-      | states        |
-      | cities        |
-      | citizenships  |
-      | rfl           |
-      | nationalities |
-      | discounts     |
-      | gradeLevels   |
-      | documentTypes |
-      | bankAccounts  |
-      | fields        |
-      | fieldSettings |
+      | countries          |
+      | states             |
+      | cities             |
+      | citizen ships      |
+      | reason for leaving |
+      | nationalities      |
+      | discounts          |
+      | grade levels       |
+      | document types     |
+      | bank accounts      |
+      | fields             |
+      | field settings     |
