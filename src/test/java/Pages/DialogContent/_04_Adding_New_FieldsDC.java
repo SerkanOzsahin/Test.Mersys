@@ -28,6 +28,9 @@ public class _04_Adding_New_FieldsDC extends Parent {
     @FindBy(css = "[formcontrolname='code']")
     public WebElement code;
 
+    @FindBy(css = "[formcontrolname='type']")
+    public WebElement fieldtype;
+
     @FindBy(css = "div[role='listbox'] > :nth-child(2)")
     public WebElement test;
 
