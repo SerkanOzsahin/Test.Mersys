@@ -21,7 +21,7 @@ public class _05_Creating_Positions_Under_HRLN extends Parent {
 
     public WebElement getWebElement(String strElement) {
         switch (strElement) {
-            case "humanResources": return this.humanResources;
+            case "human resources": return this.humanResources;
             case "setup": return this.setup;
             case "positions": return this.positions;
         }
