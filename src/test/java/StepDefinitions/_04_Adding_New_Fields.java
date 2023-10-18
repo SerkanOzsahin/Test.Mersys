@@ -22,7 +22,7 @@ public class _04_Adding_New_Fields {
 
     String fieldNameStr = "team3test";
     String newFieldNameStr = "team3test123";
-    String codeNameStr = "team3testforproject";
+    String codeNameStr = "team3testcode";
     @When("the user navigates to field")
     public void the_user_navigates_to_field(DataTable links) {
         BD.getDriver().get("https://test.mersys.io/");
