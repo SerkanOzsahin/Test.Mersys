@@ -25,7 +25,7 @@ public class _04_Adding_New_FieldsDC extends Parent {
     @FindBy(xpath = "(//input[@data-placeholder='Name'])[2]")
     public WebElement fieldName;
 
-    @FindBy(css = "[formcontrolname='code']")
+    @FindBy(css = " (//input[@data-placeholder='Code'])[2] ")
     public WebElement code;
 
     @FindBy(css = "[formcontrolname='type']")
