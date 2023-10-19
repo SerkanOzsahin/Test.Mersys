@@ -7,8 +7,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class _00_Login_FeatureDC extends Parent {
-    public
-    _00_Login_FeatureDC(){
+    public _00_Login_FeatureDC() {
         PageFactory.initElements(BD.getDriver(), this);
     }
 
