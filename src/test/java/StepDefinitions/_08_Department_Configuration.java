@@ -53,4 +53,46 @@ public class _08_Department_Configuration {
         dc.verifyContainsText(dc.successMessage, "success");
     }
 
+    @And("the user checks existing School Department's active button")
+    public void theUserChecksExistingSchoolDepartmentsActiveButton() {
+       if (dc.nameBox.equals(departmentNameStr)) {
+           dc.myClick(dc.disactiveButton);
+           dc.myClick(dc.activeButton);
+       }
+    }
+    @Then("the active button should be scrolled successfuly")
+    public void theActiveButtonShouldBeScrolledSuccessfuly() {
+
+        dc.verifyContainsText(dc.successMessage, "success");
+    }
+
+    @And("the user edits an existing School Department")
+    public void theUserEditsAnExistingSchoolDepartment() {
+        if (dc.nameBox.equals(departmentNameStr)) {
+            dc.myClick(dc.edit);
+            dc.mySendKeys(dc.departmentName, newDepartmentNameStr);
+            dc.myClick(dc.saveButton);
+        }
+    }
+
+    @Then("the New School Department should be edited successfully")
+    public void theNewSchoolDepartmentShouldBeEditedSuccessfully() {
+
+        dc.verifyContainsText(dc.successMessage, "success");
+    }
+
+    @And("the user deletes an existing School Department")
+    public void theUserDeletesAnExistingSchoolDepartment() {
+        if (dc.nameBox.equals(departmentNameStr)) {
+            dc.myClick(dc.deleteImageButton);
+            dc.myClick(dc.deleteDialogButton);
+        }
+    }
+
+    @Then("the New School Department should be deleted successfully")
+    public void theNewSchoolDepartmentShouldBeDeletedSuccessfully() {
+
+        dc.verifyContainsText(dc.successMessage, "success");
+    }
+
 }

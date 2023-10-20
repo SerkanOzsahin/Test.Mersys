@@ -49,6 +49,9 @@ public class _08_Department_ConfigurationDC extends Parent {
     @FindBy(xpath = "//button[@id='mat-mdc-slide-toggle-1-button']/*")
     public WebElement activeButton;
 
+    @FindBy(xpath = "//*[@id='ms-table-0_name']/div")
+    public WebElement nameBox;
+
     public WebElement getWebElement(String s) {
         switch (s) {
             case "addButton": return addButton;
