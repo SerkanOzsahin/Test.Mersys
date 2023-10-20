@@ -44,10 +44,10 @@ public class _08_Department_ConfigurationDC extends Parent {
     @FindBy(xpath = "//button[@type='submit']")
     public WebElement deleteDialogButton;
 
-    @FindBy(xpath = "//mat-slide-toggle[contains(@formcontrolname,'active')]")
-    public WebElement activeButton;
-    @FindBy(xpath = "//mat-slide-toggle[contains(@formcontrolname,'active')]/*")
+    @FindBy(xpath = "//button[@id='mat-mdc-slide-toggle-1-button']")
     public WebElement disactiveButton;
+    @FindBy(xpath = "//button[@id='mat-mdc-slide-toggle-1-button']/*")
+    public WebElement activeButton;
 
     public WebElement getWebElement(String s) {
         switch (s) {
