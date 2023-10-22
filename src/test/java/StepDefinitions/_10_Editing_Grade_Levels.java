@@ -68,6 +68,7 @@ public class _10_Editing_Grade_Levels {
                 gEdit.click();
                 dc.mySendKeys(dc.name, newGradeNameStr);
                 dc.myClick(dc.saveButton);
+                break;
             }
         }
     }
@@ -84,10 +85,11 @@ public class _10_Editing_Grade_Levels {
         for (int i = 0; i <= allNames.size(); i++) {
             if (allNames.get(i).getText().contains(newGradeNameStr)) {
                 i++;
-                String delLocator = "(//tbody[@role='rowgroup']/tr/td[2]/following::td[5]/div/ms-delete-button)[" + i + "]";
-                WebElement gDelete = BD.getDriver().findElement(By.xpath(delLocator));
-                gDelete.click();
+                String editLocator = "(//tbody[@role='rowgroup']/tr/td[2]/following::td[5]/div/ms-delete-button)[" + i + "]";
+                WebElement gEdit = BD.getDriver().findElement(By.xpath(editLocator));
+                gEdit.click();
                 dc.myClick(dc.deleteDialogBtn);
+                break;
             }
         }
     }
