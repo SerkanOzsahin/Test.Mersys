@@ -29,7 +29,7 @@ public class _10_Editing_Grade_LevelsDC extends Parent {
     @FindBy(xpath = "//div[contains(text(),'successfully')]")
     public WebElement successMessage;
 
-    @FindBy(xpath = "input[data-placeholder='Name']")
+    @FindBy(css = "input[data-placeholder='Name']")
     public WebElement name;
 
     @FindBy(css = "input[type='number']")
@@ -40,6 +40,14 @@ public class _10_Editing_Grade_LevelsDC extends Parent {
 
     @FindBy(css = "input[data-placeholder='Short Name']")
     public WebElement shortName;
+
+    @FindBy(xpath = "//ms-save-button/button")
+    public WebElement saveButton;
+
+    @FindBy(xpath = "//ms-edit-button")
+    public WebElement edit;
+
+
 
 
 }
