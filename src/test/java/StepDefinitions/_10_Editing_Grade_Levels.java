@@ -9,22 +9,18 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import java.util.List;
 
 public class _10_Editing_Grade_Levels {
-    _10_Editing_Grade_LevelsDC dc=new _10_Editing_Grade_LevelsDC();
-    _10_Editing_Grade_LevelsLN ln=new _10_Editing_Grade_LevelsLN();
-    String gradeNameStr="group3";
-    String shortNameStr="group";
-    String orderStr="1";
-    String maxApplicationCountStr="1";
-    String newGradeNameStr="group33";
-
-
-
-
-
+    _10_Editing_Grade_LevelsDC dc = new _10_Editing_Grade_LevelsDC();
+    _10_Editing_Grade_LevelsLN ln = new _10_Editing_Grade_LevelsLN();
+    String gradeNameStr = "group3";
+    String shortNameStr = "group";
+    String orderStr = "1";
+    String maxApplicationCountStr = "1";
+    String newGradeNameStr = "group33";
 
 
     @When("the user navigates to grade levels")
@@ -43,10 +39,10 @@ public class _10_Editing_Grade_Levels {
     @And("the user adds a new grade level")
     public void theUserAddsANewGradeLevel() {
         dc.myClick(dc.addButton);
-        dc.mySendKeys(dc.name,gradeNameStr );
-        dc.mySendKeys(dc.shortName,shortNameStr );
-        dc.mySendKeys(dc.order,orderStr);
-        dc.mySendKeys(dc.maxApplicationCount,maxApplicationCountStr );
+        dc.mySendKeys(dc.name, gradeNameStr);
+        dc.mySendKeys(dc.shortName, shortNameStr);
+        dc.mySendKeys(dc.order, orderStr);
+        dc.mySendKeys(dc.maxApplicationCount, maxApplicationCountStr);
         dc.myClick(dc.saveButton);
     }
 
@@ -57,18 +53,15 @@ public class _10_Editing_Grade_Levels {
 
     @And("the user edits a grade level")
     public void theUserEditsAGradeLevel() {
-        List<WebElement>allNames=BD.getDriver().findElements(By.xpath("//tbody[@role='rowgroup']/tr/td[2]"));
-       for (WebElement e :allNames){
-           if (e.getText().contains(gradeNameStr))
-               dc.myClick(dc.edit);
-               dc.mySendKeys(dc.name,newGradeNameStr );
-               dc.myClick(dc.saveButton);
-       }
-
-
+        List<WebElement> allNames = BD.getDriver().findElements(By.xpath("//tbody[@role='rowgroup']/tr/td[2]"));
+        for (WebElement e : allNames) {
+            String a = e.getText();
+            System.out.println(a);
+        }
     }
 
-    @Then("the grade level should be edited successfully")
+
+        @Then("the grade level should be edited successfully")
     public void theGradeLevelShouldBeEditedSuccessfully() {
 
     }
