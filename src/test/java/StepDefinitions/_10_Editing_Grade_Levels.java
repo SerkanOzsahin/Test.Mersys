@@ -58,10 +58,14 @@ public class _10_Editing_Grade_Levels {
     public void theUserEditsAGradeLevel() {
         List<WebElement> allNames = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//tbody[@role='rowgroup']/tr/td[2]")));
 
-        for (WebElement e : allNames) {
-           if (e.getText().contains(gradeNameStr)){
-               dc.myClick(dc.edit);
-           }
+        for (int i = 0; i <= allNames.size(); i++) {
+
+            if (allNames.get(i).getText().contains(gradeNameStr)) {
+                i++;
+                String delLocator = "(//tbody[@role='rowgroup']/tr/td[2]/following::td[5]/div/ms-edit-button)[" + i + "]";
+                WebElement gDelete = BD.getDriver().findElement(By.xpath(delLocator));
+                gDelete.click();
+            }
         }
     }
 
