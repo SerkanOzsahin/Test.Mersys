@@ -44,8 +44,7 @@ public class _10_Editing_Grade_LevelsDC extends Parent {
     @FindBy(xpath = "//ms-save-button/button")
     public WebElement saveButton;
 
-    @FindBy(xpath = "//ms-edit-button")
-    public WebElement edit;
+
 
 
 
