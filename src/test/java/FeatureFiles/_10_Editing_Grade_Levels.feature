@@ -5,9 +5,7 @@ Feature: Editing Grade Levels
       | setup        |
       | parameters   |
       | grade levels |
-    And the user clicks on the add button
-    And the user fills the document
-
+    And the user adds a new grade level
     Then the grade level should be added successfully
 
   Scenario: Edit Grade Levels
@@ -15,9 +13,7 @@ Feature: Editing Grade Levels
       | setup        |
       | parameters   |
       | grade levels |
-    And the user clicks on the edit button
-    And the user fills the document
-
+    And the user edits a grade level
     Then the grade level should be edited successfully
 
   Scenario: Delete Grade Levels
@@ -25,7 +21,5 @@ Feature: Editing Grade Levels
       | setup        |
       | parameters   |
       | grade levels |
-    And the user deletes a new grade level
+    And the user deletes a grade level
     Then the grade level should be deleted successfully
-
-
