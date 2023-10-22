@@ -16,15 +16,17 @@ import java.time.Duration;
 import java.util.List;
 
 public class _10_Editing_Grade_Levels {
+
     _10_Editing_Grade_LevelsDC dc = new _10_Editing_Grade_LevelsDC();
     _10_Editing_Grade_LevelsLN ln = new _10_Editing_Grade_LevelsLN();
+
     String gradeNameStr = "group3";
     String shortNameStr = "group";
     String orderStr = "1";
     String maxApplicationCountStr = "1";
     String newGradeNameStr = "group33";
-    public WebDriverWait wait = new WebDriverWait(BD.getDriver(), Duration.ofSeconds(20));
 
+    public WebDriverWait wait = new WebDriverWait(BD.getDriver(), Duration.ofSeconds(20));
 
     @When("the user navigates to grade levels")
     public void theUserNavigatesToGradeLevels(DataTable links) {
@@ -59,28 +61,39 @@ public class _10_Editing_Grade_Levels {
         List<WebElement> allNames = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//tbody[@role='rowgroup']/tr/td[2]")));
 
         for (int i = 0; i <= allNames.size(); i++) {
-
             if (allNames.get(i).getText().contains(gradeNameStr)) {
                 i++;
-                String delLocator = "(//tbody[@role='rowgroup']/tr/td[2]/following::td[5]/div/ms-edit-button)[" + i + "]";
-                WebElement gDelete = BD.getDriver().findElement(By.xpath(delLocator));
-                gDelete.click();
+                String editLocator = "(//tbody[@role='rowgroup']/tr/td[2]/following::td[5]/div/ms-edit-button)[" + i + "]";
+                WebElement gEdit = BD.getDriver().findElement(By.xpath(editLocator));
+                gEdit.click();
+                dc.mySendKeys(dc.name, newGradeNameStr);
+                dc.myClick(dc.saveButton);
             }
         }
     }
 
-
-
-        @Then("the grade level should be edited successfully")
+    @Then("the grade level should be edited successfully")
     public void theGradeLevelShouldBeEditedSuccessfully() {
-
+        dc.verifyContainsText(dc.successMessage, "success");
     }
 
     @And("the user deletes a grade level")
     public void theUserDeletesAGradeLevel() {
+        List<WebElement> allNames = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//tbody[@role='rowgroup']/tr/td[2]")));
+
+        for (int i = 0; i <= allNames.size(); i++) {
+            if (allNames.get(i).getText().contains(newGradeNameStr)) {
+                i++;
+                String delLocator = "(//tbody[@role='rowgroup']/tr/td[2]/following::td[5]/div/ms-delete-button)[" + i + "]";
+                WebElement gDelete = BD.getDriver().findElement(By.xpath(delLocator));
+                gDelete.click();
+                dc.myClick(dc.deleteDialogBtn);
+            }
+        }
     }
 
     @Then("the grade level should be deleted successfully")
     public void theGradeLevelShouldBeDeletedSuccessfully() {
+        dc.verifyContainsText(dc.successMessage, "success");
     }
 }
