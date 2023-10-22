@@ -10,6 +10,7 @@ public class _10_Editing_Grade_LevelsDC extends Parent {
     public _10_Editing_Grade_LevelsDC() {
         PageFactory.initElements(BD.getDriver(), this);
     }
+
     @FindBy(css = "[formcontrolname='username']")
     public WebElement userName;
 
@@ -24,4 +25,21 @@ public class _10_Editing_Grade_LevelsDC extends Parent {
 
     @FindBy(xpath = "//span[text()='Save']")
     public WebElement span;
+
+    @FindBy(xpath = "//div[contains(text(),'successfully')]")
+    public WebElement successMessage;
+
+    @FindBy(xpath = "input[data-placeholder='Name']")
+    public WebElement name;
+
+    @FindBy(css = "input[type='number']")
+    public WebElement order;
+
+    @FindBy(css = "input[data-placeholder='Max Application Count']")
+    public WebElement maxApplicationCount;
+
+    @FindBy(css = "input[data-placeholder='Short Name']")
+    public WebElement shortName;
+
+
 }

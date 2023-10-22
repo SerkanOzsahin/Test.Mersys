@@ -19,17 +19,7 @@ public class _10_Editing_Grade_LevelsLN extends Parent {
     @FindBy(xpath = "//span[text()='Grade Levels']")
     public WebElement gradeLevels;
 
-    @FindBy(css = "input[data-placeholder='Name']")
-    public WebElement name;
 
-    @FindBy(css = "input[type='number']")
-    public WebElement order;
-
-    @FindBy(css = "input[data-placeholder='Max Application Count']")
-    public WebElement maxApplicationCount;
-
-    @FindBy(css = "input[data-placeholder='Short Name']")
-    public WebElement shortName;
 
     public WebElement getWebElement(String strElement) {
         switch (strElement) {
