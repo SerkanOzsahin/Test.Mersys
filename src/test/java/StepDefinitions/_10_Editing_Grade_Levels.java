@@ -10,7 +10,9 @@ import io.cucumber.java.en.When;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.time.Duration;
 import java.util.List;
 
 public class _10_Editing_Grade_Levels {
@@ -21,6 +23,7 @@ public class _10_Editing_Grade_Levels {
     String orderStr = "1";
     String maxApplicationCountStr = "1";
     String newGradeNameStr = "group33";
+    public WebDriverWait wait = new WebDriverWait(BD.getDriver(), Duration.ofSeconds(20));
 
 
     @When("the user navigates to grade levels")
@@ -53,10 +56,12 @@ public class _10_Editing_Grade_Levels {
 
     @And("the user edits a grade level")
     public void theUserEditsAGradeLevel() {
-        List<WebElement> allNames = BD.getDriver().findElements(By.xpath("//tbody[@role='rowgroup']/tr/td[2]"));
+        List<WebElement> allNames = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//tbody[@role='rowgroup']/tr/td[2]")));
+
         for (WebElement e : allNames) {
-            String a = e.getText();
-            System.out.println(a);
+           if (e.getText().contains(gradeNameStr)){
+               dc.myClick(dc.edit);
+           }
         }
     }
 
