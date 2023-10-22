@@ -45,6 +45,10 @@ public class _10_Editing_Grade_LevelsDC extends Parent {
     public WebElement saveButton;
 
 
+    @FindBy(xpath = "//button[@type='submit']")
+    public WebElement deleteDialogBtn;
+
+
 
 
 
