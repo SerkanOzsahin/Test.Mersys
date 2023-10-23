@@ -3,12 +3,15 @@ package StepDefinitions;
 import Pages.DialogContent._04_Adding_New_FieldsDC;
 import Pages.DialogContent._08_Department_ConfigurationDC;
 import Pages.LeftNav._04_Adding_New_FieldsLN;
+import Pages.LeftNav._08_Department_ConfigurationLN;
 import Utilities.BD;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
@@ -16,7 +19,7 @@ import java.util.List;
 
 public class _08_Department_Configuration {
     _08_Department_ConfigurationDC dc = new _08_Department_ConfigurationDC();
-    _08_Department_ConfigurationDC ln = new _08_Department_ConfigurationDC();
+    _08_Department_ConfigurationLN ln = new _08_Department_ConfigurationLN();
 
     public WebDriverWait wait = new WebDriverWait(BD.getDriver(), Duration.ofSeconds(20));
 
@@ -55,11 +58,20 @@ public class _08_Department_Configuration {
 
     @And("the user checks existing School Department's active button")
     public void theUserChecksExistingSchoolDepartmentsActiveButton() {
-       if (dc.nameBox.equals(departmentNameStr)) {
-           dc.myClick(dc.disactiveButton);
-           dc.myClick(dc.activeButton);
-       }
+
+        List<WebElement> allNames = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//tbody[@role='rowgroup']/tr/td[2]")));
+
+        for (int i = 0; i <= allNames.size(); i++) {
+            if (allNames.get(i).getText().contains(departmentNameStr)) {
+                i++;
+                String editLocator = "(//tbody[@role='rowgroup']/tr/td[4])[" + i + "]";
+                WebElement gEdit = BD.getDriver().findElement(By.xpath(editLocator));
+                gEdit.click();
+                break;
+            }
+        }
     }
+
     @Then("the active button should be scrolled successfuly")
     public void theActiveButtonShouldBeScrolledSuccessfuly() {
 
@@ -68,10 +80,18 @@ public class _08_Department_Configuration {
 
     @And("the user edits an existing School Department")
     public void theUserEditsAnExistingSchoolDepartment() {
-        if (dc.nameBox.equals(departmentNameStr)) {
-            dc.myClick(dc.edit);
-            dc.mySendKeys(dc.departmentName, newDepartmentNameStr);
-            dc.myClick(dc.saveButton);
+        List<WebElement> allNames = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//tbody[@role='rowgroup']/tr/td[2]")));
+
+        for (int i = 0; i <= allNames.size(); i++) {
+            if (allNames.get(i).getText().contains(departmentNameStr)) {
+                i++;
+                String editLocator = "(//tbody[@role='rowgroup']/tr/td[2]/following::td[5]/div/ms-edit-button)[" + i + "]";
+                WebElement gEdit = BD.getDriver().findElement(By.xpath(editLocator));
+                gEdit.click();
+                dc.mySendKeys(dc.departmentName, newDepartmentNameStr);
+                dc.myClick(dc.saveButton);
+                break;
+            }
         }
     }
 
@@ -83,10 +103,22 @@ public class _08_Department_Configuration {
 
     @And("the user deletes an existing School Department")
     public void theUserDeletesAnExistingSchoolDepartment() {
-        if (dc.nameBox.equals(departmentNameStr)) {
-            dc.myClick(dc.deleteImageButton);
-            dc.myClick(dc.deleteDialogButton);
+        List<WebElement> allNames = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//tbody[@role='rowgroup']/tr/td[2]")));
+
+        for (int i = 0; i <= allNames.size(); i++) {
+            if (allNames.get(i).getText().contains(departmentNameStr)) {
+                i++;
+                String editLocator = "(//tbody[@role='rowgroup']/tr/td[2]/following::td[5]/div/ms-edit-button)[" + i + "]";
+                WebElement gEdit = BD.getDriver().findElement(By.xpath(editLocator));
+                gEdit.click();
+
+                dc.myClick(dc.deleteImageButton);
+                dc.myClick(dc.deleteDialogButton);
+
+                break;
+            }
         }
+
     }
 
     @Then("the New School Department should be deleted successfully")
