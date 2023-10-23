@@ -108,7 +108,7 @@ public class _08_Department_Configuration {
         for (int i = 0; i <= allNames.size(); i++) {
             if (allNames.get(i).getText().contains(newDepartmentNameStr)) {
                 i++;
-                String editLocator = "(//tbody[@role='rowgroup']/tr/td[2]/following::td[3]/div/ms-edit-button)[" + i + "]";
+                String editLocator = "(//tbody[@role='rowgroup']/tr/td[2]/following::td[3]/div/ms-delete-button)[" + i + "]";
                 WebElement gEdit = BD.getDriver().findElement(By.xpath(editLocator));
                 gEdit.click();
 
