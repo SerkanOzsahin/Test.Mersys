@@ -85,7 +85,7 @@ public class _08_Department_Configuration {
         for (int i = 0; i <= allNames.size(); i++) {
             if (allNames.get(i).getText().contains(departmentNameStr)) {
                 i++;
-                String editLocator = "(//tbody[@role='rowgroup']/tr/td[2]/following::td[5]/div/ms-edit-button)[" + i + "]";
+                String editLocator = "(//tbody[@role='rowgroup']/tr/td[2]/following::td[3]/div/ms-edit-button)[" + i + "]";
                 WebElement gEdit = BD.getDriver().findElement(By.xpath(editLocator));
                 gEdit.click();
                 dc.mySendKeys(dc.departmentName, newDepartmentNameStr);
@@ -106,13 +106,12 @@ public class _08_Department_Configuration {
         List<WebElement> allNames = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//tbody[@role='rowgroup']/tr/td[2]")));
 
         for (int i = 0; i <= allNames.size(); i++) {
-            if (allNames.get(i).getText().contains(departmentNameStr)) {
+            if (allNames.get(i).getText().contains(newDepartmentNameStr)) {
                 i++;
-                String editLocator = "(//tbody[@role='rowgroup']/tr/td[2]/following::td[5]/div/ms-edit-button)[" + i + "]";
+                String editLocator = "(//tbody[@role='rowgroup']/tr/td[2]/following::td[3]/div/ms-edit-button)[" + i + "]";
                 WebElement gEdit = BD.getDriver().findElement(By.xpath(editLocator));
                 gEdit.click();
 
-                dc.myClick(dc.deleteImageButton);
                 dc.myClick(dc.deleteDialogButton);
 
                 break;

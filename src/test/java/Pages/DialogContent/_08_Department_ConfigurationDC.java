@@ -35,25 +35,17 @@ public class _08_Department_ConfigurationDC extends Parent {
     @FindBy(xpath = "//div[contains(text(),'successfully')]")
     public WebElement successMessage;
 
-    @FindBy(xpath = "(//*[@class='mat-mdc-button-touch-target'])[12]")
-    public WebElement edit;
-
-    @FindBy(xpath = "(//ms-delete-button//button)[1]")
-    public WebElement deleteImageButton;
 
     @FindBy(xpath = "//button[@type='submit']")
     public WebElement deleteDialogButton;
 
-    @FindBy(xpath = "//*[@id='ms-table-0_name']/div")
-    public WebElement nameBox;
+
 
     public WebElement getWebElement(String s) {
         switch (s) {
             case "addButton": return addButton;
             case "departmentName": return departmentName;
             case "saveButton": return saveButton;
-            case "edit": return edit;
-            case "deleteImageButton": return deleteImageButton;
             case "deleteDialogButton": return deleteDialogButton;
         }
         return null;
