@@ -39,6 +39,9 @@ public class _08_Department_ConfigurationDC extends Parent {
     @FindBy(xpath = "//button[@type='submit']")
     public WebElement deleteDialogButton;
 
+    @FindBy(xpath = "//*[@id=\"mat-mdc-slide-toggle-11-button\"]/div[2]/div/div[3]")
+    public WebElement activeButton;
+
 
 
     public WebElement getWebElement(String s) {
