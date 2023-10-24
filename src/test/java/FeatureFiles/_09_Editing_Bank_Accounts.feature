@@ -1,5 +1,11 @@
 Feature: Editing Bank Account
 
+  Background:
+    Given Navigate to Campus
+    When the user enters username and password
+    And the user clicks login button
+    Then the user should login successfully
+
   Scenario: Add Bank Account
     When the user navigates to bank accounts
       | setup         |
