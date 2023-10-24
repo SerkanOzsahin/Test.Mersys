@@ -67,6 +67,8 @@ public class _08_Department_Configuration {
                 String editLocator = "(//tbody[@role='rowgroup']/tr/td[4])[" + i + "]";
                 WebElement gEdit = BD.getDriver().findElement(By.xpath(editLocator));
                 gEdit.click();
+                dc.myClick(dc.activeButton);
+                dc.myClick(dc.saveButton);
                 break;
             }
         }
