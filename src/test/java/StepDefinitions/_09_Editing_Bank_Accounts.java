@@ -12,13 +12,14 @@ import org.openqa.selenium.WebElement;
 import java.util.List;
 
 public class _09_Editing_Bank_Accounts {
+
     _09_Editing_Bank_AccountsDC dc=new _09_Editing_Bank_AccountsDC();
     _09_Editing_Bank_AccountsLN ln=new _09_Editing_Bank_AccountsLN();
 
     String bankAccountNameStr="group3";
     String ibanStr="01234";
     String integrationCodeStr="1";
-
+    String newCurrencyNameStr="group3test";
 
     @When("the user navigates to bank accounts")
     public void theUserNavigatesToBankAccounts(DataTable links) {
@@ -30,6 +31,7 @@ public class _09_Editing_Bank_Accounts {
         for (int i = 0; i < strLinkList.size(); i++) {
             WebElement linkWebElement = ln.getWebElement(strLinkList.get(i));
             ln.myClick(linkWebElement);
+
         }
     }
 
@@ -42,27 +44,36 @@ public class _09_Editing_Bank_Accounts {
         dc.myClick(dc.currencyEur);
         dc.mySendKeys(dc.integrationCode, integrationCodeStr);
         dc.myClick(dc.saveButton);
-
-
     }
 
     @Then("the bank accounts should be added successfully")
     public void theBankAccountsShouldBeAddedSuccessfully() {
+        dc.verifyContainsText(dc.successMessage, "success");
     }
 
     @And("the user edits a bank account")
     public void theUserEditsABankAccount() {
+        dc.mySendKeys(dc.nameSearch, bankAccountNameStr);
+        dc.myClick(dc.searchButton);
+        dc.myClick(dc.edit);
+        dc.mySendKeys(dc.newCurrencyName, newCurrencyNameStr);
+        dc.myClick(dc.saveEditButton);
     }
 
     @Then("the bank accounts should be edited successfully")
     public void theBankAccountsShouldBeEditedSuccessfully() {
+        dc.verifyContainsText(dc.successMessage, "success");
     }
+
 
     @Then("the user deletes a bank account")
     public void theUserDeletesABankAccount() {
+        dc.myClick(dc.deleteImageBtn);
+        dc.myClick(dc.deleteDialogBtn);
     }
 
     @Then("the bank accounts should be deleted successfully")
     public void theBankAccountsShouldBeDeletedSuccessfully() {
+        dc.verifyContainsText(dc.successMessage, "success");
     }
 }
