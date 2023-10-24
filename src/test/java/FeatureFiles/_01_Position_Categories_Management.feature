@@ -30,3 +30,4 @@ Feature: Position Categories Management
       | position categories |
     And the user clicks on the delete button
     Then position categories should be deleted successfully
+
