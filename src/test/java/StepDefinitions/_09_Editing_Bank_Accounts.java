@@ -65,6 +65,7 @@ public class _09_Editing_Bank_Accounts {
         dc.verifyContainsText(dc.successMessage, "success");
     }
 
+
     @Then("the user deletes a bank account")
     public void theUserDeletesABankAccount() {
         dc.myClick(dc.deleteImageBtn);
