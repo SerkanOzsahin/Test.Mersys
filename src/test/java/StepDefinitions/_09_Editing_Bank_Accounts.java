@@ -8,13 +8,18 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.time.Duration;
 import java.util.List;
 
 public class _09_Editing_Bank_Accounts {
 
     _09_Editing_Bank_AccountsDC dc=new _09_Editing_Bank_AccountsDC();
     _09_Editing_Bank_AccountsLN ln=new _09_Editing_Bank_AccountsLN();
+
+    public WebDriverWait wait = new WebDriverWait(BD.getDriver(), Duration.ofSeconds(20));
 
     String bankAccountNameStr="group3";
     String ibanStr="01234";
@@ -55,6 +60,7 @@ public class _09_Editing_Bank_Accounts {
     public void theUserEditsABankAccount() {
         dc.mySendKeys(dc.nameSearch, bankAccountNameStr);
         dc.myClick(dc.searchButton);
+        wait.until(ExpectedConditions.elementToBeClickable(dc.searchButton));
         dc.myClick(dc.edit);
         dc.mySendKeys(dc.newCurrencyName, newCurrencyNameStr);
         dc.myClick(dc.saveEditButton);
