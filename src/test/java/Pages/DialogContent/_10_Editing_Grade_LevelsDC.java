@@ -29,7 +29,7 @@ public class _10_Editing_Grade_LevelsDC extends Parent {
     @FindBy(xpath = "//div[contains(text(),'successfully')]")
     public WebElement successMessage;
 
-    @FindBy(css = "input[data-placeholder='Name']")
+    @FindBy(xpath = "(//input[@data-placeholder=Name])[2]")
     public WebElement name;
 
     @FindBy(css = "input[type='number']")
