@@ -21,7 +21,7 @@ public class _10_Editing_Grade_LevelsDC extends Parent {
     @FindBy(xpath = "//div[contains(text(),'successfully')]")
     public WebElement successMessage;
 
-    @FindBy(xpath = "(//input[@data-placeholder=Name])[2]")
+    @FindBy(xpath = "//input[@data-placeholder='Name']")
     public WebElement name;
 
     @FindBy(css = "input[type='number']")
