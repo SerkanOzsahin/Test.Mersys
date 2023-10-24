@@ -12,15 +12,6 @@ public class _01_Position_Categories_ManagementDC extends Parent {
         PageFactory.initElements(BD.getDriver(), this);
     }
 
-    @FindBy(css = "[formcontrolname='username']")
-    public WebElement userName;
-
-    @FindBy(css = "[formcontrolname='password']")
-    public WebElement password;
-
-    @FindBy(css = "[aria-label='LOGIN']")
-    public WebElement loginButton;
-
     @FindBy(xpath = "//ms-add-button[contains(@tooltip,'ADD')]//button")
     public WebElement addButton;
 
