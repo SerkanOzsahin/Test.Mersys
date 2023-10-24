@@ -26,10 +26,6 @@ public class _01_Position_Categories_Management {
 
     @When("the user navigates to position categories")
     public void theUserNavigatesToPositionCategories(DataTable links) {
-        BD.getDriver().get("https://test.mersys.io/");
-        dc.mySendKeys(dc.userName, "turkeyts");
-        dc.mySendKeys(dc.password, "TechnoStudy123");
-        dc.myClick(dc.loginButton);
         List<String> strLinkList = links.asList(String.class);
         for (int i = 0; i < strLinkList.size(); i++) {
             WebElement linkWebElement = ln.getWebElement(strLinkList.get(i));

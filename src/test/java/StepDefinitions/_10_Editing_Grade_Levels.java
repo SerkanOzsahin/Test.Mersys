@@ -30,10 +30,6 @@ public class _10_Editing_Grade_Levels {
 
     @When("the user navigates to grade levels")
     public void theUserNavigatesToGradeLevels(DataTable links) {
-        BD.getDriver().get("https://test.mersys.io/");
-        dc.mySendKeys(dc.userName, "turkeyts");
-        dc.mySendKeys(dc.password, "TechnoStudy123");
-        dc.myClick(dc.loginButton);
         List<String> strLinkList = links.asList(String.class);
         for (int i = 0; i < strLinkList.size(); i++) {
             WebElement linkWebElement = ln.getWebElement(strLinkList.get(i));

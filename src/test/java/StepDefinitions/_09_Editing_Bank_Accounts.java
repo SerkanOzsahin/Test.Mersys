@@ -28,10 +28,6 @@ public class _09_Editing_Bank_Accounts {
 
     @When("the user navigates to bank accounts")
     public void theUserNavigatesToBankAccounts(DataTable links) {
-        BD.getDriver().get("https://test.mersys.io/");
-        dc.mySendKeys(dc.username, "turkeyts");
-        dc.mySendKeys(dc.password, "TechnoStudy123");
-        dc.myClick(dc.loginButton);
         List<String> strLinkList = links.asList(String.class);
         for (int i = 0; i < strLinkList.size(); i++) {
             WebElement linkWebElement = ln.getWebElement(strLinkList.get(i));

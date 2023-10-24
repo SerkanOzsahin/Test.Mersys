@@ -1,5 +1,10 @@
 Feature: Position Categories Management
 
+Background: Given Navigate to Campus
+  When the user enters username and password
+  And the user clicks login button
+  Then the user should login successfully
+
   Scenario: Add Position Categories
     When the user navigates to position categories
       | human resources     |
