@@ -13,7 +13,7 @@ public class _09_Editing_Bank_AccountsDC extends Parent {
     }
 
     @FindBy(css = "[formcontrolname='username']")
-    public WebElement userName;
+    public WebElement username;
 
     @FindBy(css = "[formcontrolname='password']")
     public WebElement password;

@@ -7,7 +7,10 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class _09_Editing_Bank_AccountsLN extends Parent {
-    public _09_Editing_Bank_AccountsLN() {PageFactory.initElements(BD.getDriver(), this);}
+
+    public _09_Editing_Bank_AccountsLN() {
+        PageFactory.initElements(BD.getDriver(), this);
+    }
 
     @FindBy(xpath = "(//span[text()='Setup'])[1]")
     public WebElement setup;
@@ -17,7 +20,6 @@ public class _09_Editing_Bank_AccountsLN extends Parent {
 
     @FindBy(xpath = "(//span[text()='Bank Accounts'])[1]")
     public WebElement bankAccounts;
-
 
     public WebElement getWebElement(String strElement) {
         switch (strElement) {

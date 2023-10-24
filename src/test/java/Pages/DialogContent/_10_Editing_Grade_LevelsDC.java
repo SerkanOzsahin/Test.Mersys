@@ -7,6 +7,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class _10_Editing_Grade_LevelsDC extends Parent {
+
     public _10_Editing_Grade_LevelsDC() {
         PageFactory.initElements(BD.getDriver(), this);
     }
@@ -44,13 +45,6 @@ public class _10_Editing_Grade_LevelsDC extends Parent {
     @FindBy(xpath = "//ms-save-button/button")
     public WebElement saveButton;
 
-
     @FindBy(xpath = "//button[@type='submit']")
     public WebElement deleteDialogBtn;
-
-
-
-
-
-
 }
