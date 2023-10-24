@@ -29,4 +29,3 @@ Feature: Editing Grade Levels
       | grade levels |
     And the user deletes a grade level
     Then the grade level should be deleted successfully
-
