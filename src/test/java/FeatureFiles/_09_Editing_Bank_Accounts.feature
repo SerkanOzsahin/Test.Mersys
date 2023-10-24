@@ -5,8 +5,7 @@ Feature: Editing Bank Account
       | setup         |
       | parameters    |
       | bank accounts |
-    And the user clicks on the add button
-    And the user clicks on the save button
+    And the user adds a bank account
     Then the bank accounts should be added successfully
 
   Scenario: Edit Bank Account
@@ -14,7 +13,7 @@ Feature: Editing Bank Account
       | setup         |
       | parameters    |
       | bank accounts |
-    And the user clicks on the edit button
+    And the user edits a bank account
     Then the bank accounts should be edited successfully
 
   Scenario: Delete Bank Account
@@ -22,5 +21,5 @@ Feature: Editing Bank Account
       | setup         |
       | parameters    |
       | bank accounts |
-    Then the user clicks on the delete button
+    Then the user deletes a bank account
     Then the bank accounts should be deleted successfully
