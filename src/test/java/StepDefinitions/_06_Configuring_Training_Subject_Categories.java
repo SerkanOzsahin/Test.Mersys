@@ -18,10 +18,10 @@ public class _06_Configuring_Training_Subject_Categories {
     DialogContent dc = new DialogContent();
     LeftNav ln = new LeftNav();
 
-    String name = "testgrup3";
-    String code = "GRP3";
-    String editName = "testgrup3edit";
-    String editCode = "GRP3Test";
+    String name = "group3";
+    String code = "g3";
+    String editName = "group3edit";
+    String editCode = "g3edit";
 
     @When("the user navigates to education")
     public void theUserNavigatesToEducation(DataTable dt) {

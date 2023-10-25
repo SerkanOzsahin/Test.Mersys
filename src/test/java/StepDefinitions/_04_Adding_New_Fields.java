@@ -16,9 +16,9 @@ public class _04_Adding_New_Fields {
     DialogContent dc = new DialogContent();
     LeftNav ln = new LeftNav();
 
-    String fieldNameStr = "team3test";
-    String newFieldNameStr = "team3test123";
-    String codeNameStr = "team3testcode";
+    String fieldNameStr = "group3";
+    String newFieldNameStr = "group3edit";
+    String codeNameStr = "g3";
 
     @When("the user navigates to field")
     public void the_user_navigates_to_field(DataTable links) {

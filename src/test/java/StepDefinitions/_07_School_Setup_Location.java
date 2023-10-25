@@ -23,10 +23,10 @@ public class _07_School_Setup_Location {
 
     public WebDriverWait wait = new WebDriverWait(BD.getDriver(), Duration.ofSeconds(20));
 
-    String name1 = "Team31";
-    String shortName1 = "Tm31";
-    String capasity1 = "1231";
-    String newName1 = "Team3 Tebrikler";
+    String name1 = "group3";
+    String shortName1 = "g3";
+    String capasity1 = "123";
+    String newName1 = "group3edit";
 
     @When("the user navigates to school setup location")
     public void theUserNavigatesToSchoolSetupLocation(DataTable links) {

@@ -17,8 +17,8 @@ public class _05_Creating_Positions_Under_HR {
     DialogContent dc = new DialogContent();
     LeftNav ln = new LeftNav();
 
-    String positionNameStr = "group3test";
-    String posNewNameStr = "group3test123";
+    String positionNameStr = "group3";
+    String posNewNameStr = "group3edit";
     String shortNameStr = "g3";
 
     @When("the user navigates to positions")

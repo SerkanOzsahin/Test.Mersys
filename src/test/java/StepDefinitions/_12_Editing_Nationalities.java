@@ -17,8 +17,8 @@ public class _12_Editing_Nationalities {
     DialogContent dc = new DialogContent();
     LeftNav ln = new LeftNav();
 
-    String natNameStr = "group3test";
-    String newNatNameStr = "group3test123";
+    String natNameStr = "group3";
+    String newNatNameStr = "group3edit";
 
     @When("the user navigates to nationalities")
     public void theUserNavigatesToNationalities(DataTable links) {

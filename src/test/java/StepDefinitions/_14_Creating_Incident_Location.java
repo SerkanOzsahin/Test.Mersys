@@ -16,8 +16,8 @@ public class _14_Creating_Incident_Location {
     DialogContent dc = new DialogContent();
     LeftNav ln = new LeftNav();
 
-    String name = "testgrup3";
-    String editName = "testgrup3edit";
+    String name = "group3";
+    String editName = "group3edit";
 
     @When("the user navigates to incidents")
     public void theUserNavigatesToIncidents(DataTable dt) {

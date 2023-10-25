@@ -17,11 +17,11 @@ public class _11_Editing_Discounts_Under_Parameters {
     DialogContent dc = new DialogContent();
     LeftNav ln = new LeftNav();
 
-    String descriptionName = "grup3";
-    String integrationCode = "gp3";
+    String descriptionName = "group3";
+    String integrationCode = "g3";
     String priority = "%5";
-    String editDescriptionName = "grup3test";
-    String editIntegrationCode = "gp3test";
+    String editDescriptionName = "group3edit";
+    String editIntegrationCode = "g3edit";
     String editPriority = "%10";
 
     @When("the user navigates to setup")

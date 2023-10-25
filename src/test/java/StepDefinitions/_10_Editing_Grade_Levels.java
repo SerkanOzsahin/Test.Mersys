@@ -23,10 +23,10 @@ public class _10_Editing_Grade_Levels {
     public WebDriverWait wait = new WebDriverWait(BD.getDriver(), Duration.ofSeconds(20));
 
     String gradeNameStr = "group3";
-    String shortNameStr = "group";
+    String shortNameStr = "g3";
     String orderStr = "1";
     String maxApplicationCountStr = "1";
-    String newGradeNameStr = "group33";
+    String newGradeNameStr = "group3edit";
 
     @When("the user navigates to grade levels")
     public void theUserNavigatesToGradeLevels(DataTable links) {

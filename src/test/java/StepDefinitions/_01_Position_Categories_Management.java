@@ -17,7 +17,7 @@ public class _01_Position_Categories_Management {
     LeftNav ln = new LeftNav();
 
     String positionNameStr = "group3";
-    String newpositionNameStr = "group3test";
+    String newpositionNameStr = "group3edit";
 
     @When("the user navigates to position categories")
     public void theUserNavigatesToPositionCategories(DataTable links) {

@@ -19,9 +19,9 @@ public class _03_Document_Types_Management {
     DialogContent dc = new DialogContent();
     LeftNav ln = new LeftNav();
 
-    String docNameStr = "group3test";
-    String docNewNameStr = "group3test123";
-    String descNameStr = "group3testforproject";
+    String docNameStr = "group3";
+    String docNewNameStr = "group3edit";
+    String descNameStr = "group3project";
 
     @When("the user navigates to document types")
     public void theUserNavigatesToDocumentTypes(DataTable links) {

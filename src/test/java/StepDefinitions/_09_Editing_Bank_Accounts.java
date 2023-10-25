@@ -19,7 +19,7 @@ public class _09_Editing_Bank_Accounts {
     String bankAccountNameStr = "group3";
     String ibanStr = "01234";
     String integrationCodeStr = "1";
-    String newCurrencyNameStr = "group3test";
+    String newCurrencyNameStr = "group3edit";
 
     @When("the user navigates to bank accounts")
     public void theUserNavigatesToBankAccounts(DataTable links) {

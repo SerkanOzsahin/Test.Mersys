@@ -22,9 +22,9 @@ public class _08_Department_Configuration {
 
     public WebDriverWait wait = new WebDriverWait(BD.getDriver(), Duration.ofSeconds(20));
 
-    String departmentNameStr = "FrenchIDepartment";
-    String newDepartmentNameStr = "FrenchIIDepartment";
-    String codeNameStr = "f-I-r-I-e-I-n-I-c-I-h";
+    String departmentNameStr = "group3";
+    String newDepartmentNameStr = "group3edit";
+    String codeNameStr = "g3";
 
     @When("the user navigates to departments")
     public void the_user_navigates_to_departments(DataTable links) {

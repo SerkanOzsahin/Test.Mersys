@@ -17,8 +17,8 @@ public class _02_Attestations_Management {
     DialogContent dc = new DialogContent();
     LeftNav ln = new LeftNav();
 
-    String name = "testgrup3";
-    String editName = "testgrup3edit";
+    String name = "group3";
+    String editName = "group3edit";
 
     @When("the user navigates to human resources")
     public void theUserNavigatesToHumanResources(DataTable dt) {
