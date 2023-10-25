@@ -25,11 +25,6 @@ public class _04_Adding_New_Fields {
     String codeNameStr = "team3testcode";
     @When("the user navigates to field")
     public void the_user_navigates_to_field(DataTable links) {
-        BD.getDriver().get("https://test.mersys.io/");
-        dc.mySendKeys(dc.username, "turkeyts");
-        dc.mySendKeys(dc.password, "TechnoStudy123");
-        dc.myClick(dc.loginButton);
-
         List<String> strLinkList = links.asList(String.class);
 
         for (int i = 0; i < strLinkList.size(); i++) {

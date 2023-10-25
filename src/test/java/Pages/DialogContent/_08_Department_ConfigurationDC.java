@@ -50,6 +50,7 @@ public class _08_Department_ConfigurationDC extends Parent {
             case "departmentName": return departmentName;
             case "saveButton": return saveButton;
             case "deleteDialogButton": return deleteDialogButton;
+            case "activeButton": return activeButton;
         }
         return null;
     }

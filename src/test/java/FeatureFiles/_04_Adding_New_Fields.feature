@@ -1,4 +1,9 @@
 Feature: Adding New Fields to Admin Panel
+  Background:
+    Given Navigate to Campus
+    When the user enters username and password
+    And the user clicks login button
+    Then the user should login successfully
   
   Scenario: Add a New Fields
     When the user navigates to field
