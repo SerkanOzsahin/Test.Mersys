@@ -25,10 +25,6 @@ public class _14_Creating_Incident_Location {
 
     @When("the user navigates to incidents")
     public void theUserNavigatesToIncidents(DataTable dt) {
-        BD.getDriver().get("https://test.mersys.io/");
-        dc.mySendKeys(dc.username, "turkeyts");
-        dc.mySendKeys(dc.password, "TechnoStudy123");
-        dc.myClick(dc.loginButton);
 
         List<String> leftNavItem = dt.asList(String.class);
         for (int i = 0; i < leftNavItem.size(); i++) {

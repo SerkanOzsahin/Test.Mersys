@@ -33,14 +33,14 @@ DialogContent dc = new DialogContent();
     }
 
     @Then("Upon clicking the following menu links, the user should see the corresponding page titles")
-    public void uponClickingTheFollowingMenuLinksTheUserShouldSeeTheCorrespondingPageTitles(DataTable links) {
+    public void uponClickingTheFollowingMenuLinksTheUserShouldSeeTheCorrespondingPageTitles(DataTable links) throws InterruptedException {
         List<String> strLinkList = links.asList(String.class);
 
         for (int i = 0; i < strLinkList.size(); i++) {
             WebElement linkWebElement = ln.getWebElement(strLinkList.get(i));
             String linkTitle = linkWebElement.getText();
             ln.myClick(linkWebElement);
-            dc.wait.until(ExpectedConditions.elementToBeClickable(dc.searchButton));
+            Thread.sleep(1000); // Sitedeki staleElement için kullandığım tüm methodlar çalışmayı bıraktığı için mecburen ekledim
             String pageTitle = ln.titleText.getText();
             Assert.assertTrue(pageTitle.toLowerCase().contains(linkTitle.toLowerCase()));
         }

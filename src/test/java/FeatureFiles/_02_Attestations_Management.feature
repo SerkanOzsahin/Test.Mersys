@@ -8,7 +8,7 @@ Feature: Attestations Management
 
   Scenario: Create a new Attestations
     When the user navigates to human resources
-      | human resources             |
+      | human resources              |
       | human resources setup        |
       | human resources attestations |
     Then the user creates an attestations
@@ -16,7 +16,7 @@ Feature: Attestations Management
 
   Scenario: Edit a Attestations document
     When the user navigates to human resources
-      | human resources             |
+      | human resources              |
       | human resources setup        |
       | human resources attestations |
     Then the user edits an existing attestations document
@@ -24,7 +24,7 @@ Feature: Attestations Management
 
   Scenario: Delete a Attestations document
     When the user navigates to human resources
-      | human resources             |
+      | human resources              |
       | human resources setup        |
       | human resources attestations |
     Then the user deletes an existing attestations document
