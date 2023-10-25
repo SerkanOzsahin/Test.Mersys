@@ -1,10 +1,7 @@
 package StepDefinitions;
 
 import Pages.DialogContent;
-
 import Pages.LeftNav;
-
-import Utilities.BD;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
@@ -16,8 +13,10 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import java.util.List;
 
 public class _11_Editing_Discounts_Under_Parameters {
-    LeftNav ln = new LeftNav();
+
     DialogContent dc = new DialogContent();
+    LeftNav ln = new LeftNav();
+
     String descriptionName = "grup3";
     String integrationCode = "gp3";
     String priority = "%5";
@@ -27,7 +26,6 @@ public class _11_Editing_Discounts_Under_Parameters {
 
     @When("the user navigates to setup")
     public void theUserNavigatesToSetup(DataTable dt) {
-
         List<String> leftNavItem = dt.asList(String.class);
         for (int i = 0; i < leftNavItem.size(); i++) {
             WebElement clickElement = ln.getWebElement(leftNavItem.get(i));
@@ -58,7 +56,6 @@ public class _11_Editing_Discounts_Under_Parameters {
         dc.mySendKeys(dc.integrationCode, editIntegrationCode);
         dc.mySendKeys(dc.priority, editPriority + Keys.ENTER);
         dc.myClick(dc.saveAndClose);
-
     }
 
     @Then("the new discount should be edited successfully")

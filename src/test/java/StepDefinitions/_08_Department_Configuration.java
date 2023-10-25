@@ -1,9 +1,7 @@
 package StepDefinitions;
 
 import Pages.DialogContent;
-
 import Pages.LeftNav;
-
 import Utilities.BD;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.And;
@@ -18,6 +16,7 @@ import java.time.Duration;
 import java.util.List;
 
 public class _08_Department_Configuration {
+
     DialogContent dc = new DialogContent();
     LeftNav ln = new LeftNav();
 
@@ -30,7 +29,6 @@ public class _08_Department_Configuration {
     @When("the user navigates to departments")
     public void the_user_navigates_to_departments(DataTable links) {
         List<String> strLinkList = links.asList(String.class);
-
         for (int i = 0; i < strLinkList.size(); i++) {
             WebElement linkWebElement = ln.getWebElement(strLinkList.get(i));
             ln.myClick(linkWebElement);
@@ -47,15 +45,12 @@ public class _08_Department_Configuration {
 
     @Then("the New School Department should be added successfully")
     public void theNewSchoolDepartmentsShouldBeAddedSuccessfully() {
-
         dc.verifyContainsText(dc.successMessage, "success");
     }
 
     @And("the user checks existing School Department's active button")
     public void theUserChecksExistingSchoolDepartmentsActiveButton() {
-
         List<WebElement> allNames = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//tbody[@role='rowgroup']/tr/td[2]")));
-
         for (int i = 0; i <= allNames.size(); i++) {
             if (allNames.get(i).getText().contains(departmentNameStr)) {
                 i++;
@@ -71,14 +66,12 @@ public class _08_Department_Configuration {
 
     @Then("the active button should be scrolled successfuly")
     public void theActiveButtonShouldBeScrolledSuccessfuly() {
-
         dc.verifyContainsText(dc.successMessage, "success");
     }
 
     @And("the user edits an existing School Department")
     public void theUserEditsAnExistingSchoolDepartment() {
         List<WebElement> allNames = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//tbody[@role='rowgroup']/tr/td[2]")));
-
         for (int i = 0; i <= allNames.size(); i++) {
             if (allNames.get(i).getText().contains(departmentNameStr)) {
                 i++;
@@ -94,33 +87,26 @@ public class _08_Department_Configuration {
 
     @Then("the New School Department should be edited successfully")
     public void theNewSchoolDepartmentShouldBeEditedSuccessfully() {
-
         dc.verifyContainsText(dc.successMessage, "success");
     }
 
     @And("the user deletes an existing School Department")
     public void theUserDeletesAnExistingSchoolDepartment() {
         List<WebElement> allNames = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//tbody[@role='rowgroup']/tr/td[2]")));
-
         for (int i = 0; i <= allNames.size(); i++) {
             if (allNames.get(i).getText().contains(newDepartmentNameStr)) {
                 i++;
                 String editLocator = "(//tbody[@role='rowgroup']/tr/td[2]/following::td[3]/div/ms-delete-button)[" + i + "]";
                 WebElement gEdit = BD.getDriver().findElement(By.xpath(editLocator));
                 gEdit.click();
-
                 dc.myClick(dc.deleteDialogButton);
-
                 break;
             }
         }
-
     }
 
     @Then("the New School Department should be deleted successfully")
     public void theNewSchoolDepartmentShouldBeDeletedSuccessfully() {
-
         dc.verifyContainsText(dc.successMessage, "success");
     }
-
 }

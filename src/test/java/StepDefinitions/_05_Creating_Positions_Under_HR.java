@@ -1,14 +1,11 @@
 package StepDefinitions;
 
 import Pages.DialogContent;
-
 import Pages.LeftNav;
-
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
@@ -17,7 +14,7 @@ import java.util.List;
 
 public class _05_Creating_Positions_Under_HR {
 
-    DialogContent dc = new DialogContent();;
+    DialogContent dc = new DialogContent();
     LeftNav ln = new LeftNav();
 
     String positionNameStr = "group3test";
@@ -27,7 +24,6 @@ public class _05_Creating_Positions_Under_HR {
     @When("the user navigates to positions")
     public void theUserNavigatesToPositions(DataTable links) {
         List<String> strLinkList = links.asList(String.class);
-
         for (int i = 0; i < strLinkList.size(); i++) {
             WebElement linkWebElement = ln.getWebElement(strLinkList.get(i));
             ln.myClick(linkWebElement);

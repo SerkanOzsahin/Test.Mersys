@@ -1,14 +1,11 @@
 package StepDefinitions;
 
 import Pages.DialogContent;
-
 import Pages.LeftNav;
-
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
@@ -26,7 +23,6 @@ public class _12_Editing_Nationalities {
     @When("the user navigates to nationalities")
     public void theUserNavigatesToNationalities(DataTable links) {
         List<String> strLinkList = links.asList(String.class);
-
         for (int i = 0; i < strLinkList.size(); i++) {
             WebElement linkWebElement = ln.getWebElement(strLinkList.get(i));
             ln.myClick(linkWebElement);

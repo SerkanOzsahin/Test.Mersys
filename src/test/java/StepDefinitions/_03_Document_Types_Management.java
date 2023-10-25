@@ -1,9 +1,7 @@
 package StepDefinitions;
 
 import Pages.DialogContent;
-
 import Pages.LeftNav;
-
 import Utilities.BD;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.And;
@@ -13,7 +11,6 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-
 
 import java.util.List;
 
@@ -29,7 +26,6 @@ public class _03_Document_Types_Management {
     @When("the user navigates to document types")
     public void theUserNavigatesToDocumentTypes(DataTable links) {
         List<String> strLinkList = links.asList(String.class);
-
         for (int i = 0; i < strLinkList.size(); i++) {
             WebElement linkWebElement = ln.getWebElement(strLinkList.get(i));
             ln.myClick(linkWebElement);

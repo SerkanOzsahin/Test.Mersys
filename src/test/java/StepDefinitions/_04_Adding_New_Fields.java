@@ -1,38 +1,34 @@
 package StepDefinitions;
 
 import Pages.DialogContent;
-
 import Pages.LeftNav;
-
-import Utilities.BD;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.time.Duration;
 import java.util.List;
 
 public class _04_Adding_New_Fields {
+
     DialogContent dc = new DialogContent();
     LeftNav ln = new LeftNav();
-
 
     String fieldNameStr = "team3test";
     String newFieldNameStr = "team3test123";
     String codeNameStr = "team3testcode";
+
     @When("the user navigates to field")
     public void the_user_navigates_to_field(DataTable links) {
         List<String> strLinkList = links.asList(String.class);
-
         for (int i = 0; i < strLinkList.size(); i++) {
             WebElement linkWebElement = ln.getWebElement(strLinkList.get(i));
             ln.myClick(linkWebElement);
         }
     }
+
     @And("the user adds a new field")
     public void theUserAddsANewField() {
         dc.myClick(dc.addButton);
@@ -45,9 +41,9 @@ public class _04_Adding_New_Fields {
 
     @Then("the new field should be added successfully")
     public void theNewFieldShouldBeAddedSuccessfully() {
-
         dc.verifyContainsText(dc.successMessage, "success");
     }
+
     @And("the user edits an existing field")
     public void theUserEditsAnExistingField() {
         dc.mySendKeys(dc.searchBox, fieldNameStr);
@@ -57,9 +53,9 @@ public class _04_Adding_New_Fields {
         dc.mySendKeys(dc.sendName, newFieldNameStr);
         dc.myClick(dc.saveButton);
     }
+
     @Then("the field should be edited successfully")
     public void theFieldShouldBeEditedSuccessfully() {
-
         dc.verifyContainsText(dc.successMessage, "success");
     }
 
@@ -74,13 +70,6 @@ public class _04_Adding_New_Fields {
 
     @Then("the field should be deleted successfully")
     public void theFieldShouldBeDeletedSuccessfully() {
-
         dc.verifyContainsText(dc.successMessage, "success");
     }
-
 }
-
-
-
-
-

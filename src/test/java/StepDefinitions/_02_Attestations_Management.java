@@ -1,11 +1,7 @@
 package StepDefinitions;
 
 import Pages.DialogContent;
-
 import Pages.LeftNav;
-
-import Utilities.BD;
-import Utilities.Excel;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
@@ -14,12 +10,13 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class _02_Attestations_Management {
+
     DialogContent dc = new DialogContent();
     LeftNav ln = new LeftNav();
+
     String name = "testgrup3";
     String editName = "testgrup3edit";
 

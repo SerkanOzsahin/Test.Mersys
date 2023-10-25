@@ -1,10 +1,7 @@
 package StepDefinitions;
 
 import Pages.DialogContent;
-
 import Pages.LeftNav;
-
-import Utilities.BD;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
@@ -12,20 +9,18 @@ import io.cucumber.java.en.When;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
-
 import java.util.List;
 
 public class _14_Creating_Incident_Location {
-    LeftNav ln = new LeftNav();
+
     DialogContent dc = new DialogContent();
+    LeftNav ln = new LeftNav();
 
     String name = "testgrup3";
     String editName = "testgrup3edit";
 
-
     @When("the user navigates to incidents")
     public void theUserNavigatesToIncidents(DataTable dt) {
-
         List<String> leftNavItem = dt.asList(String.class);
         for (int i = 0; i < leftNavItem.size(); i++) {
             WebElement clickElement = ln.getWebElement(leftNavItem.get(i));

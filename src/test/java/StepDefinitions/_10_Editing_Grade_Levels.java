@@ -1,9 +1,7 @@
 package StepDefinitions;
 
 import Pages.DialogContent;
-
 import Pages.LeftNav;
-
 import Utilities.BD;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.And;
@@ -22,13 +20,13 @@ public class _10_Editing_Grade_Levels {
     DialogContent dc = new DialogContent();
     LeftNav ln = new LeftNav();
 
+    public WebDriverWait wait = new WebDriverWait(BD.getDriver(), Duration.ofSeconds(20));
+
     String gradeNameStr = "group3";
     String shortNameStr = "group";
     String orderStr = "1";
     String maxApplicationCountStr = "1";
     String newGradeNameStr = "group33";
-
-    public WebDriverWait wait = new WebDriverWait(BD.getDriver(), Duration.ofSeconds(20));
 
     @When("the user navigates to grade levels")
     public void theUserNavigatesToGradeLevels(DataTable links) {
@@ -57,7 +55,6 @@ public class _10_Editing_Grade_Levels {
     @And("the user edits a grade level")
     public void theUserEditsAGradeLevel() {
         List<WebElement> allNames = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//tbody[@role='rowgroup']/tr/td[2]")));
-
         for (int i = 0; i <= allNames.size(); i++) {
             if (allNames.get(i).getText().contains(gradeNameStr)) {
                 i++;
@@ -79,7 +76,6 @@ public class _10_Editing_Grade_Levels {
     @And("the user deletes a grade level")
     public void theUserDeletesAGradeLevel() {
         List<WebElement> allNames = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//tbody[@role='rowgroup']/tr/td[2]")));
-
         for (int i = 0; i <= allNames.size(); i++) {
             if (allNames.get(i).getText().contains(newGradeNameStr)) {
                 i++;

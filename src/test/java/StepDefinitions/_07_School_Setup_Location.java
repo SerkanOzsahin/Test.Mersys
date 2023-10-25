@@ -1,9 +1,7 @@
 package StepDefinitions;
 
 import Pages.DialogContent;
-
 import Pages.LeftNav;
-
 import Utilities.BD;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.And;
@@ -14,14 +12,17 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
 import java.time.Duration;
 import java.util.List;
 
 public class _07_School_Setup_Location {
+
     DialogContent dc = new DialogContent();
     LeftNav ln = new LeftNav();
 
     public WebDriverWait wait = new WebDriverWait(BD.getDriver(), Duration.ofSeconds(20));
+
     String name1 = "Team31";
     String shortName1 = "Tm31";
     String capasity1 = "1231";
@@ -30,7 +31,6 @@ public class _07_School_Setup_Location {
     @When("the user navigates to school setup location")
     public void theUserNavigatesToSchoolSetupLocation(DataTable links) {
         List<String> strLinkList = links.asList(String.class);
-
         for (int i = 0; i < strLinkList.size(); i++) {
             WebElement linkWebElement = ln.getWebElement(strLinkList.get(i));
             ln.myClick(linkWebElement);
@@ -60,7 +60,6 @@ public class _07_School_Setup_Location {
     @And("the user edits school location")
     public void theUserEditsSchoolLocation() {
         List<WebElement> allNames = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//tbody[@role='rowgroup']/tr/td[2]")));
-
         for (int i = 0; i <= allNames.size(); i++) {
             if (allNames.get(i).getText().contains(name1)) {
                 i++;
@@ -82,7 +81,6 @@ public class _07_School_Setup_Location {
     @And("the user deletes school location")
     public void theUserDeletesSchoolLocation() {
         List<WebElement> allNames = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//tbody[@role='rowgroup']/tr/td[2]")));
-
         for (int i = 0; i <= allNames.size(); i++) {
             if (allNames.get(i).getText().contains(newName1)) {
                 i++;

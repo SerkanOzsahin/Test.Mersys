@@ -1,29 +1,20 @@
 package StepDefinitions;
 
 import Pages.DialogContent;
-
 import Pages.LeftNav;
-import Utilities.BD;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.time.Duration;
 import java.util.List;
 
 public class _01_Position_Categories_Management {
 
     DialogContent dc = new DialogContent();
     LeftNav ln = new LeftNav();
-
-
-
-
 
     String positionNameStr = "group3";
     String newpositionNameStr = "group3test";
