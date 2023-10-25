@@ -25,10 +25,6 @@ public class _02_Attestations_Management {
 
     @When("the user navigates to human resources")
     public void theUserNavigatesToHumanResources(DataTable dt) {
-        BD.getDriver().get("https://test.mersys.io/");
-        dc.mySendKeys(dc.username,"turkeyts");
-        dc.mySendKeys(dc.password,"TechnoStudy123");
-        dc.myClick(dc.loginButton);
         List<String> leftNavItem = dt.asList(String.class);
         for (int i = 0; i < leftNavItem.size(); i++) {
             WebElement clickElement = ln.getWebElement(leftNavItem.get(i));
@@ -39,7 +35,7 @@ public class _02_Attestations_Management {
     @Then("the user creates an attestations")
     public void theUserCreatesAnAttestations() {
         dc.myClick(dc.addButton);
-        dc.mySendKeys(dc.shortName, name);
+        dc.mySendKeys(dc.sendName, name);
         dc.myClick(dc.saveButton);
     }
 
@@ -50,7 +46,8 @@ public class _02_Attestations_Management {
 
     @Then("the user edits an existing attestations document")
     public void theUserEditsAnExistingAttestationsDocument() {
-        dc.mySendKeys(dc.searchBox, name + Keys.ENTER);
+        dc.mySendKeys(dc.searchBox, name);
+        dc.myClick(dc.searchButton);
         dc.wait.until(ExpectedConditions.elementToBeClickable(dc.searchButton));
         dc.myClick(dc.editButton);
         dc.mySendKeys(dc.shortNameEdit, editName);
@@ -67,7 +64,7 @@ public class _02_Attestations_Management {
         dc.mySendKeys(dc.searchBox, editName + Keys.ENTER);
         dc.wait.until(ExpectedConditions.elementToBeClickable(dc.searchButton));
         dc.myClick(dc.deleteImageButton);
-        dc.myClick(dc.deleteButton);
+        dc.myClick(dc.deleteDialogButton);
     }
 
     @And("the attestations document should be deleted successfully")

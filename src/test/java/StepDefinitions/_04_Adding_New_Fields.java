@@ -36,7 +36,7 @@ public class _04_Adding_New_Fields {
     @And("the user adds a new field")
     public void theUserAddsANewField() {
         dc.myClick(dc.addButton);
-        dc.mySendKeys(dc.fieldName, fieldNameStr);
+        dc.mySendKeys(dc.sendName, fieldNameStr);
         dc.mySendKeys(dc.code, codeNameStr);
         dc.myClick(dc.fieldtype);
         dc.myClick(dc.test);
@@ -50,11 +50,11 @@ public class _04_Adding_New_Fields {
     }
     @And("the user edits an existing field")
     public void theUserEditsAnExistingField() {
-        dc.mySendKeys(dc.nameSearch, fieldNameStr);
+        dc.mySendKeys(dc.searchBox, fieldNameStr);
         dc.myClick(dc.searchButton);
         dc.wait.until(ExpectedConditions.elementToBeClickable(dc.searchButton));
-        dc.myClick(dc.edit);
-        dc.mySendKeys(dc.fieldName, newFieldNameStr);
+        dc.myClick(dc.editButton);
+        dc.mySendKeys(dc.sendName, newFieldNameStr);
         dc.myClick(dc.saveButton);
     }
     @Then("the field should be edited successfully")
@@ -65,7 +65,7 @@ public class _04_Adding_New_Fields {
 
     @And("the user deletes an existing field")
     public void theUserDeletesAnExistingField() {
-        dc.mySendKeys(dc.nameSearch, newFieldNameStr);
+        dc.mySendKeys(dc.searchBox, newFieldNameStr);
         dc.myClick(dc.searchButton);
         dc.wait.until(ExpectedConditions.elementToBeClickable(dc.searchButton));
         dc.myClick(dc.deleteImageButton);

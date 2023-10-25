@@ -37,7 +37,7 @@ public class _05_Creating_Positions_Under_HR {
     @And("the user adds a new position")
     public void theUserAddsANewPosition() {
         dc.myClick(dc.addButton);
-        dc.mySendKeys(dc.positionName, positionNameStr);
+        dc.mySendKeys(dc.sendName, positionNameStr);
         dc.mySendKeys(dc.shortName, shortNameStr);
         dc.myClick(dc.saveButton);
     }
@@ -49,11 +49,11 @@ public class _05_Creating_Positions_Under_HR {
 
     @And("the user updates an existing position")
     public void theUserUpdatesAnExistingPosition() {
-        dc.mySendKeys(dc.nameSearch, positionNameStr);
+        dc.mySendKeys(dc.searchBox, positionNameStr);
         dc.myClick(dc.searchButton);
         dc.wait.until(ExpectedConditions.elementToBeClickable(dc.searchButton));
-        dc.myClick(dc.edit);
-        dc.mySendKeys(dc.positionName, posNewNameStr);
+        dc.myClick(dc.editButton);
+        dc.mySendKeys(dc.sendName, posNewNameStr);
         dc.myClick(dc.saveButton);
     }
 
@@ -64,7 +64,7 @@ public class _05_Creating_Positions_Under_HR {
 
     @And("the user searches for a position")
     public void theUserSearchesForAPosition() {
-        dc.mySendKeys(dc.nameSearch, posNewNameStr);
+        dc.mySendKeys(dc.searchBox, posNewNameStr);
         dc.myClick(dc.searchButton);
         dc.wait.until(ExpectedConditions.elementToBeClickable(dc.searchButton));
     }
@@ -76,7 +76,7 @@ public class _05_Creating_Positions_Under_HR {
 
     @And("the user chooses to enable or disable a position")
     public void theUserChoosesToEnableOrDisableAPosition() {
-        dc.mySendKeys(dc.nameSearch, posNewNameStr);
+        dc.mySendKeys(dc.searchBox, posNewNameStr);
         dc.myClick(dc.searchButton);
         dc.wait.until(ExpectedConditions.elementToBeClickable(dc.searchButton));
         dc.myClick(dc.activeInactiveButton);
@@ -90,7 +90,7 @@ public class _05_Creating_Positions_Under_HR {
 
     @And("the user deletes a position")
     public void theUserDeletesAPosition() {
-        dc.mySendKeys(dc.nameSearch, posNewNameStr);
+        dc.mySendKeys(dc.searchBox, posNewNameStr);
         dc.myClick(dc.searchButton);
         dc.wait.until(ExpectedConditions.elementToBeClickable(dc.searchButton));
         dc.myClick(dc.deleteImageButton);

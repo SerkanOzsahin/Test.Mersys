@@ -36,7 +36,7 @@ public class _12_Editing_Nationalities {
     @And("the user adds a nationality")
     public void theUserAddsANationality() {
         dc.myClick(dc.addButton);
-        dc.mySendKeys(dc.nationalityName, natNameStr);
+        dc.mySendKeys(dc.sendName, natNameStr);
         dc.myClick(dc.saveButton);
     }
 
@@ -47,11 +47,11 @@ public class _12_Editing_Nationalities {
 
     @And("the user edits the nationality")
     public void theUserEditsTheNationality() {
-        dc.mySendKeys(dc.nameSearch, natNameStr);
+        dc.mySendKeys(dc.searchBox, natNameStr);
         dc.myClick(dc.searchButton);
         dc.wait.until(ExpectedConditions.elementToBeClickable(dc.searchButton));
-        dc.myClick(dc.edit);
-        dc.mySendKeys(dc.positionName, newNatNameStr);
+        dc.myClick(dc.editButton);
+        dc.mySendKeys(dc.sendName, newNatNameStr);
         dc.myClick(dc.saveButton);
     }
 
@@ -62,7 +62,7 @@ public class _12_Editing_Nationalities {
 
     @And("the user uses the search function to find a nationality")
     public void theUserUsesTheSearchFunctionToFindANationality() {
-        dc.mySendKeys(dc.nameSearch, newNatNameStr);
+        dc.mySendKeys(dc.searchBox, newNatNameStr);
         dc.myClick(dc.searchButton);
         dc.wait.until(ExpectedConditions.elementToBeClickable(dc.searchButton));
     }
@@ -74,7 +74,7 @@ public class _12_Editing_Nationalities {
 
     @And("the user deletes a nationality")
     public void theUserDeletesANationality() {
-        dc.mySendKeys(dc.nameSearch, newNatNameStr);
+        dc.mySendKeys(dc.searchBox, newNatNameStr);
         dc.myClick(dc.searchButton);
         dc.wait.until(ExpectedConditions.elementToBeClickable(dc.searchButton));
         dc.myClick(dc.deleteImageButton);

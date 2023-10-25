@@ -40,7 +40,7 @@ public class _01_Position_Categories_Management {
     @And("the user clicks on the add button")
     public void theUserClicksOnTheAddButton() {
         dc.myClick(dc.addButton);
-        dc.mySendKeys(dc.newPositionName, positionNameStr);
+        dc.mySendKeys(dc.sendName, positionNameStr);
     }
 
     @And("the user clicks on the save button")
@@ -55,11 +55,11 @@ public class _01_Position_Categories_Management {
 
     @And("the user clicks on the edit button")
     public void theUserClicksOnTheEditButton() {
-        dc.mySendKeys(dc.nameSearch, positionNameStr);
+        dc.mySendKeys(dc.searchBox, positionNameStr);
         dc.myClick(dc.searchButton);
         dc.wait.until(ExpectedConditions.elementToBeClickable(dc.searchButton));
-        dc.myClick(dc.edit);
-        dc.mySendKeys(dc.newPositionName, newpositionNameStr);
+        dc.myClick(dc.editButton);
+        dc.mySendKeys(dc.sendName, newpositionNameStr);
         dc.myClick(dc.saveButton);
     }
 
@@ -70,11 +70,11 @@ public class _01_Position_Categories_Management {
 
     @And("the user clicks on the delete button")
     public void theUserClicksOnTheDeleteButton() {
-        dc.mySendKeys(dc.nameSearch, newpositionNameStr);
+        dc.mySendKeys(dc.searchBox, newpositionNameStr);
         dc.myClick(dc.searchButton);
         dc.wait.until(ExpectedConditions.elementToBeClickable(dc.searchButton));
-        dc.myClick(dc.deleteImageBtn);
-        dc.myClick(dc.deleteDialogBtn);
+        dc.myClick(dc.deleteImageButton);
+        dc.myClick(dc.deleteDialogButton);
     }
 
     @Then("position categories should be deleted successfully")

@@ -40,8 +40,8 @@ public class _07_School_Setup_Location {
     @And("the user adds a new school location")
     public void theUserAddsANewSchoolLocation() {
         dc.myClick(dc.addButton);
-        dc.mySendKeys(dc.name, name1);
-        dc.mySendKeys(dc.shortName, shortName1);
+        dc.mySendKeys(dc.newName, name1);
+        dc.mySendKeys(dc.newShortName, shortName1);
         dc.myClick(dc.classroom);
         dc.myClick(dc.laboratory);
         dc.mySendKeys(dc.capacity, capasity1 + Keys.ENTER);
@@ -54,7 +54,7 @@ public class _07_School_Setup_Location {
 
     @Then("the location should be add successfully")
     public void theLocationShouldBeAddSuccessfully() {
-        dc.verifyContainsText(dc.successMsg, "success");
+        dc.verifyContainsText(dc.successMessage, "success");
     }
 
     @And("the user edits school location")
@@ -67,7 +67,7 @@ public class _07_School_Setup_Location {
                 String editLocator = "(//tbody[@role='rowgroup']/tr/td[2]/following::td[5]/div/ms-edit-button)[" + i + "]";
                 WebElement gEdit = BD.getDriver().findElement(By.xpath(editLocator));
                 gEdit.click();
-                dc.mySendKeys(dc.name, newName1);
+                dc.mySendKeys(dc.newName, newName1);
                 dc.myClick(dc.saveButton);
                 break;
             }
@@ -76,7 +76,7 @@ public class _07_School_Setup_Location {
 
     @Then("the location should be edit successfully")
     public void theLocationShouldBeEditSuccessfully() {
-        dc.verifyContainsText(dc.successMsg, "success");
+        dc.verifyContainsText(dc.successMessage, "success");
     }
 
     @And("the user deletes school location")
@@ -89,7 +89,7 @@ public class _07_School_Setup_Location {
                 String editLocator = "(//tbody[@role='rowgroup']/tr/td[2]/following::td[5]/div/ms-delete-button)[" + i + "]";
                 WebElement gEdit = BD.getDriver().findElement(By.xpath(editLocator));
                 gEdit.click();
-                dc.myClick(dc.deleteBtn);
+                dc.myClick(dc.deleteDialogButton);
                 break;
             }
         }
@@ -97,6 +97,6 @@ public class _07_School_Setup_Location {
 
     @Then("the location should be delete successfully")
     public void theLocationShouldBeDeleteSuccessfully() {
-        dc.verifyContainsText(dc.successMsg, "success");
+        dc.verifyContainsText(dc.successMessage, "success");
     }
 }

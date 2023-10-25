@@ -40,7 +40,7 @@ public class _08_Department_Configuration {
     @And("the user adds a new School Department")
     public void theUserAddsAnewSchoolDepartment() {
         dc.myClick(dc.addButton);
-        dc.mySendKeys(dc.departmentName, departmentNameStr);
+        dc.mySendKeys(dc.newName, departmentNameStr);
         dc.mySendKeys(dc.code, codeNameStr);
         dc.myClick(dc.saveButton);
     }
@@ -85,7 +85,7 @@ public class _08_Department_Configuration {
                 String editLocator = "(//tbody[@role='rowgroup']/tr/td[2]/following::td[3]/div/ms-edit-button)[" + i + "]";
                 WebElement gEdit = BD.getDriver().findElement(By.xpath(editLocator));
                 gEdit.click();
-                dc.mySendKeys(dc.departmentName, newDepartmentNameStr);
+                dc.mySendKeys(dc.newName, newDepartmentNameStr);
                 dc.myClick(dc.saveButton);
                 break;
             }

@@ -27,10 +27,6 @@ public class _11_Editing_Discounts_Under_Parameters {
 
     @When("the user navigates to setup")
     public void theUserNavigatesToSetup(DataTable dt) {
-        BD.getDriver().get("https://test.mersys.io/");
-        dc.mySendKeys(dc.username, "turkeyts");
-        dc.mySendKeys(dc.password, "TechnoStudy123");
-        dc.myClick(dc.loginButton);
 
         List<String> leftNavItem = dt.asList(String.class);
         for (int i = 0; i < leftNavItem.size(); i++) {
@@ -75,7 +71,7 @@ public class _11_Editing_Discounts_Under_Parameters {
         dc.mySendKeys(dc.searchBox, editDescriptionName + Keys.ENTER);
         dc.wait.until(ExpectedConditions.elementToBeClickable(dc.searchButton));
         dc.myClick(dc.deleteImageButton);
-        dc.myClick(dc.deleteButton);
+        dc.myClick(dc.deleteDialogButton);
     }
 
     @Then("the new discount should be deleted successfully")

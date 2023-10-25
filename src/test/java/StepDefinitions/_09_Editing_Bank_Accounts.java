@@ -39,7 +39,7 @@ public class _09_Editing_Bank_Accounts {
     @And("the user adds a bank account")
     public void theUserAddsABankAccount() {
         dc.myClick(dc.addButton);
-        dc.mySendKeys(dc.name, bankAccountNameStr);
+        dc.mySendKeys(dc.sendName, bankAccountNameStr);
         dc.mySendKeys(dc.iban, ibanStr);
         dc.myClick(dc.currency);
         dc.myClick(dc.currencyEur);
@@ -54,11 +54,11 @@ public class _09_Editing_Bank_Accounts {
 
     @And("the user edits a bank account")
     public void theUserEditsABankAccount() {
-        dc.mySendKeys(dc.nameSearch, bankAccountNameStr);
+        dc.mySendKeys(dc.searchBox, bankAccountNameStr);
         dc.myClick(dc.searchButton);
         dc.wait.until(ExpectedConditions.elementToBeClickable(dc.searchButton));
-        dc.myClick(dc.edit);
-        dc.mySendKeys(dc.newCurrencyName, newCurrencyNameStr);
+        dc.myClick(dc.editButton);
+        dc.mySendKeys(dc.sendName, newCurrencyNameStr);
         dc.myClick(dc.saveEditButton);
     }
 
@@ -69,8 +69,8 @@ public class _09_Editing_Bank_Accounts {
 
     @Then("the user deletes a bank account")
     public void theUserDeletesABankAccount() {
-        dc.myClick(dc.deleteImageBtn);
-        dc.myClick(dc.deleteDialogBtn);
+        dc.myClick(dc.deleteImageButton);
+        dc.myClick(dc.deleteDialogButton);
     }
 
     @Then("the bank accounts should be deleted successfully")

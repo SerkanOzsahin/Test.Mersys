@@ -39,7 +39,7 @@ public class _03_Document_Types_Management {
     @And("the user adds a new document type")
     public void theUserAddsANewDocumentType() {
         dc.myClick(dc.addButton);
-        dc.mySendKeys(dc.documentName, docNameStr);
+        dc.mySendKeys(dc.sendName, docNameStr);
         dc.myClick(dc.stage);
         dc.myClick(dc.certificate);
         new Actions(BD.getDriver()).sendKeys(Keys.ESCAPE).build().perform();
@@ -54,11 +54,11 @@ public class _03_Document_Types_Management {
 
     @And("the user edits an existing document type")
     public void theUserEditsAnExistingDocumentType() {
-        dc.mySendKeys(dc.nameSearch, docNameStr);
+        dc.mySendKeys(dc.searchBox, docNameStr);
         dc.myClick(dc.searchButton);
         dc.wait.until(ExpectedConditions.elementToBeClickable(dc.searchButton));
-        dc.myClick(dc.edit);
-        dc.mySendKeys(dc.documentName, docNewNameStr);
+        dc.myClick(dc.editButton);
+        dc.mySendKeys(dc.sendName, docNewNameStr);
         dc.myClick(dc.saveButton);
     }
 
@@ -69,7 +69,7 @@ public class _03_Document_Types_Management {
 
     @And("the user deletes an existing document type")
     public void theUserDeletesAnExistingDocumentType() {
-        dc.mySendKeys(dc.nameSearch, docNewNameStr);
+        dc.mySendKeys(dc.searchBox, docNewNameStr);
         dc.myClick(dc.searchButton);
         dc.wait.until(ExpectedConditions.elementToBeClickable(dc.searchButton));
         dc.myClick(dc.deleteImageButton);

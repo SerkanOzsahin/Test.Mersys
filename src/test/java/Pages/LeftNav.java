@@ -121,13 +121,13 @@ public class LeftNav extends Parent {
                 return this.setup;
             case "position categories":
                 return this.positionCategories;
-            case "humanResourcesAttestations":
+            case "human resources attestations":
                 return humanResourcesAttestations;
             case "parameters":
                 return this.parameters;
             case "document types":
                 return this.documentTypes;
-            case "humanResourcesSetup":
+            case "human resources setup":
                 return humanResourcesSetup;
             case "fields":
                 return this.fields;

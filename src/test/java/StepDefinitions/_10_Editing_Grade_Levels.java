@@ -42,8 +42,8 @@ public class _10_Editing_Grade_Levels {
     @And("the user adds a new grade level")
     public void theUserAddsANewGradeLevel() {
         dc.myClick(dc.addButton);
-        dc.mySendKeys(dc.name, gradeNameStr);
-        dc.mySendKeys(dc.shortName, shortNameStr);
+        dc.mySendKeys(dc.newName, gradeNameStr);
+        dc.mySendKeys(dc.newShortName, shortNameStr);
         dc.mySendKeys(dc.order, orderStr);
         dc.mySendKeys(dc.maxApplicationCount, maxApplicationCountStr);
         dc.myClick(dc.saveButton);
@@ -64,7 +64,7 @@ public class _10_Editing_Grade_Levels {
                 String editLocator = "(//tbody[@role='rowgroup']/tr/td[2]/following::td[5]/div/ms-edit-button)[" + i + "]";
                 WebElement gEdit = BD.getDriver().findElement(By.xpath(editLocator));
                 gEdit.click();
-                dc.mySendKeys(dc.name, newGradeNameStr);
+                dc.mySendKeys(dc.newName, newGradeNameStr);
                 dc.myClick(dc.saveButton);
                 break;
             }
@@ -86,7 +86,7 @@ public class _10_Editing_Grade_Levels {
                 String editLocator = "(//tbody[@role='rowgroup']/tr/td[2]/following::td[5]/div/ms-delete-button)[" + i + "]";
                 WebElement gEdit = BD.getDriver().findElement(By.xpath(editLocator));
                 gEdit.click();
-                dc.myClick(dc.deleteDialogBtn);
+                dc.myClick(dc.deleteDialogButton);
                 break;
             }
         }

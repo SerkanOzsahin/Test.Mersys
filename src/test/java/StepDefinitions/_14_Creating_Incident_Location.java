@@ -40,7 +40,7 @@ public class _14_Creating_Incident_Location {
     @And("the user creates a new incidents location")
     public void theUserCreatesANewIncidentsLocation() {
         dc.myClick(dc.addButton);
-        dc.mySendKeys(dc.name, name);
+        dc.mySendKeys(dc.sendName, name);
         dc.myClick(dc.saveButton);
     }
 
@@ -54,7 +54,7 @@ public class _14_Creating_Incident_Location {
         dc.mySendKeys(dc.searchBox, name);
         dc.wait.until(ExpectedConditions.elementToBeClickable(dc.searchButton));
         dc.myClick(dc.editButton);
-        dc.mySendKeys(dc.name, editName);
+        dc.mySendKeys(dc.sendName, editName);
         dc.myClick(dc.saveButton);
     }
 
@@ -68,7 +68,7 @@ public class _14_Creating_Incident_Location {
         dc.mySendKeys(dc.searchBox, editName);
         dc.wait.until(ExpectedConditions.elementToBeClickable(dc.searchButton));
         dc.myClick(dc.deleteImageButton);
-        dc.myClick(dc.deleteButton);
+        dc.myClick(dc.deleteDialogButton);
     }
 
     @Then("the incidents location should be deleted successfully")
