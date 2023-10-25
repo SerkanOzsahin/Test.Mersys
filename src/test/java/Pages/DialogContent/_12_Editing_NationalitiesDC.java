@@ -8,16 +8,9 @@ import org.openqa.selenium.support.PageFactory;
 
 public class _12_Editing_NationalitiesDC extends Parent {
 
-    public _12_Editing_NationalitiesDC() {PageFactory.initElements(BD.getDriver(), this);}
-
-    @FindBy(css = "input[formcontrolname='username']")
-    public WebElement username;
-
-    @FindBy(css = "input[formcontrolname='password']")
-    public WebElement password;
-
-    @FindBy(css = "button[aria-label='LOGIN']")
-    public WebElement loginButton;
+    public _12_Editing_NationalitiesDC() {
+        PageFactory.initElements(BD.getDriver(), this);
+    }
 
     @FindBy(xpath = "//ms-add-button[contains(@tooltip,'ADD')]//button")
     public WebElement addButton;
