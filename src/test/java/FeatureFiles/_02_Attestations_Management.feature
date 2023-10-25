@@ -1,4 +1,4 @@
-Feature: Attestations_Management
+Feature: Attestations Management
 
   Scenario: Create a new Attestations
     When the user navigates to human resources
