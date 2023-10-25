@@ -11,7 +11,7 @@ Feature: School Setup Location
       | setup        |
       | school setup |
       | locations    |
-    And the user click on the add button
+    And the user adds a new school location
     And the user click on the save button
     Then the location should be add successfully
 
@@ -20,7 +20,7 @@ Feature: School Setup Location
       | setup        |
       | school setup |
       | locations    |
-    And the user click on the edit button
+    And the user edits school location
     Then the location should be edit successfully
 
   Scenario: Delete School Setup Location
@@ -28,5 +28,5 @@ Feature: School Setup Location
       | setup        |
       | school setup |
       | locations    |
-    And the user click on the delete button
+    And the user deletes school location
     Then the location should be delete successfully
