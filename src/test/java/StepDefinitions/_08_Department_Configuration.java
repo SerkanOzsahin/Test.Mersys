@@ -1,8 +1,6 @@
 package StepDefinitions;
 
-import Pages.DialogContent._04_Adding_New_FieldsDC;
 import Pages.DialogContent._08_Department_ConfigurationDC;
-import Pages.LeftNav._04_Adding_New_FieldsLN;
 import Pages.LeftNav._08_Department_ConfigurationLN;
 import Utilities.BD;
 import io.cucumber.datatable.DataTable;
@@ -29,11 +27,6 @@ public class _08_Department_Configuration {
 
     @When("the user navigates to departments")
     public void the_user_navigates_to_departments(DataTable links) {
-        BD.getDriver().get("https://test.mersys.io/");
-        dc.mySendKeys(dc.username, "turkeyts");
-        dc.mySendKeys(dc.password, "TechnoStudy123");
-        dc.myClick(dc.loginButton);
-
         List<String> strLinkList = links.asList(String.class);
 
         for (int i = 0; i < strLinkList.size(); i++) {
