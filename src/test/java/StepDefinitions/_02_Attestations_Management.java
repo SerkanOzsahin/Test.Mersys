@@ -3,6 +3,7 @@ package StepDefinitions;
 import Pages.DialogContent._02_Attestations_ManagementDC;
 import Pages.LeftNav._02_Attestations_ManagementLN;
 import Utilities.BD;
+import Utilities.Excel;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
@@ -10,6 +11,7 @@ import io.cucumber.java.en.When;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class _02_Attestations_Management {
@@ -21,10 +23,9 @@ public class _02_Attestations_Management {
     @When("the user navigates to human resources")
     public void theUserNavigatesToHumanResources(DataTable dt) {
         BD.getDriver().get("https://test.mersys.io/");
-        dc.mySendKeys(dc.userName, "turkeyts");
-        dc.mySendKeys(dc.password, "TechnoStudy123");
+        dc.mySendKeys(dc.userName,"turkeyts");
+        dc.mySendKeys(dc.password,"TechnoStudy123");
         dc.myClick(dc.loginButton);
-
         List<String> leftNavItem = dt.asList(String.class);
         for (int i = 0; i < leftNavItem.size(); i++) {
             WebElement clickElement = ln.getWebElement(leftNavItem.get(i));
