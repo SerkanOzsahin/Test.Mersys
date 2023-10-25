@@ -1,20 +1,23 @@
 package StepDefinitions;
 
-import Pages.DialogContent._14_Creating_Incident_LocationDC;
-import Pages.LeftNav._14_Creating_Incident_LocationLN;
+import Pages.DialogContent;
+
+import Pages.LeftNav;
+
 import Utilities.BD;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 
 import java.util.List;
 
 public class _14_Creating_Incident_Location {
-    _14_Creating_Incident_LocationLN ln = new _14_Creating_Incident_LocationLN();
-    _14_Creating_Incident_LocationDC dc = new _14_Creating_Incident_LocationDC();
+    LeftNav ln = new LeftNav();
+    DialogContent dc = new DialogContent();
 
     String name = "testgrup3";
     String editName = "testgrup3edit";
@@ -23,7 +26,7 @@ public class _14_Creating_Incident_Location {
     @When("the user navigates to incidents")
     public void theUserNavigatesToIncidents(DataTable dt) {
         BD.getDriver().get("https://test.mersys.io/");
-        dc.mySendKeys(dc.userName, "turkeyts");
+        dc.mySendKeys(dc.username, "turkeyts");
         dc.mySendKeys(dc.password, "TechnoStudy123");
         dc.myClick(dc.loginButton);
 
@@ -49,7 +52,7 @@ public class _14_Creating_Incident_Location {
     @And("the user edits an existing incidents location")
     public void theUserEditsAnExistingIncidentsLocation() {
         dc.mySendKeys(dc.searchBox, name);
-        dc.staleElement(dc.editButton);
+        dc.wait.until(ExpectedConditions.elementToBeClickable(dc.searchButton));
         dc.myClick(dc.editButton);
         dc.mySendKeys(dc.name, editName);
         dc.myClick(dc.saveButton);
@@ -63,7 +66,7 @@ public class _14_Creating_Incident_Location {
     @And("the user deletes an existing incidents location")
     public void theUserDeletesAnExistingIncidentsLocation() {
         dc.mySendKeys(dc.searchBox, editName);
-        dc.staleElement(dc.deleteImageButton);
+        dc.wait.until(ExpectedConditions.elementToBeClickable(dc.searchButton));
         dc.myClick(dc.deleteImageButton);
         dc.myClick(dc.deleteButton);
     }

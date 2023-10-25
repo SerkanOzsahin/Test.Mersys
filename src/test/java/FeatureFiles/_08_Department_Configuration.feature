@@ -1,4 +1,5 @@
 Feature: Department Configuration
+
   Background:
     Given Navigate to Campus
     When the user enters username and password
@@ -36,4 +37,3 @@ Feature: Department Configuration
       | departments  |
     And  the user deletes an existing School Department
     Then the New School Department should be deleted successfully
-

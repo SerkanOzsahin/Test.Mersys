@@ -1,7 +1,9 @@
 package StepDefinitions;
 
-import Pages.DialogContent._10_Editing_Grade_LevelsDC;
-import Pages.LeftNav._10_Editing_Grade_LevelsLN;
+import Pages.DialogContent;
+
+import Pages.LeftNav;
+
 import Utilities.BD;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.And;
@@ -17,8 +19,8 @@ import java.util.List;
 
 public class _10_Editing_Grade_Levels {
 
-    _10_Editing_Grade_LevelsDC dc = new _10_Editing_Grade_LevelsDC();
-    _10_Editing_Grade_LevelsLN ln = new _10_Editing_Grade_LevelsLN();
+    DialogContent dc = new DialogContent();
+    LeftNav ln = new LeftNav();
 
     String gradeNameStr = "group3";
     String shortNameStr = "group";

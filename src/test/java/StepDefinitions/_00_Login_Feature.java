@@ -1,6 +1,6 @@
 package StepDefinitions;
 
-import Pages.DialogContent._00_Login_FeatureDC;
+import Pages.DialogContent;
 import Utilities.BD;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
@@ -8,7 +8,8 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 public class _00_Login_Feature {
-    _00_Login_FeatureDC dc = new _00_Login_FeatureDC();
+
+    DialogContent dc = new DialogContent();
 
     @Given("Navigate to Campus")
     public void navigateToCampus() {
@@ -28,6 +29,6 @@ public class _00_Login_Feature {
 
     @Then("the user should login successfully")
     public void theUserShouldLoginSuccessfully() {
-        dc.verifyContainsText(dc.successfullyMsg, "Techno Study");
+        dc.verifyContainsText(dc.loginSuccess, "Techno Study");
     }
 }

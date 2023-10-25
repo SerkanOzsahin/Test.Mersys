@@ -1,7 +1,9 @@
 package StepDefinitions;
 
-import Pages.DialogContent._12_Editing_NationalitiesDC;
-import Pages.LeftNav._12_Editing_NationalitiesLN;
+import Pages.DialogContent;
+
+import Pages.LeftNav;
+
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
@@ -15,8 +17,8 @@ import java.util.List;
 
 public class _12_Editing_Nationalities {
 
-    _12_Editing_NationalitiesDC dc = new _12_Editing_NationalitiesDC();
-    _12_Editing_NationalitiesLN ln = new _12_Editing_NationalitiesLN();
+    DialogContent dc = new DialogContent();
+    LeftNav ln = new LeftNav();
 
     String natNameStr = "group3test";
     String newNatNameStr = "group3test123";
@@ -47,7 +49,7 @@ public class _12_Editing_Nationalities {
     public void theUserEditsTheNationality() {
         dc.mySendKeys(dc.nameSearch, natNameStr);
         dc.myClick(dc.searchButton);
-        dc.wait.until(ExpectedConditions.numberOfElementsToBe(By.xpath("//fuse-progress-bar/*"), 0));
+        dc.wait.until(ExpectedConditions.elementToBeClickable(dc.searchButton));
         dc.myClick(dc.edit);
         dc.mySendKeys(dc.positionName, newNatNameStr);
         dc.myClick(dc.saveButton);
@@ -62,7 +64,7 @@ public class _12_Editing_Nationalities {
     public void theUserUsesTheSearchFunctionToFindANationality() {
         dc.mySendKeys(dc.nameSearch, newNatNameStr);
         dc.myClick(dc.searchButton);
-        dc.wait.until(ExpectedConditions.numberOfElementsToBe(By.xpath("//fuse-progress-bar/*"), 0));
+        dc.wait.until(ExpectedConditions.elementToBeClickable(dc.searchButton));
     }
 
     @Then("the matching nationalities should be displayed successfully")
@@ -74,7 +76,7 @@ public class _12_Editing_Nationalities {
     public void theUserDeletesANationality() {
         dc.mySendKeys(dc.nameSearch, newNatNameStr);
         dc.myClick(dc.searchButton);
-        dc.wait.until(ExpectedConditions.numberOfElementsToBe(By.xpath("//fuse-progress-bar/*"), 0));
+        dc.wait.until(ExpectedConditions.elementToBeClickable(dc.searchButton));
         dc.myClick(dc.deleteImageButton);
         dc.myClick(dc.deleteDialogButton);
     }

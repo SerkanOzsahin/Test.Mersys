@@ -1,7 +1,9 @@
 package StepDefinitions;
 
-import Pages.DialogContent._08_Department_ConfigurationDC;
-import Pages.LeftNav._08_Department_ConfigurationLN;
+import Pages.DialogContent;
+
+import Pages.LeftNav;
+
 import Utilities.BD;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.And;
@@ -16,8 +18,8 @@ import java.time.Duration;
 import java.util.List;
 
 public class _08_Department_Configuration {
-    _08_Department_ConfigurationDC dc = new _08_Department_ConfigurationDC();
-    _08_Department_ConfigurationLN ln = new _08_Department_ConfigurationLN();
+    DialogContent dc = new DialogContent();
+    LeftNav ln = new LeftNav();
 
     public WebDriverWait wait = new WebDriverWait(BD.getDriver(), Duration.ofSeconds(20));
 

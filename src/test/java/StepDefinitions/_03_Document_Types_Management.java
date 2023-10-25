@@ -1,24 +1,26 @@
 package StepDefinitions;
 
-import Pages.DialogContent._03_Document_Types_ManagementDC;
-import Pages.LeftNav._03_Document_Types_ManagementLN;
+import Pages.DialogContent;
+
+import Pages.LeftNav;
+
 import Utilities.BD;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
+
 import java.util.List;
 
 public class _03_Document_Types_Management {
 
-    _03_Document_Types_ManagementDC dc = new _03_Document_Types_ManagementDC();
-    _03_Document_Types_ManagementLN ln = new _03_Document_Types_ManagementLN();
+    DialogContent dc = new DialogContent();
+    LeftNav ln = new LeftNav();
 
     String docNameStr = "group3test";
     String docNewNameStr = "group3test123";
@@ -54,7 +56,7 @@ public class _03_Document_Types_Management {
     public void theUserEditsAnExistingDocumentType() {
         dc.mySendKeys(dc.nameSearch, docNameStr);
         dc.myClick(dc.searchButton);
-        dc.wait.until(ExpectedConditions.numberOfElementsToBe(By.xpath("//fuse-progress-bar/*"), 0));
+        dc.wait.until(ExpectedConditions.elementToBeClickable(dc.searchButton));
         dc.myClick(dc.edit);
         dc.mySendKeys(dc.documentName, docNewNameStr);
         dc.myClick(dc.saveButton);
@@ -69,7 +71,7 @@ public class _03_Document_Types_Management {
     public void theUserDeletesAnExistingDocumentType() {
         dc.mySendKeys(dc.nameSearch, docNewNameStr);
         dc.myClick(dc.searchButton);
-        dc.wait.until(ExpectedConditions.numberOfElementsToBe(By.xpath("//fuse-progress-bar/*"), 0));
+        dc.wait.until(ExpectedConditions.elementToBeClickable(dc.searchButton));
         dc.myClick(dc.deleteImageButton);
         dc.myClick(dc.deleteDialogButton);
     }

@@ -1,6 +1,8 @@
 package StepDefinitions;
 
-import Pages.LeftNav._13_Parameters_NavigationLN;
+import Pages.DialogContent;
+import Pages.LeftNav;
+
 import Utilities.BD;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.Then;
@@ -15,10 +17,10 @@ import java.time.Duration;
 import java.util.List;
 
 public class _13_Parameters_Navigation {
+DialogContent dc = new DialogContent();
+    LeftNav ln = new LeftNav();
 
-    _13_Parameters_NavigationLN ln = new _13_Parameters_NavigationLN();
 
-    public WebDriverWait wait = new WebDriverWait(BD.getDriver(), Duration.ofSeconds(20));
 
     @When("the user navigates to parameters")
     public void theUserNavigatesToParameters(DataTable links) {
@@ -38,7 +40,7 @@ public class _13_Parameters_Navigation {
             WebElement linkWebElement = ln.getWebElement(strLinkList.get(i));
             String linkTitle = linkWebElement.getText();
             ln.myClick(linkWebElement);
-            wait.until(ExpectedConditions.numberOfElementsToBe(By.xpath("//fuse-progress-bar/*"), 0));
+            dc.wait.until(ExpectedConditions.elementToBeClickable(dc.searchButton));
             String pageTitle = ln.titleText.getText();
             Assert.assertTrue(pageTitle.toLowerCase().contains(linkTitle.toLowerCase()));
         }

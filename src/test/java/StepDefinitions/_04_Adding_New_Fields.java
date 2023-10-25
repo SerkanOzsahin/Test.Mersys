@@ -1,7 +1,9 @@
 package StepDefinitions;
 
-import Pages.DialogContent._04_Adding_New_FieldsDC;
-import Pages.LeftNav._04_Adding_New_FieldsLN;
+import Pages.DialogContent;
+
+import Pages.LeftNav;
+
 import Utilities.BD;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.And;
@@ -15,10 +17,9 @@ import java.time.Duration;
 import java.util.List;
 
 public class _04_Adding_New_Fields {
-    _04_Adding_New_FieldsDC dc=new _04_Adding_New_FieldsDC();
-    _04_Adding_New_FieldsLN ln=new _04_Adding_New_FieldsLN();
+    DialogContent dc = new DialogContent();
+    LeftNav ln = new LeftNav();
 
-    public WebDriverWait wait = new WebDriverWait(BD.getDriver(), Duration.ofSeconds(20));
 
     String fieldNameStr = "team3test";
     String newFieldNameStr = "team3test123";
@@ -51,7 +52,7 @@ public class _04_Adding_New_Fields {
     public void theUserEditsAnExistingField() {
         dc.mySendKeys(dc.nameSearch, fieldNameStr);
         dc.myClick(dc.searchButton);
-        wait.until(ExpectedConditions.elementToBeClickable(dc.searchButton));
+        dc.wait.until(ExpectedConditions.elementToBeClickable(dc.searchButton));
         dc.myClick(dc.edit);
         dc.mySendKeys(dc.fieldName, newFieldNameStr);
         dc.myClick(dc.saveButton);
@@ -66,7 +67,7 @@ public class _04_Adding_New_Fields {
     public void theUserDeletesAnExistingField() {
         dc.mySendKeys(dc.nameSearch, newFieldNameStr);
         dc.myClick(dc.searchButton);
-        wait.until(ExpectedConditions.elementToBeClickable(dc.searchButton));
+        dc.wait.until(ExpectedConditions.elementToBeClickable(dc.searchButton));
         dc.myClick(dc.deleteImageButton);
         dc.myClick(dc.deleteDialogButton);
     }

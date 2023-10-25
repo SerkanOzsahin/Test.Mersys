@@ -1,7 +1,9 @@
 package StepDefinitions;
 
-import Pages.DialogContent._07_School_Setup_LocationDC;
-import Pages.LeftNav._07_School_Setup_LocationLN;
+import Pages.DialogContent;
+
+import Pages.LeftNav;
+
 import Utilities.BD;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.And;
@@ -16,8 +18,8 @@ import java.time.Duration;
 import java.util.List;
 
 public class _07_School_Setup_Location {
-    _07_School_Setup_LocationDC dc = new _07_School_Setup_LocationDC();
-    _07_School_Setup_LocationLN ln = new _07_School_Setup_LocationLN();
+    DialogContent dc = new DialogContent();
+    LeftNav ln = new LeftNav();
 
     public WebDriverWait wait = new WebDriverWait(BD.getDriver(), Duration.ofSeconds(20));
     String name1 = "Team31";

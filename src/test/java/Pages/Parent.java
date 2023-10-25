@@ -11,7 +11,7 @@ import org.testng.Assert;
 
 import java.time.Duration;
 
-public class Parent  {
+public class Parent {
 
     public WebDriverWait wait = new WebDriverWait(BD.getDriver(), Duration.ofSeconds(20));
 

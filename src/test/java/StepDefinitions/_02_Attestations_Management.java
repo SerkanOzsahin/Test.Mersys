@@ -1,7 +1,9 @@
 package StepDefinitions;
 
-import Pages.DialogContent._02_Attestations_ManagementDC;
-import Pages.LeftNav._02_Attestations_ManagementLN;
+import Pages.DialogContent;
+
+import Pages.LeftNav;
+
 import Utilities.BD;
 import Utilities.Excel;
 import io.cucumber.datatable.DataTable;
@@ -10,20 +12,21 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class _02_Attestations_Management {
-    _02_Attestations_ManagementDC dc = new _02_Attestations_ManagementDC();
-    _02_Attestations_ManagementLN ln = new _02_Attestations_ManagementLN();
+    DialogContent dc = new DialogContent();
+    LeftNav ln = new LeftNav();
     String name = "testgrup3";
     String editName = "testgrup3edit";
 
     @When("the user navigates to human resources")
     public void theUserNavigatesToHumanResources(DataTable dt) {
         BD.getDriver().get("https://test.mersys.io/");
-        dc.mySendKeys(dc.userName,"turkeyts");
+        dc.mySendKeys(dc.username,"turkeyts");
         dc.mySendKeys(dc.password,"TechnoStudy123");
         dc.myClick(dc.loginButton);
         List<String> leftNavItem = dt.asList(String.class);
@@ -48,7 +51,7 @@ public class _02_Attestations_Management {
     @Then("the user edits an existing attestations document")
     public void theUserEditsAnExistingAttestationsDocument() {
         dc.mySendKeys(dc.searchBox, name + Keys.ENTER);
-        dc.staleElement(dc.editButton);
+        dc.wait.until(ExpectedConditions.elementToBeClickable(dc.searchButton));
         dc.myClick(dc.editButton);
         dc.mySendKeys(dc.shortNameEdit, editName);
         dc.myClick(dc.saveButton);
@@ -62,7 +65,7 @@ public class _02_Attestations_Management {
     @Then("the user deletes an existing attestations document")
     public void theUserDeletesAnExistingAttestationsDocument() {
         dc.mySendKeys(dc.searchBox, editName + Keys.ENTER);
-        dc.staleElement(dc.deleteImageButton);
+        dc.wait.until(ExpectedConditions.elementToBeClickable(dc.searchButton));
         dc.myClick(dc.deleteImageButton);
         dc.myClick(dc.deleteButton);
     }

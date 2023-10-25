@@ -1,7 +1,9 @@
 package StepDefinitions;
 
-import Pages.DialogContent._09_Editing_Bank_AccountsDC;
-import Pages.LeftNav._09_Editing_Bank_AccountsLN;
+import Pages.DialogContent;
+
+import Pages.LeftNav;
+
 import Utilities.BD;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.And;
@@ -16,10 +18,9 @@ import java.util.List;
 
 public class _09_Editing_Bank_Accounts {
 
-    _09_Editing_Bank_AccountsDC dc = new _09_Editing_Bank_AccountsDC();
-    _09_Editing_Bank_AccountsLN ln = new _09_Editing_Bank_AccountsLN();
+    DialogContent dc = new DialogContent();
+    LeftNav ln = new LeftNav();
 
-    public WebDriverWait wait = new WebDriverWait(BD.getDriver(), Duration.ofSeconds(20));
 
     String bankAccountNameStr = "group3";
     String ibanStr = "01234";
@@ -55,7 +56,7 @@ public class _09_Editing_Bank_Accounts {
     public void theUserEditsABankAccount() {
         dc.mySendKeys(dc.nameSearch, bankAccountNameStr);
         dc.myClick(dc.searchButton);
-        wait.until(ExpectedConditions.elementToBeClickable(dc.searchButton));
+        dc.wait.until(ExpectedConditions.elementToBeClickable(dc.searchButton));
         dc.myClick(dc.edit);
         dc.mySendKeys(dc.newCurrencyName, newCurrencyNameStr);
         dc.myClick(dc.saveEditButton);

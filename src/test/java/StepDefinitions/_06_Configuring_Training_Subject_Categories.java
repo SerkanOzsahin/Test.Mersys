@@ -1,7 +1,9 @@
 package StepDefinitions;
 
-import Pages.DialogContent._06_Configuring_Training_Subject_CategoriesDC;
-import Pages.LeftNav._06_Configuring_Training_Subject_CategoriesLN;
+import Pages.DialogContent;
+
+import Pages.LeftNav;
+
 import Utilities.BD;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.And;
@@ -9,13 +11,16 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 
 import java.util.List;
 
 public class _06_Configuring_Training_Subject_Categories {
-    _06_Configuring_Training_Subject_CategoriesLN ln = new _06_Configuring_Training_Subject_CategoriesLN();
-    _06_Configuring_Training_Subject_CategoriesDC dc = new _06_Configuring_Training_Subject_CategoriesDC();
+
+    DialogContent dc = new DialogContent();
+    LeftNav ln = new LeftNav();
+
     String name = "testgrup3";
     String code = "GRP3";
     String editName = "testgrup3edit";
@@ -24,7 +29,7 @@ public class _06_Configuring_Training_Subject_Categories {
     @When("the user navigates to education")
     public void theUserNavigatesToEducation(DataTable dt) {
         BD.getDriver().get("https://test.mersys.io/");
-        dc.mySendKeys(dc.userName, "turkeyts");
+        dc.mySendKeys(dc.username, "turkeyts");
         dc.mySendKeys(dc.password, "TechnoStudy123");
         dc.myClick(dc.loginButton);
 
@@ -52,7 +57,7 @@ public class _06_Configuring_Training_Subject_Categories {
     @And("the user edits an existing subject categories")
     public void theUserEditsAnExistingSubjectCategories() {
         dc.mySendKeys(dc.searchBox, name + Keys.ENTER);
-        dc.staleElement(dc.editButton);
+        dc.wait.until(ExpectedConditions.elementToBeClickable(dc.searchButton));
         dc.myClick(dc.editButton);
         dc.mySendKeys(dc.shortNameEdit, editName);
         dc.mySendKeys(dc.editCodeInput, editCode);
@@ -67,7 +72,7 @@ public class _06_Configuring_Training_Subject_Categories {
     @And("the user deletes an existing subject categories")
     public void theUserDeletesAnExistingSubjectCategories() {
         dc.mySendKeys(dc.searchBox, editName + Keys.ENTER);
-        dc.staleElement(dc.deleteImageButton);
+        dc.wait.until(ExpectedConditions.elementToBeClickable(dc.searchButton));
         dc.myClick(dc.deleteImageButton);
         dc.myClick(dc.deleteButton);
     }

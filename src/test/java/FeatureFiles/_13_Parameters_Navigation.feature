@@ -1,5 +1,11 @@
 Feature: Parameters Navigation
 
+  Background:
+    Given Navigate to Campus
+    When the user enters username and password
+    And the user clicks login button
+    Then the user should login successfully
+
   Scenario: Check if parameters menu links lead to the correct pages
     When the user navigates to parameters
       | setup      |

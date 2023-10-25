@@ -1,7 +1,9 @@
 package StepDefinitions;
 
-import Pages.DialogContent._11_Editing_Discounts_Under_ParametersDC;
-import Pages.LeftNav._11_Editing_Discounts_Under_ParametersLN;
+import Pages.DialogContent;
+
+import Pages.LeftNav;
+
 import Utilities.BD;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.And;
@@ -14,8 +16,8 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import java.util.List;
 
 public class _11_Editing_Discounts_Under_Parameters {
-    _11_Editing_Discounts_Under_ParametersLN ln = new _11_Editing_Discounts_Under_ParametersLN();
-    _11_Editing_Discounts_Under_ParametersDC dc = new _11_Editing_Discounts_Under_ParametersDC();
+    LeftNav ln = new LeftNav();
+    DialogContent dc = new DialogContent();
     String descriptionName = "grup3";
     String integrationCode = "gp3";
     String priority = "%5";
@@ -26,7 +28,7 @@ public class _11_Editing_Discounts_Under_Parameters {
     @When("the user navigates to setup")
     public void theUserNavigatesToSetup(DataTable dt) {
         BD.getDriver().get("https://test.mersys.io/");
-        dc.mySendKeys(dc.userName, "turkeyts");
+        dc.mySendKeys(dc.username, "turkeyts");
         dc.mySendKeys(dc.password, "TechnoStudy123");
         dc.myClick(dc.loginButton);
 
@@ -54,7 +56,7 @@ public class _11_Editing_Discounts_Under_Parameters {
     @And("the user edits an existing new discount")
     public void theUserEditsAnExistingNewDiscount() {
         dc.mySendKeys(dc.searchBox, descriptionName + Keys.ENTER);
-        dc.staleElement(dc.editButton);
+        dc.wait.until(ExpectedConditions.elementToBeClickable(dc.searchButton));
         dc.myClick(dc.editButton);
         dc.mySendKeys(dc.description, editDescriptionName);
         dc.mySendKeys(dc.integrationCode, editIntegrationCode);
@@ -71,7 +73,7 @@ public class _11_Editing_Discounts_Under_Parameters {
     @And("the user deletes an existing new discount")
     public void theUserDeletesAnExistingNewDiscount() {
         dc.mySendKeys(dc.searchBox, editDescriptionName + Keys.ENTER);
-        dc.staleElement(dc.deleteImageButton);
+        dc.wait.until(ExpectedConditions.elementToBeClickable(dc.searchButton));
         dc.myClick(dc.deleteImageButton);
         dc.myClick(dc.deleteButton);
     }
