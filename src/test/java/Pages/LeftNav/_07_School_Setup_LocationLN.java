@@ -13,13 +13,10 @@ public class _07_School_Setup_LocationLN extends Parent {
 
     @FindBy(xpath = "//span[text()='Setup']")
     public WebElement setup;
-
     @FindBy(xpath = "//span[text()='School Setup']")
     public WebElement schoolSetup;
-
     @FindBy(xpath = "//span[text()='Locations']")
     public WebElement locations;
-
     public WebElement getWebElement(String strElement) {
         switch (strElement) {
             case "setup":
