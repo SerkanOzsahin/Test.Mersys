@@ -6,7 +6,6 @@ import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
@@ -58,7 +57,8 @@ public class _02_Attestations_Management {
 
     @Then("the user deletes an existing attestations document")
     public void theUserDeletesAnExistingAttestationsDocument() {
-        dc.mySendKeys(dc.searchBox, editName + Keys.ENTER);
+        dc.mySendKeys(dc.searchBox, editName);
+        dc.myClick(dc.searchButton);
         dc.wait.until(ExpectedConditions.elementToBeClickable(dc.searchButton));
         dc.myClick(dc.deleteImageButton);
         dc.myClick(dc.deleteDialogButton);
