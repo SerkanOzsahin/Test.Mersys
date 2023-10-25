@@ -2,7 +2,6 @@ package StepDefinitions;
 
 import Pages.DialogContent._05_Creating_Positions_Under_HRDC;
 import Pages.LeftNav._05_Creating_Positions_Under_HRLN;
-import Utilities.BD;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
@@ -25,11 +24,6 @@ public class _05_Creating_Positions_Under_HR {
 
     @When("the user navigates to positions")
     public void theUserNavigatesToPositions(DataTable links) {
-        BD.getDriver().get("https://test.mersys.io/");
-        dc.mySendKeys(dc.username, "turkeyts");
-        dc.mySendKeys(dc.password, "TechnoStudy123");
-        dc.myClick(dc.loginButton);
-
         List<String> strLinkList = links.asList(String.class);
 
         for (int i = 0; i < strLinkList.size(); i++) {

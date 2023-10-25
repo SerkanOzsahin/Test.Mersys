@@ -2,7 +2,6 @@ package StepDefinitions;
 
 import Pages.DialogContent._12_Editing_NationalitiesDC;
 import Pages.LeftNav._12_Editing_NationalitiesLN;
-import Utilities.BD;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
@@ -24,11 +23,6 @@ public class _12_Editing_Nationalities {
 
     @When("the user navigates to nationalities")
     public void theUserNavigatesToNationalities(DataTable links) {
-        BD.getDriver().get("https://test.mersys.io/");
-        dc.mySendKeys(dc.username, "turkeyts");
-        dc.mySendKeys(dc.password, "TechnoStudy123");
-        dc.myClick(dc.loginButton);
-
         List<String> strLinkList = links.asList(String.class);
 
         for (int i = 0; i < strLinkList.size(); i++) {

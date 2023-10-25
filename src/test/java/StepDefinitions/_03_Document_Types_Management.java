@@ -26,11 +26,6 @@ public class _03_Document_Types_Management {
 
     @When("the user navigates to document types")
     public void theUserNavigatesToDocumentTypes(DataTable links) {
-        BD.getDriver().get("https://test.mersys.io/");
-        dc.mySendKeys(dc.username, "turkeyts");
-        dc.mySendKeys(dc.password, "TechnoStudy123");
-        dc.myClick(dc.loginButton);
-
         List<String> strLinkList = links.asList(String.class);
 
         for (int i = 0; i < strLinkList.size(); i++) {
