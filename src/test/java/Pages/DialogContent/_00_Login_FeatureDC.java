@@ -11,7 +11,7 @@ public class _00_Login_FeatureDC extends Parent {
         PageFactory.initElements(BD.getDriver(), this);
     }
 
-    @FindBy(css = "input[formcontrolname='username']")
+    @FindBy(css = "[formcontrolname='username']")
     public WebElement username;
 
     @FindBy(css = "input[formcontrolname='password']")
@@ -23,8 +23,14 @@ public class _00_Login_FeatureDC extends Parent {
     @FindBy(css = "[class='mat-mdc-tooltip-trigger logo-text']")
     public WebElement successfullyMsg;
 
-    @FindBy(css = "[id='mat-mdc-error-2']")
-    public WebElement errorMsg;
+    public WebElement getWebElement(String strElement) {
+        switch (strElement) {
+            case "username":
+                return this.username;
+            case "password":
+                return this.password;
+        }
+        return null;
+    }
 }
-
 
