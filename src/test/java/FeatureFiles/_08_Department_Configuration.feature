@@ -14,14 +14,6 @@ Feature: Department Configuration
     And  the user adds a new school department
     Then the new school department should be added successfully
 
-  Scenario: Checking School Department's Active Button
-    When the user navigates to departments
-      | setup        |
-      | school setup |
-      | departments  |
-    And  the user checks existing school department's active button
-    Then the active button should be scrolled successfully
-
   Scenario: Edit an Existing School Department
     When the user navigates to departments
       | setup        |

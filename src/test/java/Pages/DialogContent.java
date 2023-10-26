@@ -107,9 +107,6 @@ public class DialogContent extends Parent {
     @FindBy(css = "input[data-placeholder='Capacity']")
     public WebElement capacity;
 
-    @FindBy(xpath = "//*[@id='mat-mdc-slide-toggle-11-button']/div[2]/div/div[3]")
-    public WebElement activeButton;
-
     @FindBy(css = "input[data-placeholder='IBAN']")
     public WebElement iban;
 
@@ -121,6 +118,9 @@ public class DialogContent extends Parent {
 
     @FindBy(xpath = "(//input[@data-placeholder='Integration Code'])[2]")
     public WebElement integrationCode;
+
+    @FindBy(xpath = "(//input[@data-placeholder='Integration Code'])[1]")
+    public WebElement bankCode;
 
     @FindBy(xpath = "//span[text()='Save']")
     public WebElement saveEditButton;

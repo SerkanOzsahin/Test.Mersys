@@ -37,7 +37,7 @@ public class _09_Editing_Bank_Accounts {
         dc.mySendKeys(dc.iban, ibanStr);
         dc.myClick(dc.currency);
         dc.myClick(dc.currencyEur);
-        dc.mySendKeys(dc.integrationCode, integrationCodeStr);
+        dc.mySendKeys(dc.bankCode, integrationCodeStr);
         dc.myClick(dc.saveButton);
     }
 

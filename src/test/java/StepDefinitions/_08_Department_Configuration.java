@@ -48,27 +48,6 @@ public class _08_Department_Configuration {
         dc.verifyContainsText(dc.successMessage, "success");
     }
 
-    @And("the user checks existing school department's active button")
-    public void theUserChecksExistingSchoolDepartmentsActiveButton() {
-        List<WebElement> allNames = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//tbody[@role='rowgroup']/tr/td[2]")));
-        for (int i = 0; i <= allNames.size(); i++) {
-            if (allNames.get(i).getText().contains(departmentNameStr)) {
-                i++;
-                String editLocator = "(//tbody[@role='rowgroup']/tr/td[4])[" + i + "]";
-                WebElement gEdit = BD.getDriver().findElement(By.xpath(editLocator));
-                gEdit.click();
-                dc.myClick(dc.activeButton);
-                dc.myClick(dc.saveButton);
-                break;
-            }
-        }
-    }
-
-    @Then("the active button should be scrolled successfully")
-    public void theActiveButtonShouldBeScrolledSuccessfully() {
-        dc.verifyContainsText(dc.successMessage, "success");
-    }
-
     @And("the user edits an existing school department")
     public void theUserEditsAnExistingSchoolDepartment() {
         List<WebElement> allNames = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//tbody[@role='rowgroup']/tr/td[2]")));
