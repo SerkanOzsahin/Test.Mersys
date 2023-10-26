@@ -1,3 +1,4 @@
+@SmokeTest @Regression
 Feature: School Setup Location
 
   Background:

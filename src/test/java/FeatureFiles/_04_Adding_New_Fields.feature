@@ -1,3 +1,4 @@
+@SmokeTest
 Feature: Adding New Fields to Admin Panel
 
   Background:

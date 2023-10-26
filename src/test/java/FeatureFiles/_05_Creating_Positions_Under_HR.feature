@@ -1,3 +1,4 @@
+@SmokeTest @Regression
 Feature: Creating Positions Under HR
 
   Background:

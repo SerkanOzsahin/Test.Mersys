@@ -1,3 +1,4 @@
+@SmokeTest
 Feature: Login Functionality
 
   Scenario: Login with valid username and password

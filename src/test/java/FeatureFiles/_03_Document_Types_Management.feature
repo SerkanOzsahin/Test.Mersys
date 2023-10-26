@@ -1,3 +1,4 @@
+@SmokeTest
 Feature: Document Types Management
 
   Background:

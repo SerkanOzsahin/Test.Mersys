@@ -1,3 +1,4 @@
+@SmokeTest
 Feature: Parameters Navigation
 
   Background:

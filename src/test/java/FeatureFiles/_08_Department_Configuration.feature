@@ -1,3 +1,4 @@
+@SmokeTest @Regression
 Feature: Department Configuration
 
   Background:

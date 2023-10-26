@@ -1,3 +1,4 @@
+@SmokeTest @Regression
 Feature: Position Categories Management
 
   Background:

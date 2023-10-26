@@ -1,3 +1,4 @@
+@SmokeTest @Regression
 Feature: Attestations Management
 
   Background:

@@ -1,3 +1,4 @@
+@SmokeTest @Regression
 Feature: Editing Bank Account
 
   Background:

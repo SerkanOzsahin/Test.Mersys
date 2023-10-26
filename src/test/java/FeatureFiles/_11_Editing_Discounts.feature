@@ -1,3 +1,4 @@
+@SmokeTest @Regression
 Feature: Editing Discounts Under Parameters
 
   Background:

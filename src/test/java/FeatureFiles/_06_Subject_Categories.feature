@@ -1,3 +1,4 @@
+@Regression
 Feature: Education Categories
 
   Background:
