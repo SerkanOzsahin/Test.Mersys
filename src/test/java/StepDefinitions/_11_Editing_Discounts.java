@@ -51,7 +51,7 @@ public class _11_Editing_Discounts {
     public void theUserEditsAnExistingNewDiscount() {
         dc.mySendKeys(dc.descriptionSearch, descriptionName);
         dc.myClick(dc.searchButton);
-        dc.wait.until(ExpectedConditions.visibilityOf(dc.elementToBe));
+        dc.wait.until(ExpectedConditions.elementToBeClickable(dc.searchButton));
         dc.myClick(dc.editButton);
         dc.mySendKeys(dc.descriptionName, editDescriptionName);
         dc.mySendKeys(dc.integrationCode, editIntegrationCode);
@@ -68,7 +68,7 @@ public class _11_Editing_Discounts {
     public void theUserDeletesAnExistingNewDiscount() {
         dc.mySendKeys(dc.descriptionSearch, editDescriptionName);
         dc.myClick(dc.searchButton);
-        dc.wait.until(ExpectedConditions.visibilityOf(dc.elementToBe));
+        dc.wait.until(ExpectedConditions.elementToBeClickable(dc.searchButton));
         dc.myClick(dc.deleteImageButton);
         dc.myClick(dc.deleteDialogButton);
     }

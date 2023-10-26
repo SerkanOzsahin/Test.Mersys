@@ -52,7 +52,7 @@ public class _03_Document_Types_Management {
     public void theUserEditsAnExistingDocumentType() {
         dc.mySendKeys(dc.searchBox, docNameStr);
         dc.myClick(dc.searchButton);
-        dc.wait.until(ExpectedConditions.visibilityOf(dc.elementToBe));
+        dc.wait.until(ExpectedConditions.elementToBeClickable(dc.searchButton));
         dc.myClick(dc.editButton);
         dc.mySendKeys(dc.sendName, docNewNameStr);
         dc.myClick(dc.saveButton);
@@ -67,7 +67,7 @@ public class _03_Document_Types_Management {
     public void theUserDeletesAnExistingDocumentType() {
         dc.mySendKeys(dc.searchBox, docNewNameStr);
         dc.myClick(dc.searchButton);
-        dc.wait.until(ExpectedConditions.visibilityOf(dc.elementToBe));
+        dc.wait.until(ExpectedConditions.elementToBeClickable(dc.searchButton));
         dc.myClick(dc.deleteImageButton);
         dc.myClick(dc.deleteDialogButton);
     }

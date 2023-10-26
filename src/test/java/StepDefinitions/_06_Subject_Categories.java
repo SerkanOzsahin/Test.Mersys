@@ -6,7 +6,6 @@ import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
@@ -50,7 +49,7 @@ public class _06_Subject_Categories {
     public void theUserEditsAnExistingSubjectCategories() {
         dc.mySendKeys(dc.searchBox, name);
         dc.myClick(dc.searchButton);
-        dc.wait.until(ExpectedConditions.visibilityOf(dc.elementToBe));
+        dc.wait.until(ExpectedConditions.elementToBeClickable(dc.searchButton));
         dc.myClick(dc.editButton);
         dc.mySendKeys(dc.shortNameEdit, editName);
         dc.mySendKeys(dc.editCodeInput, editCode);
@@ -66,7 +65,7 @@ public class _06_Subject_Categories {
     public void theUserDeletesAnExistingSubjectCategories() {
         dc.mySendKeys(dc.searchBox, editName);
         dc.myClick(dc.searchButton);
-        dc.wait.until(ExpectedConditions.visibilityOf(dc.elementToBe));
+        dc.wait.until(ExpectedConditions.elementToBeClickable(dc.searchButton));
         dc.myClick(dc.deleteImageButton);
         dc.myClick(dc.deleteDialogButton);
     }

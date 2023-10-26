@@ -48,7 +48,7 @@ public class _04_Adding_New_Fields {
     public void theUserEditsAnExistingField() {
         dc.mySendKeys(dc.searchBox, fieldNameStr);
         dc.myClick(dc.searchButton);
-        dc.wait.until(ExpectedConditions.visibilityOf(dc.elementToBe));
+        dc.wait.until(ExpectedConditions.elementToBeClickable(dc.searchButton));
         dc.myClick(dc.editButton);
         dc.mySendKeys(dc.sendName, newFieldNameStr);
         dc.myClick(dc.saveButton);
@@ -63,7 +63,7 @@ public class _04_Adding_New_Fields {
     public void theUserDeletesAnExistingField() {
         dc.mySendKeys(dc.searchBox, newFieldNameStr);
         dc.myClick(dc.searchButton);
-        dc.wait.until(ExpectedConditions.visibilityOf(dc.elementToBe));
+        dc.wait.until(ExpectedConditions.elementToBeClickable(dc.searchButton));
         dc.myClick(dc.deleteImageButton);
         dc.myClick(dc.deleteDialogButton);
     }

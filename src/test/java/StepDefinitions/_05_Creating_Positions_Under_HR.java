@@ -47,7 +47,7 @@ public class _05_Creating_Positions_Under_HR {
     public void theUserUpdatesAnExistingPosition() {
         dc.mySendKeys(dc.searchBox, positionNameStr);
         dc.myClick(dc.searchButton);
-        dc.wait.until(ExpectedConditions.visibilityOf(dc.elementToBe));
+        dc.wait.until(ExpectedConditions.elementToBeClickable(dc.searchButton));
         dc.myClick(dc.editButton);
         dc.mySendKeys(dc.sendName, posNewNameStr);
         dc.myClick(dc.saveButton);
@@ -62,7 +62,7 @@ public class _05_Creating_Positions_Under_HR {
     public void theUserSearchesForAPosition() {
         dc.mySendKeys(dc.searchBox, posNewNameStr);
         dc.myClick(dc.searchButton);
-        dc.wait.until(ExpectedConditions.visibilityOf(dc.elementToBe));
+        dc.wait.until(ExpectedConditions.elementToBeClickable(dc.searchButton));
     }
 
     @Then("the system should display the results")
@@ -74,9 +74,9 @@ public class _05_Creating_Positions_Under_HR {
     public void theUserChoosesToEnableOrDisableAPosition() {
         dc.mySendKeys(dc.searchBox, posNewNameStr);
         dc.myClick(dc.searchButton);
-        dc.wait.until(ExpectedConditions.visibilityOf(dc.elementToBe));
+        dc.wait.until(ExpectedConditions.elementToBeClickable(dc.searchButton));
         dc.myClick(dc.activeInactiveButton);
-        dc.wait.until(ExpectedConditions.visibilityOf(dc.elementToBe));
+        dc.wait.until(ExpectedConditions.elementToBeClickable(dc.searchButton));
     }
 
     @Then("the position's status should be updated")
@@ -88,7 +88,7 @@ public class _05_Creating_Positions_Under_HR {
     public void theUserDeletesAPosition() {
         dc.mySendKeys(dc.searchBox, posNewNameStr);
         dc.myClick(dc.searchButton);
-        dc.wait.until(ExpectedConditions.visibilityOf(dc.elementToBe));
+        dc.wait.until(ExpectedConditions.elementToBeClickable(dc.searchButton));
         dc.myClick(dc.deleteImageButton);
         dc.myClick(dc.deleteDialogButton);
     }

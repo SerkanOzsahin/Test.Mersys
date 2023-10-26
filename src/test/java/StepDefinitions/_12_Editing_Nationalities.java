@@ -45,7 +45,7 @@ public class _12_Editing_Nationalities {
     public void theUserEditsTheNationality() {
         dc.mySendKeys(dc.searchBox, natNameStr);
         dc.myClick(dc.searchButton);
-        dc.wait.until(ExpectedConditions.visibilityOf(dc.elementToBe));
+        dc.wait.until(ExpectedConditions.elementToBeClickable(dc.searchButton));
         dc.myClick(dc.editButton);
         dc.mySendKeys(dc.sendName, newNatNameStr);
         dc.myClick(dc.saveButton);
@@ -60,7 +60,7 @@ public class _12_Editing_Nationalities {
     public void theUserUsesTheSearchFunctionToFindANationality() {
         dc.mySendKeys(dc.searchBox, newNatNameStr);
         dc.myClick(dc.searchButton);
-        dc.wait.until(ExpectedConditions.visibilityOf(dc.elementToBe));
+        dc.wait.until(ExpectedConditions.elementToBeClickable(dc.searchButton));
     }
 
     @Then("the matching nationalities should be displayed successfully")
@@ -72,7 +72,7 @@ public class _12_Editing_Nationalities {
     public void theUserDeletesANationality() {
         dc.mySendKeys(dc.searchBox, newNatNameStr);
         dc.myClick(dc.searchButton);
-        dc.wait.until(ExpectedConditions.visibilityOf(dc.elementToBe));
+        dc.wait.until(ExpectedConditions.elementToBeClickable(dc.searchButton));
         dc.myClick(dc.deleteImageButton);
         dc.myClick(dc.deleteDialogButton);
     }
