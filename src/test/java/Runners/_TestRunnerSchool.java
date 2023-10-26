@@ -9,8 +9,7 @@ import io.cucumber.testng.CucumberOptions;
                 "src/test/java/FeatureFiles/_07_School_Setup_Location.feature",
                 "src/test/java/FeatureFiles/_08_Department_Configuration.feature"
         },
-        glue = {"StepDefinitions"},
-        plugin = {"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"}
+        glue = {"StepDefinitions"}
 )
 
 public class _TestRunnerSchool extends AbstractTestNGCucumberTests {

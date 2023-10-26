@@ -9,8 +9,7 @@ import io.cucumber.testng.CucumberOptions;
                 "src/test/java/FeatureFiles/_02_Attestations_Management.feature",
                 "src/test/java/FeatureFiles/_05_Creating_Positions_Under_HR.feature"
         },
-        glue = {"StepDefinitions"},
-        plugin = {"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"}
+        glue = {"StepDefinitions"}
 )
 
 public class _TestRunnerHR extends AbstractTestNGCucumberTests {

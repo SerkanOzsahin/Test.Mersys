@@ -11,8 +11,7 @@ import io.cucumber.testng.CucumberOptions;
                 "src/test/java/FeatureFiles/_11_Editing_Discounts.feature",
                 "src/test/java/FeatureFiles/_12_Editing_Nationalities.feature"
         },
-        glue = {"StepDefinitions"},
-        plugin = {"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"}
+        glue = {"StepDefinitions"}
 )
 
 public class _TestRunnerParameters extends AbstractTestNGCucumberTests {
