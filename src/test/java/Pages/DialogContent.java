@@ -136,7 +136,4 @@ public class DialogContent extends Parent {
 
     @FindBy(css = "[data-placeholder='Description']")
     public WebElement descriptionSearch;
-
-    @FindBy(xpath = "//tbody[@role='rowgroup']/tr/td[2]")
-    public WebElement elementToBe;
 }
