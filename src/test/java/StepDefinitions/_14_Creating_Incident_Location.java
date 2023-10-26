@@ -43,7 +43,8 @@ public class _14_Creating_Incident_Location {
     @And("the user edits an existing incidents location")
     public void theUserEditsAnExistingIncidentsLocation() {
         dc.mySendKeys(dc.searchBox, name);
-        dc.wait.until(ExpectedConditions.elementToBeClickable(dc.searchButton));
+        dc.myClick(dc.searchButton);
+        dc.wait.until(ExpectedConditions.visibilityOf(dc.elementToBe));
         dc.myClick(dc.editButton);
         dc.mySendKeys(dc.sendName, editName);
         dc.myClick(dc.saveButton);
@@ -57,7 +58,8 @@ public class _14_Creating_Incident_Location {
     @And("the user deletes an existing incidents location")
     public void theUserDeletesAnExistingIncidentsLocation() {
         dc.mySendKeys(dc.searchBox, editName);
-        dc.wait.until(ExpectedConditions.elementToBeClickable(dc.searchButton));
+        dc.myClick(dc.searchButton);
+        dc.wait.until(ExpectedConditions.visibilityOf(dc.elementToBe));
         dc.myClick(dc.deleteImageButton);
         dc.myClick(dc.deleteDialogButton);
     }

@@ -50,7 +50,7 @@ public class _09_Editing_Bank_Accounts {
     public void theUserEditsABankAccount() {
         dc.mySendKeys(dc.searchBox, bankAccountNameStr);
         dc.myClick(dc.searchButton);
-        dc.wait.until(ExpectedConditions.elementToBeClickable(dc.searchButton));
+        dc.wait.until(ExpectedConditions.visibilityOf(dc.elementToBe));
         dc.myClick(dc.editButton);
         dc.mySendKeys(dc.sendName, newCurrencyNameStr);
         dc.myClick(dc.saveEditButton);
@@ -65,7 +65,7 @@ public class _09_Editing_Bank_Accounts {
     public void theUserDeletesABankAccount() {
         dc.mySendKeys(dc.searchBox, newCurrencyNameStr);
         dc.myClick(dc.searchButton);
-        dc.wait.until(ExpectedConditions.elementToBeClickable(dc.searchButton));
+        dc.wait.until(ExpectedConditions.visibilityOf(dc.elementToBe));
         dc.myClick(dc.deleteImageButton);
         dc.myClick(dc.deleteDialogButton);
     }

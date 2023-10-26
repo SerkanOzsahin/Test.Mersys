@@ -44,7 +44,7 @@ public class _01_Position_Categories_Management {
     public void theUserEditsAnExistingPositionCategories() {
         dc.mySendKeys(dc.searchBox, positionNameStr);
         dc.myClick(dc.searchButton);
-        dc.wait.until(ExpectedConditions.elementToBeClickable(dc.searchButton));
+        dc.wait.until(ExpectedConditions.visibilityOf(dc.elementToBe));
         dc.myClick(dc.editButton);
         dc.mySendKeys(dc.sendName, newPositionNameStr);
         dc.myClick(dc.saveButton);
@@ -59,7 +59,7 @@ public class _01_Position_Categories_Management {
     public void theUserDeletesAnExistingPositionCategories() {
         dc.mySendKeys(dc.searchBox, newPositionNameStr);
         dc.myClick(dc.searchButton);
-        dc.wait.until(ExpectedConditions.elementToBeClickable(dc.searchButton));
+        dc.wait.until(ExpectedConditions.visibilityOf(dc.elementToBe));
         dc.myClick(dc.deleteImageButton);
         dc.myClick(dc.deleteDialogButton);
     }

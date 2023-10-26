@@ -44,7 +44,7 @@ public class _02_Attestations_Management {
     public void theUserEditsAnExistingAttestationsDocument() {
         dc.mySendKeys(dc.searchBox, name);
         dc.myClick(dc.searchButton);
-        dc.wait.until(ExpectedConditions.elementToBeClickable(dc.searchButton));
+        dc.wait.until(ExpectedConditions.visibilityOf(dc.elementToBe));
         dc.myClick(dc.editButton);
         dc.mySendKeys(dc.shortNameEdit, editName);
         dc.myClick(dc.saveButton);
@@ -59,7 +59,7 @@ public class _02_Attestations_Management {
     public void theUserDeletesAnExistingAttestationsDocument() {
         dc.mySendKeys(dc.searchBox, editName);
         dc.myClick(dc.searchButton);
-        dc.wait.until(ExpectedConditions.elementToBeClickable(dc.searchButton));
+        dc.wait.until(ExpectedConditions.visibilityOf(dc.elementToBe));
         dc.myClick(dc.deleteImageButton);
         dc.myClick(dc.deleteDialogButton);
     }
