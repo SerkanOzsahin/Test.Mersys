@@ -7,7 +7,8 @@ import io.cucumber.testng.CucumberOptions;
         features = {
                 "src/test/java/FeatureFiles/_03_Document_Types_Management.feature"
         },
-        glue = {"StepDefinitions"}
+        glue = {"StepDefinitions"},
+        plugin = {"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"}
 )
 
 public class _TestRunnerDocuments extends AbstractTestNGCucumberTests {

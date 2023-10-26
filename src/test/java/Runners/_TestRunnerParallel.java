@@ -8,7 +8,8 @@ import org.testng.annotations.Parameters;
 
 @CucumberOptions(
         features = {"src/test/java/FeatureFiles"},
-        glue = {"StepDefinitions"}
+        glue = {"StepDefinitions"},
+        plugin = {"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"}
 )
 
 public class _TestRunnerParallel extends AbstractTestNGCucumberTests {
