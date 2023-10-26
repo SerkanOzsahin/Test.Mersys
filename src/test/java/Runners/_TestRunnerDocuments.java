@@ -5,7 +5,7 @@ import io.cucumber.testng.CucumberOptions;
 
 @CucumberOptions(
         features = {
-                "_03_Document_Types_Management.feature"
+                "src/test/java/FeatureFiles/_03_Document_Types_Management.feature"
         },
         glue = {"StepDefinitions"},
         plugin = {"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"}
