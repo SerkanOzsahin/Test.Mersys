@@ -13,7 +13,7 @@ import org.testng.Assert;
 
 import java.util.List;
 
-public class _06_Configuring_Training_Subject_Categories {
+public class _06_Subject_Categories {
 
     DialogContent dc = new DialogContent();
     LeftNav ln = new LeftNav();

@@ -12,7 +12,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import java.util.List;
 
-public class _11_Editing_Discounts_Under_Parameters {
+public class _11_Editing_Discounts {
 
     DialogContent dc = new DialogContent();
     LeftNav ln = new LeftNav();
@@ -36,10 +36,10 @@ public class _11_Editing_Discounts_Under_Parameters {
     @And("the user creates a new discount")
     public void theUserCreatesANewDiscount() {
         dc.myClick(dc.addButton);
-        dc.mySendKeys(dc.description, descriptionName);
+        dc.mySendKeys(dc.descriptionName, descriptionName);
         dc.mySendKeys(dc.integrationCode, integrationCode);
         dc.mySendKeys(dc.priority, priority + Keys.ENTER);
-        dc.myClick(dc.saveAndClose);
+        dc.myClick(dc.saveButton);
     }
 
     @Then("the discount document should be added successfully")
@@ -49,13 +49,14 @@ public class _11_Editing_Discounts_Under_Parameters {
 
     @And("the user edits an existing new discount")
     public void theUserEditsAnExistingNewDiscount() {
-        dc.mySendKeys(dc.searchBox, descriptionName + Keys.ENTER);
+        dc.mySendKeys(dc.descriptionSearch, descriptionName);
+        dc.myClick(dc.searchButton);
         dc.wait.until(ExpectedConditions.elementToBeClickable(dc.searchButton));
         dc.myClick(dc.editButton);
-        dc.mySendKeys(dc.description, editDescriptionName);
+        dc.mySendKeys(dc.descriptionName, editDescriptionName);
         dc.mySendKeys(dc.integrationCode, editIntegrationCode);
         dc.mySendKeys(dc.priority, editPriority + Keys.ENTER);
-        dc.myClick(dc.saveAndClose);
+        dc.myClick(dc.saveButton);
     }
 
     @Then("the new discount should be edited successfully")
@@ -65,7 +66,8 @@ public class _11_Editing_Discounts_Under_Parameters {
 
     @And("the user deletes an existing new discount")
     public void theUserDeletesAnExistingNewDiscount() {
-        dc.mySendKeys(dc.searchBox, editDescriptionName + Keys.ENTER);
+        dc.mySendKeys(dc.descriptionSearch, editDescriptionName);
+        dc.myClick(dc.searchButton);
         dc.wait.until(ExpectedConditions.elementToBeClickable(dc.searchButton));
         dc.myClick(dc.deleteImageButton);
         dc.myClick(dc.deleteDialogButton);

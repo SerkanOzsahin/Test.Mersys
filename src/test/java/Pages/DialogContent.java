@@ -44,6 +44,9 @@ public class DialogContent extends Parent {
     @FindBy(css = "[formcontrolname='description']")
     public WebElement description;
 
+    @FindBy(xpath = "(//input[@data-placeholder='Description'])[2]")
+    public WebElement descriptionName;
+
     @FindBy(xpath = "//ms-save-button/button")
     public WebElement saveButton;
 
@@ -116,7 +119,7 @@ public class DialogContent extends Parent {
     @FindBy(xpath = "//span[text()=' EUR ']")
     public WebElement currencyEur;
 
-    @FindBy(css = "input[data-placeholder='Integration Code']")
+    @FindBy(xpath = "(//input[@data-placeholder='Integration Code'])[2]")
     public WebElement integrationCode;
 
     @FindBy(xpath = "//span[text()='Save']")
@@ -128,9 +131,9 @@ public class DialogContent extends Parent {
     @FindBy(css = "input[data-placeholder='Max Application Count']")
     public WebElement maxApplicationCount;
 
-    @FindBy(xpath = "//ms-integer-field[contains(@formcontrolname,'priority')]//input")
+    @FindBy(css = "input[data-placeholder='Priority']")
     public WebElement priority;
 
-    @FindBy(xpath = "(//ms-save-button[@class='ng-star-inserted']//button)[2]")
-    public WebElement saveAndClose;
+    @FindBy(css = "[data-placeholder='Description']")
+    public WebElement descriptionSearch;
 }

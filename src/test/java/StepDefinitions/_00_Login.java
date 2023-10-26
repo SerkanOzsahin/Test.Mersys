@@ -7,7 +7,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-public class _00_Login_Feature {
+public class _00_Login {
 
     DialogContent dc = new DialogContent();
 
