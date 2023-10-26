@@ -18,8 +18,8 @@ public class Hooks {
     public void after(Scenario scenario) {
         if (scenario.isFailed()) {
             TakesScreenshot ts = ((TakesScreenshot) BD.getDriver());
-            byte[] atMemory = ts.getScreenshotAs(OutputType.BYTES);
-            scenario.attach(atMemory, "image/png", "screenshot name");
+            byte[] screenshotData = ts.getScreenshotAs(OutputType.BYTES);
+            scenario.attach(screenshotData, "image/png", "screenshot name");
         }
         BD.quitDriver();
     }
