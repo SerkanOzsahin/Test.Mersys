@@ -17,7 +17,7 @@ public class _01_Position_Categories_Management {
     LeftNav ln = new LeftNav();
 
     String positionNameStr = "group3";
-    String newpositionNameStr = "group3edit";
+    String newPositionNameStr = "group3edit";
 
     @When("the user navigates to position categories")
     public void theUserNavigatesToPositionCategories(DataTable links) {
@@ -46,7 +46,7 @@ public class _01_Position_Categories_Management {
         dc.myClick(dc.searchButton);
         dc.wait.until(ExpectedConditions.elementToBeClickable(dc.searchButton));
         dc.myClick(dc.editButton);
-        dc.mySendKeys(dc.sendName, newpositionNameStr);
+        dc.mySendKeys(dc.sendName, newPositionNameStr);
         dc.myClick(dc.saveButton);
     }
 
@@ -57,7 +57,7 @@ public class _01_Position_Categories_Management {
 
     @And("the user deletes an existing position categories")
     public void theUserDeletesAnExistingPositionCategories() {
-        dc.mySendKeys(dc.searchBox, newpositionNameStr);
+        dc.mySendKeys(dc.searchBox, newPositionNameStr);
         dc.myClick(dc.searchButton);
         dc.wait.until(ExpectedConditions.elementToBeClickable(dc.searchButton));
         dc.myClick(dc.deleteImageButton);

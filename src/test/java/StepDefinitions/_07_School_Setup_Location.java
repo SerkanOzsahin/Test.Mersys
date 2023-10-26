@@ -23,10 +23,10 @@ public class _07_School_Setup_Location {
 
     public WebDriverWait wait = new WebDriverWait(BD.getDriver(), Duration.ofSeconds(20));
 
-    String name1 = "group3";
-    String shortName1 = "g3";
-    String capasity1 = "123";
-    String newName1 = "group3edit";
+    String name = "group3";
+    String shortName = "g3";
+    String capacity = "123";
+    String newName = "group3edit";
 
     @When("the user navigates to school setup location")
     public void theUserNavigatesToSchoolSetupLocation(DataTable links) {
@@ -40,11 +40,11 @@ public class _07_School_Setup_Location {
     @And("the user adds a new school location")
     public void theUserAddsANewSchoolLocation() {
         dc.myClick(dc.addButton);
-        dc.mySendKeys(dc.newName, name1);
-        dc.mySendKeys(dc.newShortName, shortName1);
+        dc.mySendKeys(dc.newName, name);
+        dc.mySendKeys(dc.newShortName, shortName);
         dc.myClick(dc.classroom);
         dc.myClick(dc.laboratory);
-        dc.mySendKeys(dc.capacity, capasity1 + Keys.ENTER);
+        dc.mySendKeys(dc.capacity, capacity + Keys.ENTER);
         dc.myClick(dc.saveButton);
     }
 
@@ -57,12 +57,12 @@ public class _07_School_Setup_Location {
     public void theUserEditsSchoolLocation() {
         List<WebElement> allNames = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//tbody[@role='rowgroup']/tr/td[2]")));
         for (int i = 0; i <= allNames.size(); i++) {
-            if (allNames.get(i).getText().contains(name1)) {
+            if (allNames.get(i).getText().contains(name)) {
                 i++;
                 String editLocator = "(//tbody[@role='rowgroup']/tr/td[2]/following::td[5]/div/ms-edit-button)[" + i + "]";
                 WebElement gEdit = BD.getDriver().findElement(By.xpath(editLocator));
                 gEdit.click();
-                dc.mySendKeys(dc.newName, newName1);
+                dc.mySendKeys(dc.newName, newName);
                 dc.myClick(dc.saveButton);
                 break;
             }
@@ -78,7 +78,7 @@ public class _07_School_Setup_Location {
     public void theUserDeletesSchoolLocation() {
         List<WebElement> allNames = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//tbody[@role='rowgroup']/tr/td[2]")));
         for (int i = 0; i <= allNames.size(); i++) {
-            if (allNames.get(i).getText().contains(newName1)) {
+            if (allNames.get(i).getText().contains(newName)) {
                 i++;
                 String editLocator = "(//tbody[@role='rowgroup']/tr/td[2]/following::td[5]/div/ms-delete-button)[" + i + "]";
                 WebElement gEdit = BD.getDriver().findElement(By.xpath(editLocator));
