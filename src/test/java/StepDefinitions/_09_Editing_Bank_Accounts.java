@@ -41,8 +41,8 @@ public class _09_Editing_Bank_Accounts {
         dc.myClick(dc.saveButton);
     }
 
-    @Then("the bank accounts should be added successfully")
-    public void theBankAccountsShouldBeAddedSuccessfully() {
+    @Then("the bank account should be added successfully")
+    public void theBankAccountShouldBeAddedSuccessfully() {
         dc.verifyContainsText(dc.successMessage, "success");
     }
 
@@ -56,19 +56,19 @@ public class _09_Editing_Bank_Accounts {
         dc.myClick(dc.saveEditButton);
     }
 
-    @Then("the bank accounts should be edited successfully")
-    public void theBankAccountsShouldBeEditedSuccessfully() {
+    @Then("the bank account should be edited successfully")
+    public void theBankAccountShouldBeEditedSuccessfully() {
         dc.verifyContainsText(dc.successMessage, "success");
     }
 
-    @Then("the user deletes a bank account")
+    @And("the user deletes a bank account")
     public void theUserDeletesABankAccount() {
         dc.myClick(dc.deleteImageButton);
         dc.myClick(dc.deleteDialogButton);
     }
 
-    @Then("the bank accounts should be deleted successfully")
-    public void theBankAccountsShouldBeDeletedSuccessfully() {
+    @Then("the bank account should be deleted successfully")
+    public void theBankAccountShouldBeDeletedSuccessfully() {
         dc.verifyContainsText(dc.successMessage, "success");
     }
 }

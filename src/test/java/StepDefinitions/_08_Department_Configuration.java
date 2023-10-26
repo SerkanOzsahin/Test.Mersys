@@ -35,7 +35,7 @@ public class _08_Department_Configuration {
         }
     }
 
-    @And("the user adds a new School Department")
+    @And("the user adds a new school department")
     public void theUserAddsAnewSchoolDepartment() {
         dc.myClick(dc.addButton);
         dc.mySendKeys(dc.newName, departmentNameStr);
@@ -43,12 +43,12 @@ public class _08_Department_Configuration {
         dc.myClick(dc.saveButton);
     }
 
-    @Then("the New School Department should be added successfully")
+    @Then("the new school department should be added successfully")
     public void theNewSchoolDepartmentsShouldBeAddedSuccessfully() {
         dc.verifyContainsText(dc.successMessage, "success");
     }
 
-    @And("the user checks existing School Department's active button")
+    @And("the user checks existing school department's active button")
     public void theUserChecksExistingSchoolDepartmentsActiveButton() {
         List<WebElement> allNames = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//tbody[@role='rowgroup']/tr/td[2]")));
         for (int i = 0; i <= allNames.size(); i++) {
@@ -64,12 +64,12 @@ public class _08_Department_Configuration {
         }
     }
 
-    @Then("the active button should be scrolled successfuly")
-    public void theActiveButtonShouldBeScrolledSuccessfuly() {
+    @Then("the active button should be scrolled successfully")
+    public void theActiveButtonShouldBeScrolledSuccessfully() {
         dc.verifyContainsText(dc.successMessage, "success");
     }
 
-    @And("the user edits an existing School Department")
+    @And("the user edits an existing school department")
     public void theUserEditsAnExistingSchoolDepartment() {
         List<WebElement> allNames = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//tbody[@role='rowgroup']/tr/td[2]")));
         for (int i = 0; i <= allNames.size(); i++) {
@@ -85,12 +85,12 @@ public class _08_Department_Configuration {
         }
     }
 
-    @Then("the New School Department should be edited successfully")
+    @Then("the new school department should be edited successfully")
     public void theNewSchoolDepartmentShouldBeEditedSuccessfully() {
         dc.verifyContainsText(dc.successMessage, "success");
     }
 
-    @And("the user deletes an existing School Department")
+    @And("the user deletes an existing school department")
     public void theUserDeletesAnExistingSchoolDepartment() {
         List<WebElement> allNames = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//tbody[@role='rowgroup']/tr/td[2]")));
         for (int i = 0; i <= allNames.size(); i++) {
@@ -105,7 +105,7 @@ public class _08_Department_Configuration {
         }
     }
 
-    @Then("the New School Department should be deleted successfully")
+    @Then("the new school department should be deleted successfully")
     public void theNewSchoolDepartmentShouldBeDeletedSuccessfully() {
         dc.verifyContainsText(dc.successMessage, "success");
     }

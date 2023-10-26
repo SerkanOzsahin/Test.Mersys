@@ -6,7 +6,7 @@ Feature: Incident Location
     And the user clicks login button
     Then the user should login successfully
 
-  Scenario: Create a new Incident Location
+  Scenario: Create a New Incident Location
     When the user navigates to incidents
       | incidents        |
       | incidentsSetup   |

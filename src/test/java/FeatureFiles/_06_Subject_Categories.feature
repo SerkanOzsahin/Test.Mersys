@@ -6,7 +6,7 @@ Feature: Education Categories
     And the user clicks login button
     Then the user should login successfully
 
-  Scenario: Create a new Subject Categories
+  Scenario: Create a New Subject Categories
     When the user navigates to education
       | educationButton   |
       | setupButton       |

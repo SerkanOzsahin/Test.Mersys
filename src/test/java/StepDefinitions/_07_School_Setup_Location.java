@@ -45,10 +45,6 @@ public class _07_School_Setup_Location {
         dc.myClick(dc.classroom);
         dc.myClick(dc.laboratory);
         dc.mySendKeys(dc.capacity, capasity1 + Keys.ENTER);
-    }
-
-    @And("the user click on the save button")
-    public void theUserClickOnTheSaveButton() {
         dc.myClick(dc.saveButton);
     }
 

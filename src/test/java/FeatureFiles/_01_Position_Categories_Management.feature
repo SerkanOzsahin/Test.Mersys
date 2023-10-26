@@ -11,8 +11,7 @@ Feature: Position Categories Management
       | human resources       |
       | human resources setup |
       | position categories   |
-    And the user clicks on the add button
-    And the user clicks on the save button
+    And the user adds a new position categories
     Then the position categories should be added successfully
 
   Scenario: Edit Position Categories
@@ -20,7 +19,7 @@ Feature: Position Categories Management
       | human resources       |
       | human resources setup |
       | position categories   |
-    And the user clicks on the edit button
+    And the user edits an existing position categories
     Then position categories should be edited successfully
 
   Scenario: Delete Position Categories
@@ -28,5 +27,5 @@ Feature: Position Categories Management
       | human resources       |
       | human resources setup |
       | position categories   |
-    And the user clicks on the delete button
+    And the user deletes an existing position categories
     Then position categories should be deleted successfully

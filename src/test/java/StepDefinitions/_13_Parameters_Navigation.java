@@ -22,7 +22,7 @@ public class _13_Parameters_Navigation {
         }
     }
 
-    @Then("Upon clicking the following menu links, the user should see the corresponding page titles")
+    @Then("upon clicking the following menu links, the user should see the corresponding page titles")
     public void uponClickingTheFollowingMenuLinksTheUserShouldSeeTheCorrespondingPageTitles(DataTable links) throws InterruptedException {
         List<String> strLinkList = links.asList(String.class);
         for (int i = 0; i < strLinkList.size(); i++) {

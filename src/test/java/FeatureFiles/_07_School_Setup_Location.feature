@@ -12,7 +12,6 @@ Feature: School Setup Location
       | school setup |
       | locations    |
     And the user adds a new school location
-    And the user click on the save button
     Then the location should be add successfully
 
   Scenario: Edit School Setup Location

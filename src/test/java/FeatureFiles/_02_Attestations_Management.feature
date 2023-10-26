@@ -11,21 +11,21 @@ Feature: Attestations Management
       | human resources              |
       | human resources setup        |
       | human resources attestations |
-    Then the user creates an attestations
-    And the attestations document should be added successfully
+    And the user creates an attestations
+    Then the attestations document should be added successfully
 
   Scenario: Edit a Attestations document
     When the user navigates to human resources
       | human resources              |
       | human resources setup        |
       | human resources attestations |
-    Then the user edits an existing attestations document
-    And the attestations document should be edited successfully
+    And the user edits an existing attestations document
+    Then the attestations document should be edited successfully
 
   Scenario: Delete a Attestations document
     When the user navigates to human resources
       | human resources              |
       | human resources setup        |
       | human resources attestations |
-    Then the user deletes an existing attestations document
-    And the attestations document should be deleted successfully
+    And the user deletes an existing attestations document
+    Then the attestations document should be deleted successfully

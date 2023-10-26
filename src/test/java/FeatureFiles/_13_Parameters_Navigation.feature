@@ -10,8 +10,7 @@ Feature: Parameters Navigation
     When the user navigates to parameters
       | setup      |
       | parameters |
-
-    Then Upon clicking the following menu links, the user should see the corresponding page titles
+    Then upon clicking the following menu links, the user should see the corresponding page titles
       | countries          |
       | states             |
       | cities             |

@@ -28,14 +28,10 @@ public class _01_Position_Categories_Management {
         }
     }
 
-    @And("the user clicks on the add button")
-    public void theUserClicksOnTheAddButton() {
+    @And("the user adds a new position categories")
+    public void theUserAddsANewPositionCategories() {
         dc.myClick(dc.addButton);
         dc.mySendKeys(dc.sendName, positionNameStr);
-    }
-
-    @And("the user clicks on the save button")
-    public void theUserClicksOnTheSaveButton() {
         dc.myClick(dc.saveButton);
     }
 
@@ -44,8 +40,8 @@ public class _01_Position_Categories_Management {
         dc.verifyContainsText(dc.successMessage, "success");
     }
 
-    @And("the user clicks on the edit button")
-    public void theUserClicksOnTheEditButton() {
+    @And("the user edits an existing position categories")
+    public void theUserEditsAnExistingPositionCategories() {
         dc.mySendKeys(dc.searchBox, positionNameStr);
         dc.myClick(dc.searchButton);
         dc.wait.until(ExpectedConditions.elementToBeClickable(dc.searchButton));
@@ -59,8 +55,8 @@ public class _01_Position_Categories_Management {
         dc.verifyContainsText(dc.successMessage, "updated");
     }
 
-    @And("the user clicks on the delete button")
-    public void theUserClicksOnTheDeleteButton() {
+    @And("the user deletes an existing position categories")
+    public void theUserDeletesAnExistingPositionCategories() {
         dc.mySendKeys(dc.searchBox, newpositionNameStr);
         dc.myClick(dc.searchButton);
         dc.wait.until(ExpectedConditions.elementToBeClickable(dc.searchButton));

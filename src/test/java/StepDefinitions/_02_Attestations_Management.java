@@ -28,19 +28,19 @@ public class _02_Attestations_Management {
         }
     }
 
-    @Then("the user creates an attestations")
+    @And("the user creates an attestations")
     public void theUserCreatesAnAttestations() {
         dc.myClick(dc.addButton);
         dc.mySendKeys(dc.sendName, name);
         dc.myClick(dc.saveButton);
     }
 
-    @And("the attestations document should be added successfully")
+    @Then("the attestations document should be added successfully")
     public void theAttestationsDocumentShouldBeAddedSuccessfully() {
         dc.verifyContainsText(dc.successMessage, "successfully");
     }
 
-    @Then("the user edits an existing attestations document")
+    @And("the user edits an existing attestations document")
     public void theUserEditsAnExistingAttestationsDocument() {
         dc.mySendKeys(dc.searchBox, name);
         dc.myClick(dc.searchButton);
@@ -50,12 +50,12 @@ public class _02_Attestations_Management {
         dc.myClick(dc.saveButton);
     }
 
-    @And("the attestations document should be edited successfully")
+    @Then("the attestations document should be edited successfully")
     public void theAttestationsDocumentShouldBeEditedSuccessfully() {
         dc.verifyContainsText(dc.successMessage, "successfully");
     }
 
-    @Then("the user deletes an existing attestations document")
+    @And("the user deletes an existing attestations document")
     public void theUserDeletesAnExistingAttestationsDocument() {
         dc.mySendKeys(dc.searchBox, editName);
         dc.myClick(dc.searchButton);
@@ -64,7 +64,7 @@ public class _02_Attestations_Management {
         dc.myClick(dc.deleteDialogButton);
     }
 
-    @And("the attestations document should be deleted successfully")
+    @Then("the attestations document should be deleted successfully")
     public void theAttestationsDocumentShouldBeDeletedSuccessfully() {
         dc.verifyContainsText(dc.successMessage, "successfully");
     }
