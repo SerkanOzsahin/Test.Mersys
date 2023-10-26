@@ -63,6 +63,9 @@ public class _09_Editing_Bank_Accounts {
 
     @And("the user deletes a bank account")
     public void theUserDeletesABankAccount() {
+        dc.mySendKeys(dc.searchBox, newCurrencyNameStr);
+        dc.myClick(dc.searchButton);
+        dc.wait.until(ExpectedConditions.elementToBeClickable(dc.searchButton));
         dc.myClick(dc.deleteImageButton);
         dc.myClick(dc.deleteDialogButton);
     }

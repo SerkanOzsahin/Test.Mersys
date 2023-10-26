@@ -48,7 +48,8 @@ public class _06_Subject_Categories {
 
     @And("the user edits an existing subject categories")
     public void theUserEditsAnExistingSubjectCategories() {
-        dc.mySendKeys(dc.searchBox, name + Keys.ENTER);
+        dc.mySendKeys(dc.searchBox, name);
+        dc.myClick(dc.searchButton);
         dc.wait.until(ExpectedConditions.elementToBeClickable(dc.searchButton));
         dc.myClick(dc.editButton);
         dc.mySendKeys(dc.shortNameEdit, editName);
