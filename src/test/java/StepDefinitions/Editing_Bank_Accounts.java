@@ -11,7 +11,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import java.util.List;
 
-public class _09_Editing_Bank_Accounts {
+public class Editing_Bank_Accounts {
 
     DialogContent dc = new DialogContent();
     LeftNav ln = new LeftNav();

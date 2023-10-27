@@ -9,7 +9,7 @@ import org.testng.Assert;
 
 import java.util.List;
 
-public class _13_Parameters_Navigation {
+public class Parameters_Navigation {
 
     LeftNav ln = new LeftNav();
 

@@ -14,7 +14,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import java.util.List;
 
-public class _03_Document_Types_Management {
+public class Document_Types_Management {
 
     DialogContent dc = new DialogContent();
     LeftNav ln = new LeftNav();

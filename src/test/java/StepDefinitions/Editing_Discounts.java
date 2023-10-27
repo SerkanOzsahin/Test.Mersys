@@ -12,7 +12,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import java.util.List;
 
-public class _11_Editing_Discounts {
+public class Editing_Discounts {
 
     DialogContent dc = new DialogContent();
     LeftNav ln = new LeftNav();

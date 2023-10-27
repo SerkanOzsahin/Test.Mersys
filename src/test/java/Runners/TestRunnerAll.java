@@ -9,5 +9,5 @@ import io.cucumber.testng.CucumberOptions;
         plugin = {"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"}
 )
 
-public class _TestRunnerAll extends AbstractTestNGCucumberTests {
+public class TestRunnerAll extends AbstractTestNGCucumberTests {
 }

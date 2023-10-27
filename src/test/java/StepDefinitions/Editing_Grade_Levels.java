@@ -8,7 +8,6 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -16,20 +15,21 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 import java.util.List;
 
-public class _07_School_Setup_Location {
+public class Editing_Grade_Levels {
 
     DialogContent dc = new DialogContent();
     LeftNav ln = new LeftNav();
 
     public WebDriverWait wait = new WebDriverWait(BD.getDriver(), Duration.ofSeconds(20));
 
-    String name = "group3";
-    String shortName = "g3";
-    String capacity = "123";
-    String newName = "group3edit";
+    String gradeNameStr = "group3";
+    String shortNameStr = "g3";
+    String orderStr = "1";
+    String maxApplicationCountStr = "1";
+    String newGradeNameStr = "group3edit";
 
-    @When("the user navigates to school setup location")
-    public void theUserNavigatesToSchoolSetupLocation(DataTable links) {
+    @When("the user navigates to grade levels")
+    public void theUserNavigatesToGradeLevels(DataTable links) {
         List<String> strLinkList = links.asList(String.class);
         for (int i = 0; i < strLinkList.size(); i++) {
             WebElement linkWebElement = ln.getWebElement(strLinkList.get(i));
@@ -37,48 +37,47 @@ public class _07_School_Setup_Location {
         }
     }
 
-    @And("the user adds a new school location")
-    public void theUserAddsANewSchoolLocation() {
+    @And("the user adds a new grade level")
+    public void theUserAddsANewGradeLevel() {
         dc.myClick(dc.addButton);
-        dc.mySendKeys(dc.newName, name);
-        dc.mySendKeys(dc.newShortName, shortName);
-        dc.myClick(dc.classroom);
-        dc.myClick(dc.laboratory);
-        dc.mySendKeys(dc.capacity, capacity + Keys.ENTER);
+        dc.mySendKeys(dc.newName, gradeNameStr);
+        dc.mySendKeys(dc.newShortName, shortNameStr);
+        dc.mySendKeys(dc.order, orderStr);
+        dc.mySendKeys(dc.maxApplicationCount, maxApplicationCountStr);
         dc.myClick(dc.saveButton);
     }
 
-    @Then("the location should be add successfully")
-    public void theLocationShouldBeAddSuccessfully() {
+    @Then("the grade level should be added successfully")
+    public void theGradeLevelShouldBeAddedSuccessfully() {
         dc.verifyContainsText(dc.successMessage, "success");
     }
 
-    @And("the user edits school location")
-    public void theUserEditsSchoolLocation() {
+    @And("the user edits a grade level")
+    public void theUserEditsAGradeLevel() {
         List<WebElement> allNames = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//tbody[@role='rowgroup']/tr/td[2]")));
         for (int i = 0; i <= allNames.size(); i++) {
-            if (allNames.get(i).getText().contains(name)) {
+            if (allNames.get(i).getText().contains(gradeNameStr)) {
                 i++;
                 String editLocator = "(//tbody[@role='rowgroup']/tr/td[2]/following::td[5]/div/ms-edit-button)[" + i + "]";
                 WebElement gEdit = BD.getDriver().findElement(By.xpath(editLocator));
                 gEdit.click();
-                dc.mySendKeys(dc.newName, newName);
+                dc.mySendKeys(dc.newName, newGradeNameStr);
                 dc.myClick(dc.saveButton);
                 break;
             }
         }
     }
 
-    @Then("the location should be edit successfully")
-    public void theLocationShouldBeEditSuccessfully() {
+    @Then("the grade level should be edited successfully")
+    public void theGradeLevelShouldBeEditedSuccessfully() {
         dc.verifyContainsText(dc.successMessage, "success");
     }
 
-    @And("the user deletes school location")
-    public void theUserDeletesSchoolLocation() {
+    @And("the user deletes a grade level")
+    public void theUserDeletesAGradeLevel() {
         List<WebElement> allNames = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//tbody[@role='rowgroup']/tr/td[2]")));
         for (int i = 0; i <= allNames.size(); i++) {
-            if (allNames.get(i).getText().contains(newName)) {
+            if (allNames.get(i).getText().contains(newGradeNameStr)) {
                 i++;
                 String editLocator = "(//tbody[@role='rowgroup']/tr/td[2]/following::td[5]/div/ms-delete-button)[" + i + "]";
                 WebElement gEdit = BD.getDriver().findElement(By.xpath(editLocator));
@@ -89,8 +88,8 @@ public class _07_School_Setup_Location {
         }
     }
 
-    @Then("the location should be delete successfully")
-    public void theLocationShouldBeDeleteSuccessfully() {
+    @Then("the grade level should be deleted successfully")
+    public void theGradeLevelShouldBeDeletedSuccessfully() {
         dc.verifyContainsText(dc.successMessage, "success");
     }
 }

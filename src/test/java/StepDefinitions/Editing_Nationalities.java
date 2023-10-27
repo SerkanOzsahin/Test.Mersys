@@ -12,7 +12,7 @@ import org.testng.Assert;
 
 import java.util.List;
 
-public class _12_Editing_Nationalities {
+public class Editing_Nationalities {
 
     DialogContent dc = new DialogContent();
     LeftNav ln = new LeftNav();

@@ -12,7 +12,7 @@ import org.testng.annotations.Parameters;
         plugin = {"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"}
 )
 
-public class _TestRunnerParallel extends AbstractTestNGCucumberTests {
+public class TestRunnerParallel extends AbstractTestNGCucumberTests {
 
     @BeforeClass
     @Parameters("browserType")

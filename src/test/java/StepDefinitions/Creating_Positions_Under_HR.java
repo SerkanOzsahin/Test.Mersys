@@ -12,7 +12,7 @@ import org.testng.Assert;
 
 import java.util.List;
 
-public class _05_Creating_Positions_Under_HR {
+public class Creating_Positions_Under_HR {
 
     DialogContent dc = new DialogContent();
     LeftNav ln = new LeftNav();

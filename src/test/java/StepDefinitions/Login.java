@@ -11,7 +11,7 @@ import org.apache.poi.ss.usermodel.*;
 import java.io.FileInputStream;
 import java.io.IOException;
 
-public class _00_Login {
+public class Login {
 
     DialogContent dc = new DialogContent();
 

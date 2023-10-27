@@ -11,7 +11,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import java.util.List;
 
-public class _14_Creating_Incident_Location {
+public class Creating_Incident_Location {
 
     DialogContent dc = new DialogContent();
     LeftNav ln = new LeftNav();

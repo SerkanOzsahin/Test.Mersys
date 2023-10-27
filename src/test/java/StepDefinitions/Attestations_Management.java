@@ -11,7 +11,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import java.util.List;
 
-public class _02_Attestations_Management {
+public class Attestations_Management {
 
     DialogContent dc = new DialogContent();
     LeftNav ln = new LeftNav();

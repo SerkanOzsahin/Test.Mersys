@@ -15,21 +15,19 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 import java.util.List;
 
-public class _10_Editing_Grade_Levels {
+public class Department_Configuration {
 
     DialogContent dc = new DialogContent();
     LeftNav ln = new LeftNav();
 
     public WebDriverWait wait = new WebDriverWait(BD.getDriver(), Duration.ofSeconds(20));
 
-    String gradeNameStr = "group3";
-    String shortNameStr = "g3";
-    String orderStr = "1";
-    String maxApplicationCountStr = "1";
-    String newGradeNameStr = "group3edit";
+    String departmentNameStr = "group3";
+    String newDepartmentNameStr = "group3edit";
+    String codeNameStr = "g3";
 
-    @When("the user navigates to grade levels")
-    public void theUserNavigatesToGradeLevels(DataTable links) {
+    @When("the user navigates to departments")
+    public void the_user_navigates_to_departments(DataTable links) {
         List<String> strLinkList = links.asList(String.class);
         for (int i = 0; i < strLinkList.size(); i++) {
             WebElement linkWebElement = ln.getWebElement(strLinkList.get(i));
@@ -37,49 +35,47 @@ public class _10_Editing_Grade_Levels {
         }
     }
 
-    @And("the user adds a new grade level")
-    public void theUserAddsANewGradeLevel() {
+    @And("the user adds a new school department")
+    public void theUserAddsAnewSchoolDepartment() {
         dc.myClick(dc.addButton);
-        dc.mySendKeys(dc.newName, gradeNameStr);
-        dc.mySendKeys(dc.newShortName, shortNameStr);
-        dc.mySendKeys(dc.order, orderStr);
-        dc.mySendKeys(dc.maxApplicationCount, maxApplicationCountStr);
+        dc.mySendKeys(dc.newName, departmentNameStr);
+        dc.mySendKeys(dc.code, codeNameStr);
         dc.myClick(dc.saveButton);
     }
 
-    @Then("the grade level should be added successfully")
-    public void theGradeLevelShouldBeAddedSuccessfully() {
+    @Then("the new school department should be added successfully")
+    public void theNewSchoolDepartmentsShouldBeAddedSuccessfully() {
         dc.verifyContainsText(dc.successMessage, "success");
     }
 
-    @And("the user edits a grade level")
-    public void theUserEditsAGradeLevel() {
+    @And("the user edits an existing school department")
+    public void theUserEditsAnExistingSchoolDepartment() {
         List<WebElement> allNames = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//tbody[@role='rowgroup']/tr/td[2]")));
         for (int i = 0; i <= allNames.size(); i++) {
-            if (allNames.get(i).getText().contains(gradeNameStr)) {
+            if (allNames.get(i).getText().contains(departmentNameStr)) {
                 i++;
-                String editLocator = "(//tbody[@role='rowgroup']/tr/td[2]/following::td[5]/div/ms-edit-button)[" + i + "]";
+                String editLocator = "(//tbody[@role='rowgroup']/tr/td[2]/following::td[3]/div/ms-edit-button)[" + i + "]";
                 WebElement gEdit = BD.getDriver().findElement(By.xpath(editLocator));
                 gEdit.click();
-                dc.mySendKeys(dc.newName, newGradeNameStr);
+                dc.mySendKeys(dc.newName, newDepartmentNameStr);
                 dc.myClick(dc.saveButton);
                 break;
             }
         }
     }
 
-    @Then("the grade level should be edited successfully")
-    public void theGradeLevelShouldBeEditedSuccessfully() {
+    @Then("the new school department should be edited successfully")
+    public void theNewSchoolDepartmentShouldBeEditedSuccessfully() {
         dc.verifyContainsText(dc.successMessage, "success");
     }
 
-    @And("the user deletes a grade level")
-    public void theUserDeletesAGradeLevel() {
+    @And("the user deletes an existing school department")
+    public void theUserDeletesAnExistingSchoolDepartment() {
         List<WebElement> allNames = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//tbody[@role='rowgroup']/tr/td[2]")));
         for (int i = 0; i <= allNames.size(); i++) {
-            if (allNames.get(i).getText().contains(newGradeNameStr)) {
+            if (allNames.get(i).getText().contains(newDepartmentNameStr)) {
                 i++;
-                String editLocator = "(//tbody[@role='rowgroup']/tr/td[2]/following::td[5]/div/ms-delete-button)[" + i + "]";
+                String editLocator = "(//tbody[@role='rowgroup']/tr/td[2]/following::td[3]/div/ms-delete-button)[" + i + "]";
                 WebElement gEdit = BD.getDriver().findElement(By.xpath(editLocator));
                 gEdit.click();
                 dc.myClick(dc.deleteDialogButton);
@@ -88,8 +84,8 @@ public class _10_Editing_Grade_Levels {
         }
     }
 
-    @Then("the grade level should be deleted successfully")
-    public void theGradeLevelShouldBeDeletedSuccessfully() {
+    @Then("the new school department should be deleted successfully")
+    public void theNewSchoolDepartmentShouldBeDeletedSuccessfully() {
         dc.verifyContainsText(dc.successMessage, "success");
     }
 }
