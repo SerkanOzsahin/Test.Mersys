@@ -7,9 +7,7 @@ import org.openqa.selenium.support.PageFactory;
 
 public class LeftNav extends Parent {
 
-    public LeftNav() {
-        PageFactory.initElements(BD.getDriver(), this);
-    }
+    public LeftNav() {PageFactory.initElements(BD.getDriver(), this);}
 
     @FindBy(xpath = "//span[text()='Human Resources']")
     public WebElement humanResources;
@@ -103,64 +101,35 @@ public class LeftNav extends Parent {
 
     public WebElement getWebElement(String strElement) {
         switch (strElement) {
-            case "human resources":
-                return this.humanResources;
-            case "countries":
-                return this.countries;
-            case "citizen ships":
-                return this.citizenships;
-            case "field settings":
-                return this.fieldSettings;
-            case "reason for leaving":
-                return this.rfl;
-            case "cities":
-                return this.cities;
-            case "states":
-                return this.states;
-            case "setup":
-                return this.setup;
-            case "position categories":
-                return this.positionCategories;
-            case "human resources attestations":
-                return humanResourcesAttestations;
-            case "parameters":
-                return this.parameters;
-            case "document types":
-                return this.documentTypes;
-            case "human resources setup":
-                return humanResourcesSetup;
-            case "fields":
-                return this.fields;
-            case "positions":
-                return this.positions;
-            case "educationButton":
-                return educationButton;
-            case "setupButton":
-                return setupButton;
-            case "subjectCategories":
-                return subjectCategories;
-            case "school setup":
-                return this.schoolSetup;
-            case "locations":
-                return this.locations;
-            case "departments":
-                return this.departments;
-            case "bank accounts":
-                return this.bankAccounts;
-            case "grade levels":
-                return this.gradeLevels;
-            case "parametersSetup":
-                return parametersSetup;
-            case "discounts":
-                return discounts;
-            case "nationalities":
-                return this.nationalities;
-            case "incidents":
-                return incidents;
-            case "incidentsSetup":
-                return incidentsSetup;
-            case "incidentLocation":
-                return incidentLocation;
+            case "human resources": return this.humanResources;
+            case "countries": return this.countries;
+            case "citizen ships": return this.citizenships;
+            case "field settings": return this.fieldSettings;
+            case "reason for leaving": return this.rfl;
+            case "cities": return this.cities;
+            case "states": return this.states;
+            case "setup": return this.setup;
+            case "position categories": return this.positionCategories;
+            case "human resources attestations": return humanResourcesAttestations;
+            case "parameters": return this.parameters;
+            case "document types": return this.documentTypes;
+            case "human resources setup": return humanResourcesSetup;
+            case "fields": return this.fields;
+            case "positions": return this.positions;
+            case "educationButton": return educationButton;
+            case "setupButton": return setupButton;
+            case "subjectCategories": return subjectCategories;
+            case "school setup": return this.schoolSetup;
+            case "locations": return this.locations;
+            case "departments": return this.departments;
+            case "bank accounts": return this.bankAccounts;
+            case "grade levels": return this.gradeLevels;
+            case "parametersSetup": return parametersSetup;
+            case "discounts": return discounts;
+            case "nationalities": return this.nationalities;
+            case "incidents": return incidents;
+            case "incidentsSetup": return incidentsSetup;
+            case "incidentLocation": return incidentLocation;
         }
         return null;
     }
