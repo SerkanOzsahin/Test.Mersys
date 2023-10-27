@@ -35,6 +35,23 @@ To get started with the project, follow these steps:
    - Open the project in IntelliJ IDEA after cloning.
    - Ensure that JDK 1.8 is used.
    - Load the Project Object Model (POM) by clicking on `pom.xml` and selecting "Reload Project" under the "Maven" menu.
+  
+ ### Features:
+
+- **Admin Login**: Access the system with admin privileges on the test environment "test.mersys.io."
+- **Manage Position Categories**: Add, edit, and delete position categories under Human Resources settings.
+- **Manage Attestations**: Handle attestation management within Human Resources settings.
+- **Manage Document Types**: Add, edit, and delete document types under Parameter Settings.
+- **Customize Parameters**: Add, edit, and delete various fields under Parameter Settings to configure system settings effectively.
+- **Manage School Positions**: Add, edit, and delete positions for school administration under Human Resources settings.
+- **Configure Subject Categories**: Add, edit, and delete subject categories under Education settings for better management of educational details.
+- **Manage School Locations**: Add, edit, and delete school locations (e.g., library, laboratory, gym) for various schools and environments.
+- **Manage School Departments**: Add, edit, and delete departments for different schools to organize and enhance school settings.
+- **Manage Bank Accounts**: Add, edit, and delete bank accounts for various schools and users to improve financial management.
+- **Manage Grade Levels**: Add, edit, and delete grade levels under Parameter Settings for more effective class management.
+- **Manage Discounts**: Add, edit, and delete discounts under Parameter Settings for better control of financial records.
+- **Manage Nationalities**: Add, edit, and delete nationalities under Parameter Settings for diverse community management.
+
 
 ## Collaborators
 
