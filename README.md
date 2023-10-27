@@ -36,7 +36,7 @@ To get started with the project, follow these steps:
    - Ensure that JDK 1.8 is used.
    - Load the Project Object Model (POM) by clicking on `pom.xml` and selecting "Reload Project" under the "Maven" menu.
   
- ### Features:
+### Features:
 
 - **Admin Login**: Access the system with admin privileges on the test environment "test.mersys.io."
 - **Manage Position Categories**: Add, edit, and delete position categories under Human Resources settings.
