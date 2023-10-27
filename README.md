@@ -52,7 +52,6 @@ To get started with the project, follow these steps:
 - **Manage Discounts**: Add, edit, and delete discounts under Parameter Settings for better control of financial records.
 - **Manage Nationalities**: Add, edit, and delete nationalities under Parameter Settings for diverse community management.
 
-
 ## Collaborators
 
 - Serkan Özşahin **(Team Lead)**
