@@ -20,7 +20,6 @@ public class School_Setup_Location {
 
     DialogContent dc = new DialogContent();
     LeftNav ln = new LeftNav();
-
     public WebDriverWait wait = new WebDriverWait(BD.getDriver(), Duration.ofSeconds(20));
 
     String name = "group3";
